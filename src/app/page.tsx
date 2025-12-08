@@ -219,10 +219,10 @@ export default function HomePage() {
               FAQ
             </Link>
             <Link
-              href="/portal"
+              href="/contact"
               className="px-4 py-2 text-sm font-semibold text-optima-gold hover:text-optima-navy transition-colors"
             >
-              Client Portal →
+              Contact Us →
             </Link>
           </div>
         </div>

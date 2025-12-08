@@ -43,10 +43,10 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              href="/portal"
+              href="/contact"
               className="btn-primary text-sm"
             >
-              Client Portal
+              Get Started
             </Link>
           </nav>
 
@@ -94,11 +94,11 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="/portal"
+                href="/contact"
                 onClick={toggleMenu}
                 className="block py-2 text-sm font-medium text-optima-gold"
               >
-                Client Portal
+                Get Started
               </Link>
               <div className="pt-4 space-y-2 border-t border-gray-200">
                 <a

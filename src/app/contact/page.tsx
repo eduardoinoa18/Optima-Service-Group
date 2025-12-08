@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { toast } from "react-hot-toast";
-import type { Metadata } from "next";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
