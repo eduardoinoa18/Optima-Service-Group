@@ -8,6 +8,7 @@ const Footer = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
+    { href: "/real-estate", label: "Real Estate" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
   ];
@@ -19,6 +20,8 @@ const Footer = () => {
     { href: "/services/credit-repair", label: "Credit Repair" },
     { href: "/services/document-prep", label: "Document Services" },
     { href: "/services/business-support", label: "Business Support" },
+    { href: "/real-estate", label: "Real Estate Services" },
+    { href: "/paraiso-inmobiliario", label: "Paraíso Inmobiliario" },
   ];
 
   const legalLinks = [
