@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -35,15 +37,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
-        <Header />
-        <main className="min-h-screen md:pb-0 pb-20">{children}</main>
-        <MobileBottomNav />
-        <Footer />
-        <Toaster position="top-right" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <Header />
+            <main className="min-h-screen md:pb-0 pb-20">{children}</main>
+            <MobileBottomNav />
+            <Footer />
+            <Toaster position="top-right" />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
