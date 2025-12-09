@@ -37,7 +37,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-8">
       {/* Header */}
-      <div className="bg-gradient-to-b from-optima-navy to-optima-navy/90 text-white py-8">
+      <div className="bg-linear-to-b from-optima-navy to-optima-navy/90 text-white py-8">
         <div className="container max-w-2xl mx-auto px-4">
           <Link
             href="/"
@@ -70,7 +70,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <ul className="space-y-3">
             {service.whatWeInclude.map((item, index) => (
               <li key={index} className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
                 <span className="text-gray-700">{item}</span>
               </li>
             ))}
@@ -87,7 +87,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <ul className="space-y-3">
             {service.whoItsFor.map((item, index) => (
               <li key={index} className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-optima-gold rounded-full flex-shrink-0 mt-2" />
+                <div className="w-2 h-2 bg-optima-gold rounded-full shrink-0 mt-2" />
                 <span className="text-gray-700">{item}</span>
               </li>
             ))}
@@ -104,7 +104,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="space-y-6">
             {service.howItWorks.map((step) => (
               <div key={step.step} className="flex space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center font-heading font-bold text-optima-navy">
+                <div className="shrink-0 w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center font-heading font-bold text-optima-navy">
                   {step.step}
                 </div>
                 <div className="flex-1">
@@ -127,7 +127,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <ul className="space-y-2">
               {service.documentsNeeded.map((doc, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-4 h-4 text-blue-600 shrink-0 mt-1" />
                   <span className="text-gray-700 text-sm">{doc}</span>
                 </li>
               ))}
@@ -159,7 +159,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <section className="py-8">
         <div className="container max-w-2xl mx-auto px-4">
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start space-x-3">
-            <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-yellow-600 shrink-0 mt-0.5" />
             <p className="text-sm text-gray-700">{service.compliance}</p>
           </div>
         </div>

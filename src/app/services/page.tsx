@@ -12,7 +12,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-optima-navy to-optima-navy/90 text-white py-20">
+      <section className="bg-linear-to-br from-optima-navy to-optima-navy/90 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -59,7 +59,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Accent Border */}
-                <div className="h-2 bg-gradient-to-r from-optima-navy to-optima-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div className="h-2 bg-linear-to-r from-optima-navy to-optima-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
               </Link>
             ))}
           </div>

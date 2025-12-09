@@ -59,9 +59,9 @@ export default function RealEstatePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-optima-navy to-blue-900 text-white">
+      <section className="relative py-20 px-4 bg-linear-to-r from-optima-navy to-blue-900 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">

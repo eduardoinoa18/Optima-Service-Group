@@ -64,7 +64,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-24 md:pb-8">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white pb-24 md:pb-8">
       {/* Hero Section - App-like Profile Style */}
       <section className="pt-12 pb-8">
         <div className="container max-w-md mx-auto px-4">
@@ -135,7 +135,7 @@ export default function HomePage() {
                   className="service-tile"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-optima-gold/10 rounded-xl flex items-center justify-center text-optima-navy">
+                    <div className="shrink-0 w-12 h-12 bg-optima-gold/10 rounded-xl flex items-center justify-center text-optima-navy">
                       {getServiceIcon(service.icon)}
                     </div>
                     <div className="flex-1 text-left">

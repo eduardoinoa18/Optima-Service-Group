@@ -79,7 +79,7 @@ export default function ContactPage() {
                   href="tel:+19787055509"
                   className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  <div className="w-10 h-10 bg-optima-navy rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-optima-navy rounded-full flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   href="mailto:inoaserv@gmail.com"
                   className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  <div className="w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-optima-navy" />
                   </div>
                   <div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                 </a>
 
                 <div className="flex items-start space-x-3 p-3 rounded-lg bg-gray-50">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-gray-600" />
                   </div>
                   <div>

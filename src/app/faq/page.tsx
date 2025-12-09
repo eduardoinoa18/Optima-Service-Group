@@ -164,7 +164,7 @@ export default function FAQPage() {
                           {faq.question}
                         </span>
                         <ChevronDown
-                          className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${
+                          className={`w-5 h-5 text-gray-400 shrink-0 transition-transform ${
                             isOpen ? "transform rotate-180" : ""
                           }`}
                         />

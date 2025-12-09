@@ -104,7 +104,7 @@ const Footer = () => {
               </li>
               <li>
                 <div className="flex items-start space-x-2 text-sm text-gray-300">
-                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 mt-1 shrink-0" />
                   <span>
                     Mon-Fri: 9am-6pm<br />
                     Sat: By appointment<br />
