@@ -11,32 +11,25 @@ const config: Config = {
     extend: {
       colors: {
         optima: {
-          // Primary Blues - More vibrant
-          navy: "#0A2942",
+          // High-Contrast App-Card Design System
+          // Primary - Deep Navy (Background)
+          navy: "#0F213A",
+          
+          // Accent - Bright Gold (CTAs & Highlights)
+          gold: "#F5C440",
+          
+          // Extended Color System (existing vibrant palette preserved)
           blue: {
             50: "#e6f0f9",
             100: "#cce0f3",
             200: "#99c1e7",
             300: "#66a2db",
             400: "#3383cf",
-            500: "#2563ab", // Main blue
+            500: "#2563ab",
             600: "#1e4f8a",
             700: "#1a3a5f",
             800: "#132b47",
-            900: "#0d1e30",
-          },
-          // Gold/Yellow - Warmer, more Hispanic-friendly
-          gold: {
-            50: "#fffef5",
-            100: "#fffae6",
-            200: "#fff4cc",
-            300: "#ffd966", // Bright accent
-            400: "#f4c430",
-            500: "#d4af37", // Main gold
-            600: "#b8941f",
-            700: "#8b7310",
-            800: "#6b5808",
-            900: "#4a3d05",
+            900: "#0F213A", // Matches primary navy
           },
           // Accent Colors
           orange: {

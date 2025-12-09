@@ -1,0 +1,56 @@
+{
+  "name": "Optima Service Group",
+  "short_name": "Optima",
+  "description": "Tax, Immigration, Real Estate & Business Services in Lawrence, MA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F213A",
+  "theme_color": "#0F213A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Book Consultation",
+      "short_name": "Book",
+      "description": "Schedule a consultation with our experts",
+      "url": "/contact?action=book",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "WhatsApp Us",
+      "short_name": "WhatsApp",
+      "description": "Chat with us on WhatsApp",
+      "url": "https://wa.me/19787055509",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Services",
+      "short_name": "Services",
+      "description": "Explore our professional services",
+      "url": "/services",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

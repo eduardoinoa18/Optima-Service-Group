@@ -3,7 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileBottomNav from "@/components/MobileBottomNav";
+import MobileAppBar from "@/components/MobileAppBar";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -34,6 +34,19 @@ export const metadata: Metadata = {
     "tax advisor near me"
   ],
   metadataBase: new URL("https://www.optimaservicegroup.com"),
+  manifest: "/manifest.json",
+  themeColor: "#0F213A",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Optima Service Group",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   openGraph: {
     type: "website",
     url: "https://www.optimaservicegroup.com",
@@ -186,11 +199,31 @@ export default function RootLayout({
           <LanguageProvider>
             <Header />
             <main className="min-h-screen md:pb-0 pb-20">{children}</main>
-            <MobileBottomNav />
+            <MobileAppBar />
             <Footer />
             <Toaster position="top-right" />
           </LanguageProvider>
         </ThemeProvider>
+        
+        {/* PWA Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(
+                    function(registration) {
+                      console.log('ServiceWorker registration successful');
+                    },
+                    function(err) {
+                      console.log('ServiceWorker registration failed: ', err);
+                    }
+                  );
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

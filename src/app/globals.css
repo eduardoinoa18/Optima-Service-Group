@@ -620,3 +620,89 @@
   }
 }
 
+
+/* ===================================
+   PWA & APP-CARD EXPERIENCE STYLES
+   =================================== */
+
+/* Smooth transitions for all interactive elements */
+button, a, .transition-element {
+  transition: background-color 0.15s ease-in-out, 
+              color 0.15s ease-in-out,
+              transform 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+}
+
+/* App-like tap feedback */
+button:active, a:active {
+  transform: scale(0.98);
+}
+
+/* Mobile safe areas for notch/home indicator */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+
+
+
+
+/* Smooth page transitions */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInUp 0.6s ease-out;
+}
+
+
+
+
+
+/* High-contrast focus states for accessibility */
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #F5C440;
+  outline-offset: 2px;
+}
+
+/* Disable text selection on buttons (app-like feel) */
+button, .btn {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Backdrop blur for glassmorphism */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* App-card container constraints */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Bottom nav padding compensation */
+.pb-app-nav {
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0));
+}
+
