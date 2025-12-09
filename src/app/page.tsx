@@ -1,244 +1,304 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
-import Logo from "@/components/Logo";
-import { services } from "@/lib/services-data";
-import { ReactElement } from "react";
+/**
+ * Optima Service Group - App-Card Homepage
+ * 
+ * Mobile-first, PWA-ready single-scroll experience
+ * Designed like Linktree/Popl electronic business card
+ * High-contrast Navy + Gold color system
+ */
 
-// Icon mapping for service tiles
-const getServiceIcon = (iconName: string) => {
-  const icons: { [key: string]: ReactElement } = {
-    FileText: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-    Globe: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    Stamp: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    TrendingUp: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
-    FileCheck: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    Briefcase: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  };
-  return icons[iconName] || icons.FileText;
-};
+import Link from 'next/link';
+import { Phone, MessageCircle, Download, Star, FileText, TrendingUp, Home as HomeIcon, Building2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { services } from '@/lib/services-data';
+import OptimaIcon from '@/components/OptimaIcon';
 
 export default function HomePage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
+  // SSG-compatible: wrap useLanguage in try/catch
+  let language: 'en' | 'es' = 'en';
+  
+  try {
+    const context = useLanguage();
+    language = context.language;
+  } catch (error) {
+    // SSG/SSR fallback - will hydrate on client
+  }
+  
+  const content = {
+    en: {
+      hero: {
+        headline: "Tired of Tax Stress?",
+        subheadline: "Navigate Immigration Hassles?",
+        cta: "Get Expert Help",
+        tagline: "Your Solution, All in One Place."
       },
+      ctas: {
+        book: "Book Consultation",
+        whatsapp: "WhatsApp Us",
+        call: "Call Now"
+      },
+      serviceHub: {
+        title: "Service Hub",
+        categories: [
+          {
+            title: "Documents & Forms",
+            icon: FileText,
+            services: ["Tax Preparation", "Immigration Forms", "Notary Public"]
+          },
+          {
+            title: "Financial & Credit",
+            icon: TrendingUp,
+            services: ["Credit Repair", "Business Consulting"]
+          },
+          {
+            title: "Real Estate & Business",
+            icon: Building2,
+            services: ["Real Estate Services", "Business Admin"]
+          }
+        ]
+      },
+      leadMagnet: {
+        title: "Lead Magnet",
+        subtitle: "Unlock Your Guide to US Finances",
+        cta: "4.9 Stars on Free Guide",
+        disclaimer: "We do not provide legal or financial advice. We assist with form preparation and document services only."
+      },
+      testimonial: "Optima made my immigration seamless! – David S."
     },
+    es: {
+      hero: {
+        headline: "¿Cansado del Estrés Fiscal?",
+        subheadline: "¿Problemas con Inmigración?",
+        cta: "Obtén Ayuda Experta",
+        tagline: "Tu Solución, Todo en Un Lugar."
+      },
+      ctas: {
+        book: "Agendar Consulta",
+        whatsapp: "WhatsApp",
+        call: "Llamar Ahora"
+      },
+      serviceHub: {
+        title: "Centro de Servicios",
+        categories: [
+          {
+            title: "Documentos y Formularios",
+            icon: FileText,
+            services: ["Preparación de Impuestos", "Formularios de Inmigración", "Notario Público"]
+          },
+          {
+            title: "Financiero y Crédito",
+            icon: TrendingUp,
+            services: ["Reparación de Crédito", "Consultoría Empresarial"]
+          },
+          {
+            title: "Bienes Raíces y Negocios",
+            icon: Building2,
+            services: ["Servicios Inmobiliarios", "Administración de Negocios"]
+          }
+        ]
+      },
+      leadMagnet: {
+        title: "Imán de Clientes",
+        subtitle: "Desbloquea Tu Guía de Finanzas en EE.UU.",
+        cta: "4.9 Estrellas en Guía Gratis",
+        disclaimer: "No proporcionamos asesoramiento legal o financiero. Solo asistimos con la preparación de formularios y servicios de documentos."
+      },
+      testimonial: "¡Optima hizo mi inmigración sin problemas! – David S."
+    }
   };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
+  
+  const t = content[language];
+  
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white pb-24 md:pb-8">
-      {/* Hero Section - App-like Profile Style */}
-      <section className="pt-12 pb-8">
-        <div className="container max-w-md mx-auto px-4">
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            {/* Logo */}
-            <div className="mb-6 flex justify-center">
-              <div className="relative">
-                <Logo className="w-24 h-24 animate-float" />
-                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+    <>
+      {/* Mobile-First Container - Max 600px */}
+      <div className="min-h-screen bg-optima-navy pb-20">
+        <div className="max-w-[600px] mx-auto">
+          
+          {/* A. STICKY HEADER (Language + Logo + Share) */}
+          {/* This is handled by the global Header component */}
+          
+          {/* B. PROFILE/HERO SECTION */}
+          <section className="pt-8 pb-8 px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              {/* Professional Visual - Could be video/image */}
+              <div className="mb-6 relative">
+                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-optima-gold/20 to-optima-blue-600/20 rounded-full p-1">
+                  <div className="w-full h-full bg-optima-navy rounded-full flex items-center justify-center">
+                    <OptimaIcon size={80} className="text-optima-gold" />
+                  </div>
                 </div>
+                {/* Online Status Indicator */}
+                <div className="absolute bottom-0 right-1/2 translate-x-16 w-6 h-6 bg-green-500 rounded-full border-4 border-optima-navy" />
               </div>
-            </div>
-
-            {/* Title */}
-            <h1 className="font-heading font-bold text-3xl text-optima-navy mb-2">
-              Optima Service Group
-            </h1>
-            <p className="text-optima-gold font-semibold mb-4">
-              Your Solution, All in One Place.
-            </p>
-            <p className="text-gray-600 text-sm max-w-sm mx-auto mb-6">
-              Bilingual professional support for taxes, immigration forms, documents, and business admin.
-            </p>
-
-            {/* Primary CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-              <Link href="/contact" className="btn-primary">
-                <Phone className="w-4 h-4 mr-2" />
-                Book Consultation
+              
+              {/* Headline */}
+              <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+                {t.hero.headline}
+                <br />
+                {t.hero.subheadline}
+              </h1>
+              <p className="text-xl font-semibold text-optima-gold mb-2">
+                {t.hero.cta}
+              </p>
+              <p className="text-white/80 text-sm">
+                {t.hero.tagline}
+              </p>
+            </motion.div>
+          </section>
+          
+          {/* C. PRIMARY CONNECTION CTAs */}
+          <section className="px-4 pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-3"
+            >
+              {/* High-Commitment - Book Consultation */}
+              <Link
+                href="/contact"
+                className="block w-full bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-bold py-4 px-6 rounded-xl text-center transition-all duration-150 shadow-lg hover:shadow-xl hover:scale-[1.02] min-h-[44px] flex items-center justify-center gap-2"
+              >
+                <Phone className="w-5 h-5" />
+                {t.ctas.book}
               </Link>
+              
+              {/* Medium-Commitment - WhatsApp */}
               <a
-                href="https://wa.me/19787055509?text=Hi%20Optima%2C%20I%27m%20interested"
+                href="https://wa.me/19787055509"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary"
+                className="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-[44px] flex items-center justify-center gap-2"
               >
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                WhatsApp Us
+                <MessageCircle className="w-5 h-5" />
+                {t.ctas.whatsapp}
               </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Tiles - Linktree Style */}
-      <section className="pb-12">
-        <div className="container max-w-md mx-auto px-4">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-3"
-          >
-            {services.map((service) => (
-              <motion.div key={service.id} variants={itemVariants}>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="service-tile"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div className="shrink-0 w-12 h-12 bg-optima-gold/10 rounded-xl flex items-center justify-center text-optima-navy">
-                      {getServiceIcon(service.icon)}
-                    </div>
-                    <div className="flex-1 text-left">
-                      <h3 className="font-semibold text-optima-navy text-sm">
-                        {service.title}
-                      </h3>
-                      <p className="text-xs text-gray-500 line-clamp-1">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-optima-gold group-hover:translate-x-1 transition-all" />
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Quick Contact Section */}
-      <section className="pb-12">
-        <div className="container max-w-md mx-auto px-4">
-          <div className="bg-white rounded-2xl shadow-soft p-6 border border-gray-100">
-            <h2 className="font-heading font-semibold text-lg text-optima-navy mb-4 text-center">
-              Get in Touch
-            </h2>
-            <div className="space-y-3">
+              
+              {/* Direct/Urgent - Call Now */}
               <a
                 href="tel:+19787055509"
-                className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                className="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-[44px] flex items-center justify-center gap-2"
               >
-                <div className="w-10 h-10 bg-optima-navy rounded-full flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500">Call us</p>
-                  <p className="font-semibold text-optima-navy">(978) 705-5509</p>
-                </div>
+                <Phone className="w-5 h-5" />
+                {t.ctas.call}
               </a>
-              <a
-                href="mailto:inoaserv@gmail.com"
-                className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+            </motion.div>
+          </section>
+          
+          {/* D. SERVICE HUB (Main Links) */}
+          <section className="px-4 pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h2 className="text-white font-bold text-lg mb-4">
+                {t.serviceHub.title}
+              </h2>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {t.serviceHub.categories.map((category, index) => {
+                  const Icon = category.icon;
+                  return (
+                    <Link
+                      key={index}
+                      href="/services"
+                      className="bg-white/10 hover:bg-white/15 backdrop-blur-sm border-2 border-white/20 hover:border-optima-gold/50 rounded-xl p-4 transition-all duration-150 hover:scale-105 min-h-[120px] flex flex-col items-center justify-center text-center group"
+                    >
+                      <div className="w-12 h-12 bg-optima-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-optima-gold/30 transition-colors duration-150">
+                        <Icon className="w-6 h-6 text-optima-gold" />
+                      </div>
+                      <h3 className="text-white font-semibold text-sm leading-tight">
+                        {category.title}
+                      </h3>
+                    </Link>
+                  );
+                })}
+              </div>
+              
+              {/* All Services Link */}
+              <Link
+                href="/services"
+                className="mt-4 block text-center text-optima-gold hover:text-optima-gold/80 font-semibold text-sm transition-colors duration-150"
               >
-                <div className="w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-optima-navy" />
+                {language === 'en' ? 'View All Services →' : 'Ver Todos los Servicios →'}
+              </Link>
+            </motion.div>
+          </section>
+          
+          {/* E. LEAD MAGNET / VALUE ADD */}
+          <section className="px-4 pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gradient-to-br from-optima-gold/20 to-optima-blue-600/20 backdrop-blur-sm border-2 border-optima-gold/30 rounded-2xl p-6"
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-optima-gold rounded-full flex items-center justify-center">
+                  <Download className="w-6 h-6 text-optima-navy" />
                 </div>
-                <div>
-                  <p className="text-xs text-gray-500">Email us</p>
-                  <p className="font-semibold text-optima-navy">inoaserv@gmail.com</p>
-                </div>
-              </a>
-              <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-gray-600" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500">Business hours</p>
-                  <p className="font-semibold text-optima-navy text-sm">Mon-Fri: 9am-6pm</p>
-                  <p className="text-xs text-gray-600">Sat: By appointment • Sun: Closed</p>
+                <div className="flex-1">
+                  <h3 className="text-white font-bold text-lg mb-1">
+                    {t.leadMagnet.title}
+                  </h3>
+                  <p className="text-white/80 text-sm mb-3">
+                    {t.leadMagnet.subtitle}
+                  </p>
+                  <button className="bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-semibold py-2 px-4 rounded-lg text-sm transition-all duration-150 flex items-center gap-2">
+                    <Star className="w-4 h-4" />
+                    {t.leadMagnet.cta}
+                  </button>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Links */}
-      <section className="pb-12">
-        <div className="container max-w-md mx-auto px-4">
-          <div className="flex justify-center space-x-4">
-            <Link
-              href="/about"
-              className="px-4 py-2 text-sm text-gray-600 hover:text-optima-navy transition-colors"
+            </motion.div>
+          </section>
+          
+          {/* F. TRUST & SOCIAL PROOF */}
+          <section className="px-4 pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="space-y-4"
             >
-              About Us
-            </Link>
-            <Link
-              href="/faq"
-              className="px-4 py-2 text-sm text-gray-600 hover:text-optima-navy transition-colors"
-            >
-              FAQ
-            </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-sm font-semibold text-optima-gold hover:text-optima-navy transition-colors"
-            >
-              Contact Us →
-            </Link>
-          </div>
+              {/* Testimonial */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
+                <div className="flex justify-center mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-optima-gold fill-optima-gold" />
+                  ))}
+                </div>
+                <p className="text-white/90 text-sm italic mb-2">
+                  "{t.testimonial}"
+                </p>
+                <p className="text-white/60 text-xs">
+                  4.9 {language === 'en' ? 'Stars on Google' : 'Estrellas en Google'}
+                </p>
+              </div>
+              
+              {/* Disclaimer */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3">
+                <p className="text-white/60 text-xs text-center leading-relaxed">
+                  {t.leadMagnet.disclaimer}
+                </p>
+              </div>
+            </motion.div>
+          </section>
+          
         </div>
-      </section>
-
-      {/* Compliance Notice */}
-      <section className="pb-12">
-        <div className="container max-w-md mx-auto px-4">
-          <div className="bg-gray-50 rounded-lg p-4 text-center">
-            <p className="text-xs text-gray-600">
-              We do not provide legal or financial advice.<br />
-              We assist with form preparation and document services only.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+      
+      {/* G. STICKY FOOTER NAVIGATION (Mobile App Bar) */}
+      {/* This is handled by the MobileAppBar component in layout */}
+    </>
   );
 }

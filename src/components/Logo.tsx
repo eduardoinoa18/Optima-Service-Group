@@ -19,7 +19,7 @@ export default function Logo({
   return (
     <div className={className}>
       <Image
-        src="/logo-optima.png"
+        src="/logo.svg"
         alt="Optima Service Group Logo - Professional services in Lawrence MA"
         width={width}
         height={height}

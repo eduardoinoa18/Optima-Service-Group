@@ -18,7 +18,17 @@ import OptimaIcon from './OptimaIcon';
 import ShareButton from './ShareButton';
 
 export default function AppCardHeader() {
-  const { language, toggleLanguage } = useLanguage();
+  // SSG-compatible: wrap useLanguage in try/catch
+  let language = 'en';
+  let toggleLanguage = () => {};
+  
+  try {
+    const context = useLanguage();
+    language = context.language;
+    toggleLanguage = context.toggleLanguage;
+  } catch (error) {
+    // SSG/SSR fallback - will hydrate on client
+  }
   
   return (
     <header className="sticky top-0 z-50 bg-optima-navy/95 backdrop-blur-md border-b border-optima-gold/20">

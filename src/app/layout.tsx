@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import AppCardHeader from "@/components/AppCardHeader";
 import Footer from "@/components/Footer";
 import MobileAppBar from "@/components/MobileAppBar";
 import { Toaster } from "react-hot-toast";
@@ -197,7 +197,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <Header />
+            <AppCardHeader />
             <main className="min-h-screen md:pb-0 pb-20">{children}</main>
             <MobileAppBar />
             <Footer />

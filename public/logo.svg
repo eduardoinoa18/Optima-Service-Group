@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upward Arrow (Gold) -->
+  <path d="M100 30 L140 80 L120 80 L120 150 L80 150 L80 80 L60 80 Z" fill="#F5C440"/>
+  
+  <!-- Curved/Circular Shape (Navy) -->
+  <circle cx="100" cy="110" r="45" fill="none" stroke="#0F213A" stroke-width="8"/>
+  
+  <!-- Accent Curves (Gold) -->
+  <path d="M75 85 Q65 100 75 115" fill="none" stroke="#F5C440" stroke-width="6" stroke-linecap="round"/>
+  <path d="M125 85 Q135 100 125 115" fill="none" stroke="#F5C440" stroke-width="6" stroke-linecap="round"/>
+</svg>
