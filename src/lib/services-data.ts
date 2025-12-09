@@ -4,8 +4,8 @@ export const services = [
     title: "Tax Preparation",
     slug: "tax-preparation",
     icon: "FileText",
-    description: "Accurate and fast preparation of individual tax returns and related documents.",
-    overview: "Professional tax preparation services for individuals and families. We help ensure accuracy, maximize deductions, and file your returns on time.",
+    description: "Fast, accurate tax returns filed on time—with expert review to maximize deductions.",
+    overview: "We prepare individual tax returns accurately and file them electronically. Our team reviews every return to ensure compliance and help you get all eligible deductions.",
     whatWeInclude: [
       "Individual tax return preparation (Form 1040)",
       "ITIN application and renewal assistance",
@@ -54,8 +54,8 @@ export const services = [
     title: "Immigration Form Assistance",
     slug: "immigration-forms",
     icon: "Globe",
-    description: "Non-legal assistance completing immigration forms based on the information you provide.",
-    overview: "We help clients complete immigration forms accurately and organize supporting documents. This is non-legal assistance only.",
+    description: "Form completion help for visa, green card, and work permit applications.",
+    overview: "We help you complete immigration forms accurately and organize your application packet. We are not attorneys—we assist with paperwork preparation based on information you provide.",
     whatWeInclude: [
       "Form completion based on your information",
       "Document translation and organization",
@@ -104,8 +104,8 @@ export const services = [
     title: "Notary Public Services",
     slug: "notary-public",
     icon: "Stamp",
-    description: "Professional notarization for your personal or business documents.",
-    overview: "Official notary public services for personal and business needs. We notarize affidavits, authorizations, agreements, and more.",
+    description: "Official notarization for documents, agreements, and legal signings.",
+    overview: "Certified notary services for personal and business documents. We verify your identity, administer oaths, and provide official authentication.",
     whatWeInclude: [
       "Notarization of documents",
       "Oath administration",

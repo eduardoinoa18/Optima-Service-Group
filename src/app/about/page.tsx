@@ -66,9 +66,7 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              At Optima Service Group, we are committed to providing accessible, reliable, and transparent 
-              support services that make life easier for our clients. Our approach is simple: deliver 
-              professional assistance with honesty, respect, and exceptional customer care.
+              We help you navigate taxes, immigration, and business paperwork with clarity and confidence. Our bilingual team prepares forms accurately, keeps your information secure, and treats every client with respect.
             </p>
           </div>
         </div>
@@ -81,8 +79,7 @@ export default function AboutPage() {
             What We Do
           </h2>
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto leading-relaxed">
-            We assist clients with tax preparation, immigration form completion, document preparation, 
-            notarization, translations, and a wide range of personal and business support tasks — all in one place.
+            Tax preparation, immigration forms, notary services, business paperwork—we handle the details so you can focus on what matters.
           </p>
         </div>
       </section>
