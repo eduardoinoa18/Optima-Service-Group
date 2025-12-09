@@ -11,11 +11,66 @@ const config: Config = {
     extend: {
       colors: {
         optima: {
-          gold: "#D4AF37",
+          // Primary Blues - More vibrant
           navy: "#0A2942",
-          black: "#000000",
-          white: "#FFFFFF",
+          blue: {
+            50: "#e6f0f9",
+            100: "#cce0f3",
+            200: "#99c1e7",
+            300: "#66a2db",
+            400: "#3383cf",
+            500: "#2563ab", // Main blue
+            600: "#1e4f8a",
+            700: "#1a3a5f",
+            800: "#132b47",
+            900: "#0d1e30",
+          },
+          // Gold/Yellow - Warmer, more Hispanic-friendly
+          gold: {
+            50: "#fffef5",
+            100: "#fffae6",
+            200: "#fff4cc",
+            300: "#ffd966", // Bright accent
+            400: "#f4c430",
+            500: "#d4af37", // Main gold
+            600: "#b8941f",
+            700: "#8b7310",
+            800: "#6b5808",
+            900: "#4a3d05",
+          },
+          // Accent Colors
+          orange: {
+            50: "#fff5eb",
+            100: "#ffe8d1",
+            200: "#ffd1a3",
+            300: "#ffba75",
+            400: "#ffa347",
+            500: "#ff8c19", // Vibrant orange
+            600: "#cc7014",
+            700: "#99540f",
+            800: "#66380a",
+            900: "#331c05",
+          },
+          // Success Green
+          green: {
+            500: "#10b981",
+            600: "#059669",
+          },
+          // Warm neutrals
+          warm: {
+            50: "#fafaf9",
+            100: "#f5f5f4",
+            200: "#e7e5e4",
+            300: "#d6d3d1",
+            400: "#a8a29e",
+            500: "#78716c",
+            600: "#57534e",
+            700: "#44403c",
+            800: "#292524",
+            900: "#1c1917",
+          },
         },
+        // Keep existing system colors
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

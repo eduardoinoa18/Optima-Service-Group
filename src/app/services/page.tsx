@@ -26,40 +26,35 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200 hover:border-optima-gold"
+                className="service-tile whatsapp-ready"
               >
-                <div className="p-8">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-optima-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-optima-gold/20 transition-colors">
-                    {getServiceIcon(service.icon)}
-                  </div>
-
-                  {/* Title */}
-                  <h2 className="text-2xl font-bold text-optima-navy mb-3 group-hover:text-optima-gold transition-colors">
-                    {service.title}
-                  </h2>
-
-                  {/* Description */}
-                  <p className="text-gray-600 mb-6 line-clamp-3">
-                    {service.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-optima-gold font-semibold">
-                    Learn More
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                {/* Icon */}
+                <div className="service-tile-icon">
+                  {getServiceIcon(service.icon)}
                 </div>
 
-                {/* Accent Border */}
-                <div className="h-2 bg-linear-to-r from-optima-navy to-optima-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                {/* Title */}
+                <h2 className="service-tile-title">
+                  {service.title}
+                </h2>
+
+                {/* Description */}
+                <p className="service-tile-description line-clamp-3">
+                  {service.description}
+                </p>
+
+                {/* CTA */}
+                <div className="flex items-center gap-2 text-hsl(var(--primary)) font-semibold text-sm mt-2">
+                  Learn More
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </Link>
             ))}
           </div>
@@ -98,7 +93,7 @@ export default function ServicesPage() {
 
 // Icon component helper
 function getServiceIcon(iconName: string) {
-  const iconClass = "w-8 h-8 text-optima-gold";
+  const iconClass = "w-10 h-10 text-hsl(var(--primary))";
   
   switch (iconName) {
     case "FileText":
