@@ -1,304 +1,406 @@
 'use client';
 
 /**
- * Optima Service Group - App-Card Homepage
+ * Optima Service Group - Redesigned Homepage
  * 
- * Mobile-first, PWA-ready single-scroll experience
- * Designed like Linktree/Popl electronic business card
- * High-contrast Navy + Gold color system
+ * AUDIT IMPROVEMENTS IMPLEMENTED:
+ * ✅ Simplified hero (single value proposition)
+ * ✅ Service Hub redesigned as card grid with icons
+ * ✅ Trust/About section with credentials
+ * ✅ Simplified CTAs (Book + WhatsApp only)
+ * ✅ Improved spacing, hierarchy, accessibility
+ * ✅ Mobile-optimized (44px tap targets)
+ * ✅ High-contrast colors (Navy + Gold + White)
+ * ✅ Semantic HTML structure
  */
 
 import Link from 'next/link';
-import { Phone, MessageCircle, Download, Star, FileText, TrendingUp, Home as HomeIcon, Building2 } from 'lucide-react';
+import { Phone, MessageCircle, FileText, TrendingUp, Building2, CheckCircle2, Award, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { services } from '@/lib/services-data';
 import OptimaIcon from '@/components/OptimaIcon';
 
-export default function HomePage() {
-  // SSG-compatible: wrap useLanguage in try/catch
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+export default function HomePageRedesign() {
   let language: 'en' | 'es' = 'en';
   
   try {
     const context = useLanguage();
     language = context.language;
   } catch (error) {
-    // SSG/SSR fallback - will hydrate on client
+    // SSG/SSR fallback
   }
   
   const content = {
     en: {
+      // HERO SECTION
       hero: {
-        headline: "Tired of Tax Stress?",
-        subheadline: "Navigate Immigration Hassles?",
-        cta: "Get Expert Help",
-        tagline: "Your Solution, All in One Place."
+        headline: "Expert Tax, Immigration & Business Services",
+        subheadline: "Everything you need to grow confidently",
+        cta: "Start Free Consultation"
       },
+      
+      // PRIMARY CTAs
       ctas: {
         book: "Book Consultation",
-        whatsapp: "WhatsApp Us",
-        call: "Call Now"
+        whatsapp: "Message on WhatsApp"
       },
-      serviceHub: {
-        title: "Service Hub",
-        categories: [
+      
+      // SERVICE CARDS
+      services: [
+        {
+          title: "Tax Preparation",
+          description: "Individual & business tax returns, ERC, deductions",
+          icon: "📋",
+          href: "/services/tax-preparation"
+        },
+        {
+          title: "Immigration Forms",
+          description: "USCIS forms, visas, work permits, green cards",
+          icon: "📄",
+          href: "/services/immigration-forms"
+        },
+        {
+          title: "Notary Services",
+          description: "Certified notary public for all document types",
+          icon: "✓",
+          href: "/services/notary-public"
+        },
+        {
+          title: "Business Consulting",
+          description: "LLC setup, permits, accounting, compliance",
+          icon: "💼",
+          href: "/services"
+        },
+        {
+          title: "Credit Repair",
+          description: "Credit building, dispute resolution, monitoring",
+          icon: "📊",
+          href: "/services"
+        },
+        {
+          title: "Real Estate Support",
+          description: "Property documentation, title services, closings",
+          icon: "🏠",
+          href: "/services"
+        }
+      ],
+      
+      // WHY US SECTION
+      whyUs: {
+        title: "Why Optima Service Group?",
+        items: [
           {
-            title: "Documents & Forms",
-            icon: FileText,
-            services: ["Tax Preparation", "Immigration Forms", "Notary Public"]
+            icon: Award,
+            label: "10+ Years Experience",
+            desc: "Trusted by hundreds of clients"
           },
           {
-            title: "Financial & Credit",
-            icon: TrendingUp,
-            services: ["Credit Repair", "Business Consulting"]
+            icon: Users,
+            label: "Bilingual Support",
+            desc: "English & Spanish assistance"
           },
           {
-            title: "Real Estate & Business",
-            icon: Building2,
-            services: ["Real Estate Services", "Business Admin"]
+            icon: CheckCircle2,
+            label: "Fully Compliant",
+            desc: "Licensed & transparent operations"
+          },
+          {
+            icon: Zap,
+            label: "Fast Turnaround",
+            desc: "Quick processing on all services"
           }
         ]
       },
-      leadMagnet: {
-        title: "Lead Magnet",
-        subtitle: "Unlock Your Guide to US Finances",
-        cta: "4.9 Stars on Free Guide",
-        disclaimer: "We do not provide legal or financial advice. We assist with form preparation and document services only."
-      },
-      testimonial: "Optima made my immigration seamless! – David S."
+      
+      // FOOTER DISCLAIMER
+      disclaimer: "We do not provide legal or financial advice. We assist with form preparation and document services only."
     },
     es: {
+      // HERO SECTION
       hero: {
-        headline: "¿Cansado del Estrés Fiscal?",
-        subheadline: "¿Problemas con Inmigración?",
-        cta: "Obtén Ayuda Experta",
-        tagline: "Tu Solución, Todo en Un Lugar."
+        headline: "Servicios Expertos de Impuestos, Inmigración y Negocios",
+        subheadline: "Todo lo que necesitas para crecer con confianza",
+        cta: "Comenzar Consulta Gratuita"
       },
+      
+      // PRIMARY CTAs
       ctas: {
         book: "Agendar Consulta",
-        whatsapp: "WhatsApp",
-        call: "Llamar Ahora"
+        whatsapp: "Mensaje por WhatsApp"
       },
-      serviceHub: {
-        title: "Centro de Servicios",
-        categories: [
+      
+      // SERVICE CARDS
+      services: [
+        {
+          title: "Preparación de Impuestos",
+          description: "Declaraciones individuales y empresariales, ERC, deducciones",
+          icon: "📋",
+          href: "/services/tax-preparation"
+        },
+        {
+          title: "Formularios de Inmigración",
+          description: "Formularios USCIS, visas, permisos de trabajo, tarjetas verdes",
+          icon: "📄",
+          href: "/services/immigration-forms"
+        },
+        {
+          title: "Servicios Notariales",
+          description: "Notario certificado para todos los tipos de documentos",
+          icon: "✓",
+          href: "/services/notary-public"
+        },
+        {
+          title: "Consultoría Empresarial",
+          description: "Constitución de LLC, permisos, contabilidad, cumplimiento",
+          icon: "💼",
+          href: "/services"
+        },
+        {
+          title: "Reparación de Crédito",
+          description: "Construcción de crédito, resolución de disputas, monitoreo",
+          icon: "📊",
+          href: "/services"
+        },
+        {
+          title: "Apoyo Inmobiliario",
+          description: "Documentación de propiedades, servicios de título, cierres",
+          icon: "🏠",
+          href: "/services"
+        }
+      ],
+      
+      // WHY US SECTION
+      whyUs: {
+        title: "¿Por Qué Elegir Optima Service Group?",
+        items: [
           {
-            title: "Documentos y Formularios",
-            icon: FileText,
-            services: ["Preparación de Impuestos", "Formularios de Inmigración", "Notario Público"]
+            icon: Award,
+            label: "Más de 10 Años de Experiencia",
+            desc: "Confiado por cientos de clientes"
           },
           {
-            title: "Financiero y Crédito",
-            icon: TrendingUp,
-            services: ["Reparación de Crédito", "Consultoría Empresarial"]
+            icon: Users,
+            label: "Soporte Bilingüe",
+            desc: "Asistencia en inglés y español"
           },
           {
-            title: "Bienes Raíces y Negocios",
-            icon: Building2,
-            services: ["Servicios Inmobiliarios", "Administración de Negocios"]
+            icon: CheckCircle2,
+            label: "Totalmente Conforme",
+            desc: "Operaciones licenciadas y transparentes"
+          },
+          {
+            icon: Zap,
+            label: "Entrega Rápida",
+            desc: "Procesamiento rápido en todos los servicios"
           }
         ]
       },
-      leadMagnet: {
-        title: "Imán de Clientes",
-        subtitle: "Desbloquea Tu Guía de Finanzas en EE.UU.",
-        cta: "4.9 Estrellas en Guía Gratis",
-        disclaimer: "No proporcionamos asesoramiento legal o financiero. Solo asistimos con la preparación de formularios y servicios de documentos."
-      },
-      testimonial: "¡Optima hizo mi inmigración sin problemas! – David S."
+      
+      // FOOTER DISCLAIMER
+      disclaimer: "No proporcionamos asesoramiento legal ni financiero. Asistimos con preparación de formularios y servicios de documentos."
     }
   };
   
   const t = content[language];
-  
+
   return (
-    <>
-      {/* Mobile-First Container - Max 600px */}
-      <div className="min-h-screen bg-optima-navy pb-20">
-        <div className="max-w-[600px] mx-auto">
-          
-          {/* A. STICKY HEADER (Language + Logo + Share) */}
-          {/* This is handled by the global Header component */}
-          
-          {/* B. PROFILE/HERO SECTION */}
-          <section className="pt-8 pb-8 px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              {/* Professional Visual - Could be video/image */}
-              <div className="mb-6 relative">
-                <div className="w-32 h-32 mx-auto bg-linear-to-br from-optima-gold/20 to-optima-blue-600/20 rounded-full p-1">
-                  <div className="w-full h-full bg-optima-navy rounded-full flex items-center justify-center">
-                    <OptimaIcon size={80} className="text-optima-gold" />
-                  </div>
-                </div>
-                {/* Online Status Indicator */}
-                <div className="absolute bottom-0 right-1/2 translate-x-16 w-6 h-6 bg-green-500 rounded-full border-4 border-optima-navy" />
-              </div>
-              
-              {/* Headline */}
-              <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
-                {t.hero.headline}
-                <br />
-                {t.hero.subheadline}
-              </h1>
-              <p className="text-xl font-semibold text-optima-gold mb-2">
-                {t.hero.cta}
-              </p>
-              <p className="text-white/80 text-sm">
-                {t.hero.tagline}
-              </p>
-            </motion.div>
-          </section>
-          
-          {/* C. PRIMARY CONNECTION CTAs */}
-          <section className="px-4 pb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-3"
-            >
-              {/* High-Commitment - Book Consultation */}
+    <main className="min-h-screen bg-white">
+      {/* ============ 1. HERO SECTION ============ */}
+      <section className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-8"
+          >
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <OptimaIcon size={80} className="drop-shadow-lg" />
+            </div>
+            
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+              {t.hero.headline}
+            </h1>
+            
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
+              {t.hero.subheadline}
+            </p>
+            
+            {/* Primary CTAs - Large, Tappable, High Contrast */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="w-full bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-bold py-4 px-6 rounded-xl text-center transition-all duration-150 shadow-lg hover:shadow-xl hover:scale-[1.02] min-h-11 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-optima-gold hover:bg-yellow-400 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg min-h-11 flex items-center justify-center gap-2 text-lg"
               >
                 <Phone className="w-5 h-5" />
                 {t.ctas.book}
               </Link>
               
-              {/* Medium-Commitment - WhatsApp */}
               <a
                 href="https://wa.me/19787055509"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-11 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg min-h-11 flex items-center justify-center gap-2 text-lg"
               >
                 <MessageCircle className="w-5 h-5" />
                 {t.ctas.whatsapp}
               </a>
-              
-              {/* Direct/Urgent - Call Now */}
-              <a
-                href="tel:+19787055509"
-                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-11 flex items-center justify-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                {t.ctas.call}
-              </a>
-            </motion.div>
-          </section>
-          
-          {/* D. SERVICE HUB (Main Links) */}
-          <section className="px-4 pb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h2 className="text-white font-bold text-lg mb-4">
-                {t.serviceHub.title}
-              </h2>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {t.serviceHub.categories.map((category, index) => {
-                  const Icon = category.icon;
-                  return (
-                    <Link
-                      key={index}
-                      href="/services"
-                      className="bg-white/10 hover:bg-white/15 backdrop-blur-sm border-2 border-white/20 hover:border-optima-gold/50 rounded-xl p-4 transition-all duration-150 hover:scale-105 min-h-[120px] flex flex-col items-center justify-center text-center group"
-                    >
-                      <div className="w-12 h-12 bg-optima-gold/20 rounded-full flex items-center justify-center mb-3 group-hover:bg-optima-gold/30 transition-colors duration-150">
-                        <Icon className="w-6 h-6 text-optima-gold" />
-                      </div>
-                      <h3 className="text-white font-semibold text-sm leading-tight">
-                        {category.title}
-                      </h3>
-                    </Link>
-                  );
-                })}
-              </div>
-              
-              {/* All Services Link */}
-              <Link
-                href="/services"
-                className="mt-4 block text-center text-optima-gold hover:text-optima-gold/80 font-semibold text-sm transition-colors duration-150"
-              >
-                {language === 'en' ? 'View All Services →' : 'Ver Todos los Servicios →'}
-              </Link>
-            </motion.div>
-          </section>
-          
-          {/* E. LEAD MAGNET / VALUE ADD */}
-          <section className="px-4 pb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-linear-to-br from-optima-gold/20 to-optima-blue-600/20 backdrop-blur-sm border-2 border-optima-gold/30 rounded-2xl p-6"
-            >
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 bg-optima-gold rounded-full flex items-center justify-center">
-                  <Download className="w-6 h-6 text-optima-navy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-white font-bold text-lg mb-1">
-                    {t.leadMagnet.title}
-                  </h3>
-                  <p className="text-white/80 text-sm mb-3">
-                    {t.leadMagnet.subtitle}
-                  </p>
-                  <button className="bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-semibold py-2 px-4 rounded-lg text-sm transition-all duration-150 flex items-center gap-2">
-                    <Star className="w-4 h-4" />
-                    {t.leadMagnet.cta}
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </section>
-          
-          {/* F. TRUST & SOCIAL PROOF */}
-          <section className="px-4 pb-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="space-y-4"
-            >
-              {/* Testimonial */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-                <div className="flex justify-center mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-optima-gold fill-optima-gold" />
-                  ))}
-                </div>
-                <p className="text-white/90 text-sm italic mb-2">
-                  "{t.testimonial}"
-                </p>
-                <p className="text-white/60 text-xs">
-                  4.9 {language === 'en' ? 'Stars on Google' : 'Estrellas en Google'}
-                </p>
-              </div>
-              
-              {/* Disclaimer */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3">
-                <p className="text-white/60 text-xs text-center leading-relaxed">
-                  {t.leadMagnet.disclaimer}
-                </p>
-              </div>
-            </motion.div>
-          </section>
-          
+            </div>
+          </motion.div>
         </div>
-      </div>
-      
-      {/* G. STICKY FOOTER NAVIGATION (Mobile App Bar) */}
-      {/* This is handled by the MobileAppBar component in layout */}
-    </>
+      </section>
+
+      {/* ============ 2. SERVICE HUB - CARD GRID ============ */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-optima-navy mb-4">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Comprehensive solutions for your tax, immigration, and business needs
+            </p>
+          </div>
+          
+          {/* Service Grid - 6 Cards with Icons */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {t.services.map((service, idx) => (
+              <motion.div key={idx} variants={item}>
+                <Link href={service.href}>
+                  <div className="group h-full bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-optima-gold cursor-pointer">
+                    {/* Icon */}
+                    <div className="text-5xl mb-4">{service.icon}</div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-optima-navy mb-2 group-hover:text-optima-gold transition-colors">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    {/* Link Arrow */}
+                    <div className="flex items-center text-optima-gold font-semibold group-hover:translate-x-2 transition-transform">
+                      Learn More →
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============ 3. WHY CHOOSE US - TRUST SECTION ============ */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-optima-navy mb-4">
+              {t.whyUs.title}
+            </h2>
+          </div>
+          
+          {/* 4 Trust Pillars */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {t.whyUs.items.map((trustItem, idx) => {
+              const IconComponent = trustItem.icon;
+              return (
+                <motion.div key={idx} variants={item}>
+                  <div className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
+                    {/* Icon */}
+                    <IconComponent className="w-12 h-12 mx-auto mb-4 text-optima-gold" />
+                    
+                    {/* Label */}
+                    <h3 className="text-lg font-bold mb-2">
+                      {trustItem.label}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-200 text-sm leading-relaxed">
+                      {trustItem.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============ 4. COMPLIANCE DISCLAIMER ============ */}
+      <section className="py-12 px-4 bg-gray-50 border-t-2 border-optima-navy">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg p-6 border-l-4 border-optima-gold">
+            <p className="text-gray-700 font-semibold leading-relaxed">
+              ⚠️ {t.disclaimer}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 5. FINAL CTA BAR ============ */}
+      <section className="py-12 px-4 bg-optima-navy text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Ready to Grow?
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-optima-gold hover:bg-yellow-400 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 min-h-11 flex items-center justify-center gap-2"
+            >
+              <Phone className="w-5 h-5" />
+              {t.ctas.book}
+            </Link>
+            
+            <a
+              href="https://wa.me/19787055509"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white hover:bg-gray-100 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 min-h-11 flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              {t.ctas.whatsapp}
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
