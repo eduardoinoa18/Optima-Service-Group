@@ -56,7 +56,7 @@ export default function MobileAppBar() {
   ];
   
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-optima-navy border-t-2 border-optima-gold pb-safe shadow-2xl">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[#0c1d39] border-t-2 border-optima-gold pb-safe shadow-2xl md:hidden">
       <div className="w-full max-w-[600px] mx-auto px-4 py-2">
         <ul className="flex items-center justify-around gap-2">
           {navItems.map((item) => {
@@ -89,17 +89,21 @@ export default function MobileAppBar() {
                   >
                     <Icon 
                       className={`w-6 h-6 transition-colors duration-200 ${
-                        isActive 
-                          ? 'text-optima-gold' 
-                          : 'text-white/70 group-hover:text-white'
+                        item.label.includes('WhatsApp')
+                          ? 'text-[#25D366] group-hover:text-[#1ebe5d]'
+                          : isActive 
+                              ? 'text-optima-gold' 
+                              : 'text-white/80 group-hover:text-white'
                       }`}
                       strokeWidth={isActive ? 2.5 : 2}
                     />
                     <span 
                       className={`text-[10px] mt-1 font-medium transition-colors duration-200 ${
-                        isActive 
-                          ? 'text-optima-gold' 
-                          : 'text-white/70 group-hover:text-white'
+                        item.label.includes('WhatsApp')
+                          ? 'text-[#25D366] group-hover:text-[#1ebe5d]'
+                          : isActive 
+                              ? 'text-optima-gold' 
+                              : 'text-white/80 group-hover:text-white'
                       }`}
                     >
                       {item.label}

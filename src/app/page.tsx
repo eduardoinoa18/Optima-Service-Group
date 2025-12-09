@@ -51,7 +51,7 @@ export default function HomePageRedesign() {
       // HERO SECTION
       hero: {
         headline: "Expert Tax, Immigration & Business Services",
-        subheadline: "Everything you need to grow confidently",
+          subheadline: "Trusted bilingual experts for taxes, immigration forms, and business paperwork—fast, compliant, and transparent.",
         cta: "Start Free Consultation"
       },
       
@@ -135,7 +135,7 @@ export default function HomePageRedesign() {
       // HERO SECTION
       hero: {
         headline: "Servicios Expertos de Impuestos, Inmigración y Negocios",
-        subheadline: "Todo lo que necesitas para crecer con confianza",
+          subheadline: "Expertos bilingües en impuestos, inmigración y trámites empresariales—rápido, confiable y transparente",
         cta: "Comenzar Consulta Gratuita"
       },
       
@@ -259,7 +259,7 @@ export default function HomePageRedesign() {
                 href="https://wa.me/19787055509"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg min-h-11 flex items-center justify-center gap-2 text-lg"
+                className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg min-h-11 flex items-center justify-center gap-2 text-lg"
               >
                 <MessageCircle className="w-5 h-5" />
                 {t.ctas.whatsapp}
@@ -393,7 +393,7 @@ export default function HomePageRedesign() {
               href="https://wa.me/19787055509"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white hover:bg-gray-100 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 min-h-11 flex items-center justify-center gap-2"
+              className="px-8 py-4 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold rounded-xl transition-all duration-200 transform hover:scale-105 min-h-11 flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-5 h-5" />
               {t.ctas.whatsapp}

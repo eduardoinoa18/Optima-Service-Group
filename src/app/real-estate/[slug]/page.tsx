@@ -346,7 +346,7 @@ export default async function RealEstateServicePage({
               href="https://wa.me/16038123456?text=Hi%20Eduardo,%20I'm%20interested%20in%20real%20estate%20services"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline border-white text-white hover:bg-white hover:text-optima-navy px-8 py-4 text-lg"
+              className="btn px-8 py-4 text-lg bg-[#25D366] text-white hover:bg-[#1ebe5d]"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               WhatsApp
