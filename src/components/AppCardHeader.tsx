@@ -31,17 +31,17 @@ export default function AppCardHeader() {
   }
   
   return (
-    <header className="sticky top-0 z-50 bg-optima-navy/95 backdrop-blur-md border-b border-optima-gold/20">
+    <header className="sticky top-0 z-50 bg-optima-navy border-b-2 border-optima-gold/30 shadow-md">
       <div className="max-w-[600px] mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* LEFT: Language Toggle (44px tap target) */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 min-w-11 min-h-11"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-optima-gold/10 hover:bg-optima-gold/20 transition-all duration-200 min-w-11 min-h-11 border border-optima-gold/30"
             aria-label={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
           >
-            <Languages className="w-5 h-5 text-white" />
-            <span className="text-sm font-bold text-white">
+            <Languages className="w-5 h-5 text-optima-gold" />
+            <span className="text-sm font-bold text-optima-gold">
               {language === 'en' ? 'ES' : 'EN'}
             </span>
           </button>
@@ -52,11 +52,11 @@ export default function AppCardHeader() {
             className="flex items-center justify-center"
             aria-label="Optima Service Group Home"
           >
-            <OptimaIcon size={40} className="text-optima-gold" />
+            <OptimaIcon size={44} className="text-optima-gold" />
           </Link>
           
           {/* RIGHT: Share Button (44px tap target) */}
-          <ShareButton className="p-3 rounded-lg hover:bg-white/10 transition-all duration-200 text-white min-w-11 min-h-11 flex items-center justify-center" />
+          <ShareButton className="p-3 rounded-lg bg-optima-gold/10 hover:bg-optima-gold/20 transition-all duration-200 text-optima-gold min-w-11 min-h-11 flex items-center justify-center border border-optima-gold/30" />
         </div>
       </div>
     </header>
