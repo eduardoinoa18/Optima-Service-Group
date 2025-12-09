@@ -5,187 +5,156 @@ import { motion } from "framer-motion";
 
 interface LogoProps {
   className?: string;
+  width?: string;
+  height?: string;
+  includeText?: boolean;
 }
 
-export default function Logo({ className = "w-12 h-12" }: LogoProps) {
-  // Create a simplified process flow logo inspired by the Optima diagram
-  // Uses gold, navy, and grey to represent the three-lane workflow
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
+export default function Logo({
+  className = "w-12 h-12",
+  width = "300px",
+  height = "auto",
+  includeText = true,
+}: LogoProps) {
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const boxVariants = {
-    hidden: { scale: 0, rotateZ: -180 },
-    visible: {
       scale: 1,
-      rotateZ: 0,
       transition: {
         duration: 0.6,
       },
     },
   };
 
-  const arrowVariants = {
+  const pathVariants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {
       pathLength: 1,
       opacity: 1,
       transition: {
         duration: 0.8,
+        delay: 0.3,
       },
     },
   };
 
   return (
     <motion.svg
-      className={className}
-      viewBox="0 0 200 200"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.05 }}
+      viewBox="0 0 400 400"
+      width={className ? undefined : width}
+      height={className ? undefined : height}
+      className={className || "w-full h-full"}
+      aria-label="Optima Service Group Logo"
+      role="img"
+      initial="hidden"
+      animate="visible"
+      whileHover={{ scale: 1.02 }}
     >
       <defs>
-        <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#E6C956" />
-          <stop offset="100%" stopColor="#D4AF37" />
+        {/* Blue Gradient for swoosh */}
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#003d7a" stopOpacity={1} />
+          <stop offset="100%" stopColor="#001a38" stopOpacity={1} />
         </linearGradient>
-        <linearGradient id="navy-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#1a3a5a" />
-          <stop offset="100%" stopColor="#002B5C" />
+
+        {/* Gold Gradient for swoosh and arrow */}
+        <linearGradient id="goldGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffe599" stopOpacity={1} />
+          <stop offset="50%" stopColor="#d4af37" stopOpacity={1} />
+          <stop offset="100%" stopColor="#aa882e" stopOpacity={1} />
         </linearGradient>
-        <linearGradient id="grey-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F5F5F5" />
-          <stop offset="100%" stopColor="#E8E8E8" />
-        </linearGradient>
+
+        {/* Drop shadow filter */}
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+          <feOffset in="blur" dx="2" dy="3" result="offsetBlur" />
+          <feMerge>
+            <feMergeNode in="offsetBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
       </defs>
 
-      {/* Background Circle */}
-      <motion.circle
-        cx="100"
-        cy="100"
-        r="95"
-        fill="rgba(10, 41, 66, 0.05)"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.4 }}
-      />
-
-      {/* Three-lane workflow visualization - simplified */}
-      <motion.g variants={containerVariants} initial="hidden" animate="visible">
-        {/* Left box (Gold - Afiliado) */}
-        <motion.g variants={boxVariants}>
-          <rect x="15" y="60" width="45" height="35" rx="4" fill="url(#gold-gradient)" stroke="#D4AF37" strokeWidth="1.5" />
-          <text x="37.5" y="83" textAnchor="middle" fontSize="9" fontWeight="bold" fill="white" fontFamily="system-ui">
-            INPUT
-          </text>
-        </motion.g>
-
-        {/* Right box (Navy - Zoho System) */}
-        <motion.g variants={boxVariants} transition={{ delay: 0.1 }}>
-          <rect x="77.5" y="60" width="45" height="35" rx="4" fill="url(#navy-gradient)" stroke="#002B5C" strokeWidth="1.5" />
-          <text x="100" y="83" textAnchor="middle" fontSize="9" fontWeight="bold" fill="white" fontFamily="system-ui">
-            PROCESS
-          </text>
-        </motion.g>
-
-        {/* Far right box (Grey - Administración) */}
-        <motion.g variants={boxVariants} transition={{ delay: 0.2 }}>
-          <rect x="140" y="60" width="45" height="35" rx="4" fill="url(#grey-gradient)" stroke="#D0D0D0" strokeWidth="1.5" />
-          <text x="162.5" y="83" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#333" fontFamily="system-ui">
-            OUTPUT
-          </text>
-        </motion.g>
-
-        {/* Arrow 1: Gold to Navy */}
-        <motion.path
-          d="M 60 77.5 L 77.5 77.5"
-          stroke="#D4AF37"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          variants={arrowVariants}
-          transition={{ delay: 0.3 }}
-        />
-        <motion.polygon
-          points="77.5,77.5 72,75 72,80"
-          fill="#D4AF37"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.4 }}
-        />
-
-        {/* Arrow 2: Navy to Grey */}
-        <motion.path
-          d="M 122.5 77.5 L 140 77.5"
-          stroke="#002B5C"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-          variants={arrowVariants}
-          transition={{ delay: 0.35 }}
-        />
-        <motion.polygon
-          points="140,77.5 134.5,75 134.5,80"
-          fill="#002B5C"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.45 }}
-        />
-
-        {/* Bottom flow lines - showing process circulation */}
-        <motion.path
-          d="M 162.5 95 Q 162.5 115, 100 115 Q 37.5 115, 37.5 95"
-          stroke="#D4AF37"
-          strokeWidth="1.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeDasharray="4,4"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.6 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        />
-
-        {/* Center accent - checkmark/success */}
+      {/* Main Group Container */}
+      <motion.g transform="translate(200, 200)" filter="url(#shadow)">
+        {/* Icon Group */}
         <motion.g
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.4 }}
+          transform="translate(-75, -100) scale(1.5)"
+          variants={iconVariants}
         >
-          <circle cx="100" cy="140" r="12" fill="#D4AF37" fillOpacity="0.2" stroke="#D4AF37" strokeWidth="1" />
-          <path d="M 96 140 L 99 143 L 104 138" stroke="#D4AF37" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        </motion.g>
-      </motion.g>
+          {/* Dark Blue Swoosh (Top/Left part of circle) */}
+          <motion.path
+            d="M50,10 A45,45 0 0,1 95,55 A45,45 0 0,1 60,95 L45,80 A25,25 0 0,0 75,55 A25,25 0 0,0 50,30 Z"
+            fill="url(#blueGradient)"
+            variants={pathVariants}
+            initial="hidden"
+            animate="visible"
+          />
 
-      {/* Decorative elements */}
-      <motion.circle
-        cx="30"
-        cy="30"
-        r="2"
-        fill="#D4AF37"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.8, duration: 0.3 }}
-      />
-      <motion.circle
-        cx="170"
-        cy="170"
-        r="2"
-        fill="#002B5C"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.85, duration: 0.3 }}
-      />
+          {/* Gold Swoosh and Arrow Combination */}
+          <motion.path
+            d="M50,100 A45,45 0 0,1 5,55 C5,45 8,35 12,28 L30,45 C24,50 22,60 25,70 A25,25 0 0,0 50,80 C60,80 68,75 72,68 L90,15 L100,15 L82,70 C75,90 60,100 50,100 Z"
+            fill="url(#goldGradient)"
+            variants={pathVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+            }}
+          />
+
+          {/* Arrow Head */}
+          <motion.path
+            d="M90,15 L105,15 L105,30 L90,15 Z"
+            fill="url(#goldGradient)"
+            variants={pathVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.6,
+              delay: 0.6,
+            }}
+          />
+        </motion.g>
+
+        {/* Text Group - conditionally rendered */}
+        {includeText && (
+          <motion.g
+            transform="translate(0, 100)"
+            textAnchor="middle"
+            fontFamily="Arial, sans-serif"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            {/* Primary Text */}
+            <text
+              x="0"
+              y="0"
+              fontSize="24"
+              fontWeight="bold"
+              fill="#001a38"
+              letterSpacing="1"
+            >
+              OPTIMA SERVICE GROUP
+            </text>
+
+            {/* Secondary Text */}
+            <text
+              x="0"
+              y="22"
+              fontSize="14"
+              fontWeight="normal"
+              fill="#001a38"
+            >
+              Your Solution, All in One Place.
+            </text>
+          </motion.g>
+        )}
+      </motion.g>
     </motion.svg>
   );
 }
