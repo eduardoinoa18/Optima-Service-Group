@@ -10,7 +10,7 @@ export default function MobileBottomNav() {
   const navItems = [
     { href: "/", label: "Home", icon: Home },
     { href: "/services", label: "Services", icon: Briefcase },
-    { href: "/real-estate", label: "Real Estate", icon: Building2 },
+    { href: "/real-estate", label: "Estate", icon: Building2 },
     { href: "/paraiso-inmobiliario", label: "Paraíso", icon: MapPin },
     { href: "/contact", label: "Contact", icon: Phone },
   ];

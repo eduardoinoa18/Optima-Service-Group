@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   title: "Optima Service Group - Your Solution, All in One Place",
   description: "Professional support for taxes, immigration forms, documents, and everyday services with clarity, transparency, and trust. Bilingual services in English and Spanish.",
   keywords: ["tax preparation", "immigration forms", "notary public", "credit repair", "translations", "business services", "bilingual services"],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

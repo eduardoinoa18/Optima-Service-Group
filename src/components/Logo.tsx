@@ -53,70 +53,95 @@ export default function Logo({
       whileHover={{ scale: 1.02 }}
     >
       <defs>
-        {/* Blue Gradient for swoosh */}
+        {/* Blue Gradient - darker, more metallic */}
         <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#003d7a" stopOpacity={1} />
-          <stop offset="100%" stopColor="#001a38" stopOpacity={1} />
+          <stop offset="0%" stopColor="#4A6B8A" stopOpacity={1} />
+          <stop offset="50%" stopColor="#2C4A6B" stopOpacity={1} />
+          <stop offset="100%" stopColor="#1A2E46" stopOpacity={1} />
         </linearGradient>
 
-        {/* Gold Gradient for swoosh and arrow */}
-        <linearGradient id="goldGradient" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#ffe599" stopOpacity={1} />
-          <stop offset="50%" stopColor="#d4af37" stopOpacity={1} />
-          <stop offset="100%" stopColor="#aa882e" stopOpacity={1} />
+        {/* Gold Gradient - more metallic sheen */}
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#F4E4C1" stopOpacity={1} />
+          <stop offset="40%" stopColor="#D4AF37" stopOpacity={1} />
+          <stop offset="100%" stopColor="#B8941F" stopOpacity={1} />
         </linearGradient>
 
-        {/* Drop shadow filter */}
-        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
-          <feOffset in="blur" dx="2" dy="3" result="offsetBlur" />
+        {/* Enhanced drop shadow for 3D effect */}
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+          <feOffset in="blur" dx="3" dy="5" result="offsetBlur" />
+          <feComponentTransfer in="offsetBlur" result="darkerShadow">
+            <feFuncA type="linear" slope="0.5" />
+          </feComponentTransfer>
           <feMerge>
-            <feMergeNode in="offsetBlur" />
+            <feMergeNode in="darkerShadow" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
+
+        {/* Inner highlight for depth */}
+        <radialGradient id="highlightGradient">
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.3} />
+          <stop offset="100%" stopColor="#FFFFFF" stopOpacity={0} />
+        </radialGradient>
       </defs>
 
       {/* Main Group Container */}
       <motion.g transform="translate(200, 200)" filter="url(#shadow)">
-        {/* Icon Group */}
+        {/* Icon Group - Circular swoosh with arrow */}
         <motion.g
-          transform="translate(-75, -100) scale(1.5)"
+          transform="translate(0, -50) scale(1.8)"
           variants={iconVariants}
         >
-          {/* Dark Blue Swoosh (Top/Left part of circle) */}
+          {/* Navy Blue Swoosh (Top half) - thicker, more prominent */}
           <motion.path
-            d="M50,10 A45,45 0 0,1 95,55 A45,45 0 0,1 60,95 L45,80 A25,25 0 0,0 75,55 A25,25 0 0,0 50,30 Z"
+            d="M 0,0 A 50,50 0 1,1 50,50 L 35,35 A 30,30 0 1,0 0,0 Z"
             fill="url(#blueGradient)"
+            stroke="#1A2E46"
+            strokeWidth="0.5"
             variants={pathVariants}
             initial="hidden"
             animate="visible"
           />
 
-          {/* Gold Swoosh and Arrow Combination */}
+          {/* Inner highlight on blue swoosh */}
           <motion.path
-            d="M50,100 A45,45 0 0,1 5,55 C5,45 8,35 12,28 L30,45 C24,50 22,60 25,70 A25,25 0 0,0 50,80 C60,80 68,75 72,68 L90,15 L100,15 L82,70 C75,90 60,100 50,100 Z"
+            d="M 5,5 A 45,45 0 0,1 45,45"
+            fill="none"
+            stroke="url(#highlightGradient)"
+            strokeWidth="2"
+            opacity={0.4}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            transition={{ delay: 0.8 }}
+          />
+
+          {/* Gold Swoosh/Arrow (Bottom half emerging to arrow) */}
+          <motion.path
+            d="M 0,0 A 50,50 0 0,0 -50,50 L -35,35 A 30,30 0 0,1 0,0 L 55,-20 L 65,-10 L 70,-20 L 65,-30 L 55,-25 Z"
             fill="url(#goldGradient)"
+            stroke="#B8941F"
+            strokeWidth="0.5"
             variants={pathVariants}
             initial="hidden"
             animate="visible"
             transition={{
               duration: 0.8,
-              delay: 0.4,
+              delay: 0.5,
             }}
           />
 
-          {/* Arrow Head */}
+          {/* Inner highlight on gold swoosh */}
           <motion.path
-            d="M90,15 L105,15 L105,30 L90,15 Z"
-            fill="url(#goldGradient)"
-            variants={pathVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{
-              duration: 0.6,
-              delay: 0.6,
-            }}
+            d="M -5,5 A 45,45 0 0,0 -45,45"
+            fill="none"
+            stroke="url(#highlightGradient)"
+            strokeWidth="2"
+            opacity={0.4}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            transition={{ delay: 1 }}
           />
         </motion.g>
 
@@ -125,7 +150,7 @@ export default function Logo({
           <motion.g
             transform="translate(0, 100)"
             textAnchor="middle"
-            fontFamily="Arial, sans-serif"
+            fontFamily="Montserrat, Arial, sans-serif"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -134,10 +159,10 @@ export default function Logo({
             <text
               x="0"
               y="0"
-              fontSize="24"
-              fontWeight="bold"
-              fill="#001a38"
-              letterSpacing="1"
+              fontSize="26"
+              fontWeight="700"
+              fill="#1A2E46"
+              letterSpacing="2"
             >
               OPTIMA SERVICE GROUP
             </text>
@@ -145,10 +170,11 @@ export default function Logo({
             {/* Secondary Text */}
             <text
               x="0"
-              y="22"
+              y="26"
               fontSize="14"
-              fontWeight="normal"
-              fill="#001a38"
+              fontWeight="400"
+              fill="#2C4A6B"
+              letterSpacing="0.5"
             >
               Your Solution, All in One Place.
             </text>
