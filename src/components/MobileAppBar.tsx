@@ -56,8 +56,8 @@ export default function MobileAppBar() {
   ];
   
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-optima-navy border-t-2 border-optima-gold pb-safe shadow-2xl md:hidden">
-      <div className="w-full px-4 py-2">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-optima-navy border-t-2 border-optima-gold pb-safe shadow-2xl">
+      <div className="w-full max-w-[600px] mx-auto px-4 py-2">
         <ul className="flex items-center justify-around gap-2">
           {navItems.map((item) => {
             const Icon = item.icon;
