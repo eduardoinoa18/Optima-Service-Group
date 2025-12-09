@@ -356,6 +356,118 @@ export const services = [
       }
     ],
     compliance: "Life insurance is offered through licensed insurance carriers. We provide guidance and comparison services. Policy terms and conditions apply."
+  },
+  {
+    id: "real-estate-services",
+    title: "Real Estate Services",
+    slug: "real-estate-services",
+    icon: "Building2",
+    description: "Expert real estate services including buying, selling, and property investment guidance in the USA and Dominican Republic.",
+    overview: "Eduardo Inoa brings years of real estate expertise to help clients navigate buying, selling, and investment opportunities. Whether you're a first-time buyer or seasoned investor, we provide personalized guidance every step of the way.",
+    whatWeInclude: [
+      "Property buying assistance",
+      "Home selling support",
+      "Investment property guidance",
+      "Market analysis and comparables (CMA)",
+      "First-time buyer consultation",
+      "Property tours and viewings",
+      "Dominican Republic real estate services"
+    ],
+    whoItsFor: [
+      "First-time home buyers",
+      "Property sellers",
+      "Real estate investors",
+      "Business owners",
+      "Families looking to relocate",
+      "International investors"
+    ],
+    howItWorks: [
+      { step: 1, title: "Initial Consultation", description: "Discuss your real estate goals and needs" },
+      { step: 2, title: "Market Analysis", description: "We analyze market trends and comparable properties" },
+      { step: 3, title: "Property Matching", description: "Find properties that match your criteria" },
+      { step: 4, title: "Closing Support", description: "Guidance through inspection, appraisal, and closing process" }
+    ],
+    documentsNeeded: [
+      "Valid photo ID",
+      "Proof of income",
+      "Bank statements",
+      "Credit report",
+      "Pre-approval letter (buyers)",
+      "Property deed (sellers)"
+    ],
+    faqs: [
+      {
+        question: "Do you have properties in the Dominican Republic?",
+        answer: "Yes! We specialize in Dominican Republic real estate investments with strong connections and market knowledge."
+      },
+      {
+        question: "What is a CMA?",
+        answer: "A Comparative Market Analysis shows recent comparable property sales to determine accurate pricing."
+      },
+      {
+        question: "Can you help international buyers?",
+        answer: "Absolutely! We work with buyers from all countries and handle the documentation and process."
+      }
+    ],
+    compliance: "All real estate services comply with local, state, and federal real estate regulations. Eduardo Inoa is a licensed real estate professional."
+  },
+  {
+    id: "paraiso-inmobiliario",
+    title: "Paraíso Inmobiliario",
+    slug: "paraiso-inmobiliario",
+    icon: "MapPin",
+    description: "Premium real estate investment opportunities in the Dominican Republic with up to 30% commission structure and expert guidance.",
+    overview: "Paraíso Inmobiliario specializes in high-yield real estate investments in the Dominican Republic. With our exclusive partnership model and 30% profit-sharing commission structure, you can build wealth through prime property investments with expert guidance.",
+    whatWeInclude: [
+      "Property acquisition and investment analysis",
+      "30% commission structure on profits",
+      "Monthly revenue sharing",
+      "Property management oversight",
+      "Investor portfolio tracking",
+      "Annual investment reporting",
+      "Exit strategy planning"
+    ],
+    whoItsFor: [
+      "Real estate investors",
+      "International business owners",
+      "Passive income seekers",
+      "Portfolio diversification investors",
+      "Entrepreneurs",
+      "Wealth builders"
+    ],
+    howItWorks: [
+      { step: 1, title: "Investment Intake", description: "Complete investment profile and goals assessment" },
+      { step: 2, title: "Property Analysis", description: "Review curated Dominican Republic properties" },
+      { step: 3, title: "Investment Agreement", description: "Sign partnership agreement with 30% commission terms" },
+      { step: 4, title: "Acquisition & Returns", description: "We manage properties; you receive monthly revenue share" }
+    ],
+    documentsNeeded: [
+      "Valid photo ID",
+      "Proof of funds",
+      "Bank statements (last 3 months)",
+      "Investment profile form",
+      "Completed intake questionnaire",
+      "Signed partnership agreement"
+    ],
+    faqs: [
+      {
+        question: "What is the 30% commission structure?",
+        answer: "You receive 30% of net profits from property investments. This includes rental income, appreciation, and sale proceeds."
+      },
+      {
+        question: "Is my money secure?",
+        answer: "All investments are legally structured with Dominican Republic property law and insurance coverage for protection."
+      },
+      {
+        question: "How often do I receive payments?",
+        answer: "Monthly revenue sharing statements are provided. Distribution frequency depends on property performance."
+      },
+      {
+        question: "Can I exit my investment?",
+        answer: "Yes, we work with you on exit strategies. Terms are detailed in your investment agreement."
+      }
+    ],
+    compliance: "Paraíso Inmobiliario investments are subject to Dominican Republic real estate laws and international investment regulations. All transactions include proper documentation and legal review."
   }
 ];
 
