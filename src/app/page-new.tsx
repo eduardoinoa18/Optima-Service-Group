@@ -122,7 +122,7 @@ export default function HomePage() {
             >
               {/* Professional Visual - Could be video/image */}
               <div className="mb-6 relative">
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-optima-gold/20 to-optima-blue-600/20 rounded-full p-1">
+                <div className="w-32 h-32 mx-auto bg-linear-to-br from-optima-gold/20 to-optima-blue-600/20 rounded-full p-1">
                   <div className="w-full h-full bg-optima-navy rounded-full flex items-center justify-center">
                     <OptimaIcon size={80} className="text-optima-gold" />
                   </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
               {/* High-Commitment - Book Consultation */}
               <Link
                 href="/contact"
-                className="block w-full bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-bold py-4 px-6 rounded-xl text-center transition-all duration-150 shadow-lg hover:shadow-xl hover:scale-[1.02] min-h-[44px] flex items-center justify-center gap-2"
+                className="w-full bg-optima-gold hover:bg-optima-gold/90 text-optima-navy font-bold py-4 px-6 rounded-xl text-center transition-all duration-150 shadow-lg hover:shadow-xl hover:scale-[1.02] min-h-11 flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 {t.ctas.book}
@@ -168,7 +168,7 @@ export default function HomePage() {
                 href="https://wa.me/19787055509"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-[44px] flex items-center justify-center gap-2"
+                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-11 flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
                 {t.ctas.whatsapp}
@@ -177,7 +177,7 @@ export default function HomePage() {
               {/* Direct/Urgent - Call Now */}
               <a
                 href="tel:+19787055509"
-                className="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-[44px] flex items-center justify-center gap-2"
+                className="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl text-center transition-all duration-150 border-2 border-white/20 hover:border-optima-gold/50 min-h-11 flex items-center justify-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 {t.ctas.call}
@@ -232,7 +232,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-gradient-to-br from-optima-gold/20 to-optima-blue-600/20 backdrop-blur-sm border-2 border-optima-gold/30 rounded-2xl p-6"
+              className="bg-linear-to-br from-optima-gold/20 to-optima-blue-600/20 backdrop-blur-sm border-2 border-optima-gold/30 rounded-2xl p-6"
             >
               <div className="flex items-start gap-4">
                 <div className="shrink-0 w-12 h-12 bg-optima-gold rounded-full flex items-center justify-center">

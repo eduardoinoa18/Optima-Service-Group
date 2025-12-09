@@ -21,7 +21,7 @@ export default function OptimaIcon({
 }: OptimaIconProps) {
   return (
     <Image
-      src="/logo.svg"
+      src="/Logo.png"
       alt="Optima Service Group"
       width={size}
       height={size}
