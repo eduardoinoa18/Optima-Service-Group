@@ -198,7 +198,7 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <AppCardHeader />
-            <main className="min-h-screen md:pb-0 pb-20">{children}</main>
+            <main className="min-h-screen pb-24 md:pb-0">{children}</main>
             <MobileAppBar />
             <Footer />
             <Toaster position="top-right" />
