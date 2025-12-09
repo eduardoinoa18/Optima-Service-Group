@@ -232,8 +232,8 @@ export default function HomePageRedesign() {
           >
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-full p-3 border border-optima-gold/40">
-                <Logo width={96} height={96} priority className="shadow-lg" />
+              <div className="bg-white/10 backdrop-blur-sm rounded-full p-2 border border-optima-gold/40">
+                <Logo width={140} height={140} priority className="shadow-lg" />
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">

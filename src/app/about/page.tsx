@@ -78,7 +78,7 @@ export default function AboutPage() {
           <h2 className="font-heading font-bold text-3xl text-optima-navy mb-6 text-center">
             What We Do
           </h2>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-optima-navy font-medium text-center max-w-3xl mx-auto leading-relaxed">
             Tax preparation, immigration forms, notary services, business paperwork—we handle the details so you can focus on what matters.
           </p>
         </div>

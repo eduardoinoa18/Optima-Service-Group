@@ -71,7 +71,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             {service.whatWeInclude.map((item, index) => (
               <li key={index} className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                <span className="text-gray-700">{item}</span>
+                <span className="text-optima-navy font-medium">{item}</span>
               </li>
             ))}
           </ul>
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-optima-navy mb-1">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                  <p className="text-optima-navy/80 text-sm">{step.description}</p>
                 </div>
               </div>
             ))}
