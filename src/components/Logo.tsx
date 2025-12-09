@@ -1,100 +1,115 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 
 interface LogoProps {
   className?: string;
 }
 
-const Logo = ({ className = "w-12 h-12" }: LogoProps) => {
+export default function Logo({ className = "w-12 h-12" }: LogoProps) {
   return (
     <motion.svg
       className={className}
       viewBox="0 0 200 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      initial={{ rotate: 0, scale: 1 }}
-      whileHover={{ rotate: 5, scale: 1.05 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      initial={{ scale: 0.95, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.05 }}
     >
-      {/* Navy Circle Background */}
-      <circle cx="100" cy="100" r="85" fill="#0A2942" />
-      
-      {/* Inner light circle */}
-      <circle cx="100" cy="100" r="75" fill="#1a3a5a" />
-      
-      {/* 3D Gold Arrow - Main Path */}
       <defs>
-        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F4E4B3" stopOpacity={1} />
-          <stop offset="50%" stopColor="#D4AF37" stopOpacity={1} />
-          <stop offset="100%" stopColor="#B8941F" stopOpacity={1} />
+        <linearGradient id="optima-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#E6C956" />
+          <stop offset="100%" stopColor="#D4AF37" />
         </linearGradient>
-        <linearGradient id="arrowShadow" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#000000" stopOpacity={0.3} />
-          <stop offset="100%" stopColor="#000000" stopOpacity={0} />
+        <linearGradient id="optima-navy" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#1a3a5a" />
+          <stop offset="100%" stopColor="#0A2942" />
         </linearGradient>
       </defs>
-      
-      {/* Arrow bottom curve (swoosh base) */}
-      <motion.path
-        d="M 70 140 Q 60 120, 70 100 Q 80 80, 100 70 Q 120 60, 140 70 L 130 85 Q 115 80, 100 88 Q 88 95, 85 110 Q 83 120, 90 130 Z"
-        fill="url(#goldGradient)"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-      />
-      
-      {/* Arrow upward diagonal path */}
-      <motion.path
-        d="M 90 130 L 145 55 L 165 65 L 110 140 Z"
-        fill="url(#goldGradient)"
-        initial={{ y: 10, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      />
-      
-      {/* Arrow head */}
-      <motion.path
-        d="M 145 55 L 165 65 L 175 45 L 170 30 L 155 35 Z"
-        fill="#F4E4B3"
-        initial={{ scale: 0, transformOrigin: "165px 50px" }}
+
+      {/* Outer Navy Circle */}
+      <motion.circle
+        cx="100"
+        cy="100"
+        r="95"
+        fill="url(#optima-navy)"
+        initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
       />
-      
-      {/* 3D Shadow effect for depth */}
-      <motion.path
-        d="M 92 132 L 147 57 L 145 55 L 90 130 Z"
-        fill="url(#arrowShadow)"
-        opacity="0.4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-      />
-      
-      {/* Highlight on arrow for 3D effect */}
-      <motion.path
-        d="M 95 128 Q 110 110, 125 90 L 127 92 Q 112 112, 97 130 Z"
-        fill="#FFFFFF"
-        opacity="0.3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-      />
-      
-      {/* Subtle outer glow */}
-      <circle
+
+      {/* Inner Gold Circle */}
+      <motion.circle
         cx="100"
         cy="100"
         r="85"
+        fill="url(#optima-gold)"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      />
+
+      {/* "O" Shape - Outer Ring */}
+      <motion.circle
+        cx="100"
+        cy="100"
+        r="60"
         fill="none"
-        stroke="#D4AF37"
-        strokeWidth="2"
-        opacity="0.3"
+        stroke="#0A2942"
+        strokeWidth="8"
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      />
+
+      {/* "O" Shape - Inner Arc (creates letter O) */}
+      <motion.circle
+        cx="100"
+        cy="100"
+        r="40"
+        fill="none"
+        stroke="#0A2942"
+        strokeWidth="4"
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      />
+
+      {/* Upward Arrow/Checkmark - Success Symbol */}
+      <motion.path
+        d="M 80 115 L 95 100 L 120 85"
+        stroke="#0A2942"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+      />
+
+      {/* Accent dots for visual appeal */}
+      <motion.circle
+        cx="140"
+        cy="70"
+        r="4"
+        fill="#E6C956"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.7, duration: 0.3 }}
+      />
+      <motion.circle
+        cx="60"
+        cy="130"
+        r="3"
+        fill="#E6C956"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.75, duration: 0.3 }}
       />
     </motion.svg>
   );
-};
-
-export default Logo;
+}

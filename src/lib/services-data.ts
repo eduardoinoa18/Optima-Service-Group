@@ -291,6 +291,71 @@ export const services = [
       }
     ],
     compliance: "We do not provide legal or financial advice. We assist with form preparation and administrative tasks based on your information."
+  },
+  {
+    id: "life-insurance",
+    title: "Life Insurance Services",
+    slug: "life-insurance",
+    icon: "Shield",
+    description: "Comprehensive life insurance solutions to protect your family's financial future.",
+    overview: "Protect what matters most. We help you find the right life insurance coverage to ensure your family's financial security and peace of mind.",
+    whatWeInclude: [
+      "Life insurance needs assessment",
+      "Comparison of term and whole life policies",
+      "Coverage calculation based on your situation",
+      "Application assistance and guidance",
+      "Policy review and updates",
+      "Claims support and assistance"
+    ],
+    whoItsFor: [
+      "Families with dependents",
+      "Homeowners with mortgages",
+      "Business owners needing coverage",
+      "Anyone wanting financial protection",
+      "Parents and guardians"
+    ],
+    howItWorks: [
+      { step: 1, title: "Initial Consultation", description: "Discuss your family situation and coverage needs" },
+      { step: 2, title: "Needs Analysis", description: "Calculate appropriate coverage amount" },
+      { step: 3, title: "Compare Policies", description: "Review different options and quotes" },
+      { step: 4, title: "Application Support", description: "Complete medical questions and underwriting" },
+      { step: 5, title: "Policy Activation", description: "Receive coverage and ongoing support" }
+    ],
+    documentsNeeded: [
+      "Valid photo ID",
+      "Social Security Number",
+      "Information about dependents",
+      "Employment and income details",
+      "Medical history (if requested)",
+      "List of any existing insurance"
+    ],
+    faqs: [
+      {
+        question: "What's the difference between term and whole life insurance?",
+        answer: "Term insurance provides coverage for a specific period (10-30 years) at lower cost. Whole life covers your lifetime with cash value. We help you choose based on your needs."
+      },
+      {
+        question: "How much coverage do I need?",
+        answer: "Coverage depends on your debts, income replacement needs, and dependents. We calculate a personalized recommendation."
+      },
+      {
+        question: "Is a medical exam required?",
+        answer: "It depends on coverage amount and age. Many policies don't require exams. We guide you through the process."
+      },
+      {
+        question: "How long does approval take?",
+        answer: "Most policies are approved within 1-2 weeks, depending on medical requirements and underwriting."
+      },
+      {
+        question: "Can I change my policy later?",
+        answer: "Yes! You can increase/decrease coverage or switch policies. We help you review and adjust as needed."
+      },
+      {
+        question: "Do you sell insurance directly?",
+        answer: "We provide guidance and assistance. Insurance is issued by licensed carriers. We ensure you understand your policy fully."
+      }
+    ],
+    compliance: "Life insurance is offered through licensed insurance carriers. We provide guidance and comparison services. Policy terms and conditions apply."
   }
 ];
 

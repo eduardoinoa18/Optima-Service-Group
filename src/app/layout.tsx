@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -32,7 +33,8 @@ export default function RootLayout({
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen md:pb-0 pb-20">{children}</main>
+        <MobileBottomNav />
         <Footer />
         <Toaster position="top-right" />
       </body>
