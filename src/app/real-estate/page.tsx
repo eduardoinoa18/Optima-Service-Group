@@ -190,7 +190,7 @@ export default function RealEstatePage() {
               <div key={idx} className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
                 <p className="font-semibold text-optima-navy">{testimonial.author}</p>
-                <p className="text-sm text-gray-500">{testimonial.location}</p>
+                <p className="text-sm text-gray-600">{testimonial.location}</p>
               </div>
             ))}
           </div>

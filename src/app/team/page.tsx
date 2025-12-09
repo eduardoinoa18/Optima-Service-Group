@@ -42,7 +42,7 @@ export default function TeamPage() {
             {team.map((member) => (
               <Link
                 key={member.slug}
-                href={`/team/${member.slug}`}
+                href="/contact"
                 className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-optima-gold/10 hover:border-optima-gold/30 hover:-translate-y-1"
               >
                 <div className="p-6">
@@ -82,7 +82,7 @@ export default function TeamPage() {
 
                   {/* CTA */}
                   <div className="flex items-center justify-center text-optima-gold font-semibold text-sm">
-                    View Profile
+                    Contact Us
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

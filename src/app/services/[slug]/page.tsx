@@ -34,10 +34,25 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  // Service-specific color schemes
+  const colorSchemes: Record<string, { bg: string; accent: string; icon: string }> = {
+    'tax-preparation': { bg: 'from-blue-900 to-blue-800', accent: 'bg-blue-100 border-blue-200', icon: 'text-blue-600' },
+    'immigration-forms': { bg: 'from-green-900 to-green-800', accent: 'bg-green-100 border-green-200', icon: 'text-green-600' },
+    'notary-public': { bg: 'from-purple-900 to-purple-800', accent: 'bg-purple-100 border-purple-200', icon: 'text-purple-600' },
+    'credit-repair': { bg: 'from-emerald-900 to-emerald-800', accent: 'bg-emerald-100 border-emerald-200', icon: 'text-emerald-600' },
+    'document-prep': { bg: 'from-orange-900 to-orange-800', accent: 'bg-orange-100 border-orange-200', icon: 'text-orange-600' },
+    'business-support': { bg: 'from-indigo-900 to-indigo-800', accent: 'bg-indigo-100 border-indigo-200', icon: 'text-indigo-600' },
+    'life-insurance': { bg: 'from-red-900 to-red-800', accent: 'bg-red-100 border-red-200', icon: 'text-red-600' },
+    'real-estate-services': { bg: 'from-cyan-900 to-cyan-800', accent: 'bg-cyan-100 border-cyan-200', icon: 'text-cyan-600' },
+    'paraiso-inmobiliario': { bg: 'from-rose-900 to-rose-800', accent: 'bg-rose-100 border-rose-200', icon: 'text-rose-600' },
+  };
+
+  const colors = colorSchemes[slug] || { bg: 'from-optima-navy to-optima-navy/90', accent: 'bg-blue-100 border-blue-200', icon: 'text-blue-600' };
+
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-8">
       {/* Header */}
-      <div className="bg-linear-to-b from-optima-navy to-optima-navy/90 text-white py-8">
+      <div className={`bg-linear-to-b ${colors.bg} text-white py-8`}>
         <div className="container max-w-2xl mx-auto px-4">
           <Link
             href="/"
@@ -123,11 +138,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <h2 className="font-heading font-semibold text-2xl text-optima-navy mb-4">
             What to Bring
           </h2>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div className={`${colors.accent} rounded-lg p-4`}>
             <ul className="space-y-2">
               {service.documentsNeeded.map((doc, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-4 h-4 text-blue-600 shrink-0 mt-1" />
+                  <CheckCircle className={`w-4 h-4 ${colors.icon} shrink-0 mt-1`} />
                   <span className="text-gray-700 text-sm">{doc}</span>
                 </li>
               ))}

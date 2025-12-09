@@ -83,7 +83,7 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Phone</p>
+                    <p className="text-xs text-gray-600">Phone</p>
                     <p className="font-semibold text-optima-navy">(978) 705-5509</p>
                   </div>
                 </a>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-optima-navy" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Email</p>
+                    <p className="text-xs text-gray-600">Email</p>
                     <p className="font-semibold text-optima-navy break-all">
                       inoaserv@gmail.com
                     </p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-gray-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Business Hours</p>
+                    <p className="text-xs text-gray-600">Business Hours</p>
                     <p className="font-semibold text-optima-navy text-sm">Mon-Fri: 9am-6pm</p>
                     <p className="text-xs text-gray-600">Sat: By appointment</p>
                     <p className="text-xs text-gray-600">Sun: Closed</p>

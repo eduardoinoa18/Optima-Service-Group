@@ -133,7 +133,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-300">
               © {currentYear} Optima Service Group. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
@@ -141,14 +141,14 @@ const Footer = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-400 hover:text-optima-gold transition-colors"
+                  className="text-sm text-gray-300 hover:text-optima-gold transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-4 text-center md:text-left">
+          <p className="text-xs text-gray-300 mt-4 text-center md:text-left">
             We do not provide legal or financial advice. We assist with form preparation and document services only.
           </p>
         </div>
