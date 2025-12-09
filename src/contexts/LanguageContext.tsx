@@ -1,12 +1,13 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "en" | "es";
 
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
 
@@ -182,18 +183,43 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguageState] = useState<Language>("en");
+  const [mounted, setMounted] = useState(false);
+
+  // Load saved language from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("language") as Language | null;
+      if (saved && (saved === "en" || saved === "es")) {
+        setLanguageState(saved);
+      }
+      setMounted(true);
+    }
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", lang);
+    }
+  };
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "en" ? "es" : "en"));
+    const newLang = language === "en" ? "es" : "en";
+    setLanguage(newLang);
   };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key;
   };
 
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return <>{children}</>;
+  }
+
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

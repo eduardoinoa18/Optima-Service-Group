@@ -16,7 +16,7 @@ export default function Logo({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 120 120"
+      viewBox="0 0 200 200"
       width={className ? undefined : width}
       height={className ? undefined : height}
       className={className || "w-full h-full"}
@@ -24,126 +24,106 @@ export default function Logo({
       role="img"
     >
       <defs>
-        {/* Enhanced Blue Metallic Gradient with 3D effect */}
-        <linearGradient id="blueGradient3D" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#4a6fa5" stopOpacity={1} />
-          <stop offset="25%" stopColor="#003d7a" stopOpacity={1} />
-          <stop offset="50%" stopColor="#002652" stopOpacity={1} />
-          <stop offset="75%" stopColor="#001a38" stopOpacity={1} />
-          <stop offset="100%" stopColor="#000f1f" stopOpacity={1} />
+        {/* Enhanced blue gradient for left semicircle */}
+        <linearGradient id="blueSemicircle" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4a7ba7" stopOpacity={1} />
+          <stop offset="25%" stopColor="#1a4d7d" stopOpacity={1} />
+          <stop offset="50%" stopColor="#0d3857" stopOpacity={1} />
+          <stop offset="100%" stopColor="#051f35" stopOpacity={1} />
         </linearGradient>
 
-        {/* Blue Highlight for depth */}
-        <linearGradient id="blueHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#6a8fc5" stopOpacity={0.8} />
-          <stop offset="50%" stopColor="#4a6fa5" stopOpacity={0.4} />
-          <stop offset="100%" stopColor="#003d7a" stopOpacity={0} />
-        </linearGradient>
-        
-        {/* Enhanced Gold Metallic Gradient with 3D effect */}
-        <linearGradient id="goldGradient3D" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#fffae6" stopOpacity={1} />
-          <stop offset="15%" stopColor="#fff0b3" stopOpacity={1} />
-          <stop offset="35%" stopColor="#f4d673" stopOpacity={1} />
-          <stop offset="50%" stopColor="#d4af37" stopOpacity={1} />
-          <stop offset="70%" stopColor="#aa882e" stopOpacity={1} />
-          <stop offset="85%" stopColor="#8c6d1f" stopOpacity={1} />
-          <stop offset="100%" stopColor="#6b5216" stopOpacity={1} />
+        {/* Blue shine/highlight */}
+        <linearGradient id="blueShine" x1="0%" y1="0%" x2="50%" y2="0%">
+          <stop offset="0%" stopColor="#6a9bc5" stopOpacity={0.6} />
+          <stop offset="100%" stopColor="#1a4d7d" stopOpacity={0} />
         </linearGradient>
 
-        {/* Gold Highlight for depth */}
-        <linearGradient id="goldHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#fffef0" stopOpacity={0.9} />
-          <stop offset="40%" stopColor="#f4d673" stopOpacity={0.5} />
-          <stop offset="100%" stopColor="#d4af37" stopOpacity={0} />
+        {/* Enhanced gold gradient for arrow/swoosh */}
+        <linearGradient id="goldArrow" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#fffde0" stopOpacity={1} />
+          <stop offset="10%" stopColor="#fffab5" stopOpacity={1} />
+          <stop offset="25%" stopColor="#f5d76e" stopOpacity={1} />
+          <stop offset="50%" stopColor="#d4a540" stopOpacity={1} />
+          <stop offset="75%" stopColor="#a88a2e" stopOpacity={1} />
+          <stop offset="100%" stopColor="#7d6820" stopOpacity={1} />
         </linearGradient>
-        
-        {/* Radial shine effect for metallic look */}
-        <radialGradient id="metallicShine" cx="30%" cy="30%" r="70%">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity={0.3} />
-          <stop offset="50%" stopColor="#ffffff" stopOpacity={0.1} />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
-        </radialGradient>
 
-        {/* Enhanced 3D Shadow with multiple layers */}
-        <filter id="shadow3D" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur1" />
-          <feOffset in="blur1" dx="3" dy="4" result="offsetBlur1" />
-          <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur2" />
-          <feOffset in="blur2" dx="1.5" dy="2" result="offsetBlur2" />
-          <feFlood floodColor="#000000" floodOpacity="0.4" result="color1" />
-          <feComposite in="color1" in2="offsetBlur1" operator="in" result="shadow1" />
-          <feFlood floodColor="#000000" floodOpacity="0.3" result="color2" />
-          <feComposite in="color2" in2="offsetBlur2" operator="in" result="shadow2" />
+        {/* Gold shine/highlight */}
+        <linearGradient id="goldShine" x1="0%" y1="0%" x2="50%" y2="0%">
+          <stop offset="0%" stopColor="#fffef0" stopOpacity={0.7} />
+          <stop offset="100%" stopColor="#d4a540" stopOpacity={0} />
+        </linearGradient>
+
+        {/* 3D shadow effect */}
+        <filter id="shadow3D" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+          <feOffset in="blur" dx="4" dy="6" result="offsetblur" />
+          <feFlood floodColor="#000000" floodOpacity="0.4" result="offsetcolor" />
+          <feComposite in="offsetcolor" in2="offsetblur" operator="in" result="offsetblur" />
+          <feComposite in="offsetblur" in2="SourceAlpha" operator="in" result="offsetblur" />
           <feMerge>
-            <feMergeNode in="shadow1" />
-            <feMergeNode in="shadow2" />
+            <feMergeNode in="offsetblur" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
 
         {/* Inner shadow for depth */}
-        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
-          <feOffset dx="1" dy="2" result="offsetblur" />
-          <feFlood floodColor="#000000" floodOpacity="0.2" />
-          <feComposite in2="offsetblur" operator="in" />
-        </filter>
+        <radialGradient id="innerShadow" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity={0.2} />
+          <stop offset="50%" stopColor="#ffffff" stopOpacity={0.05} />
+          <stop offset="100%" stopColor="#000000" stopOpacity={0.1} />
+        </radialGradient>
       </defs>
 
-      {/* Main Group Container - Centered with enhanced 3D effect */}
-      <g transform="translate(60, 60)" filter="url(#shadow3D)">
-        <g transform="translate(-30, -35) scale(0.65)">
-          
-          {/* Dark Blue Swoosh - Main body with depth */}
-          <path
-            d="M50,10 A45,45 0 0,1 95,55 A45,45 0 0,1 60,95 L45,80 A25,25 0 0,0 75,55 A25,25 0 0,0 50,30 Z"
-            fill="url(#blueGradient3D)"
-          />
-          
-          {/* Blue highlight layer for 3D depth */}
-          <path
-            d="M50,10 A45,45 0 0,1 95,55 A45,45 0 0,1 60,95 L45,80 A25,25 0 0,0 75,55 A25,25 0 0,0 50,30 Z"
-            fill="url(#blueHighlight)"
-            opacity="0.4"
-          />
+      {/* Main group with shadow */}
+      <g filter="url(#shadow3D)">
+        {/* Left Blue Semicircle (background) */}
+        <path
+          d="M 100 40 A 60 60 0 0 0 100 160 Q 100 160 100 100 Q 100 40 100 40 Z"
+          fill="url(#blueSemicircle)"
+        />
 
-          {/* Gold Swoosh and Arrow - Main body with enhanced metallic look */}
-          <path
-            d="M50,100 A45,45 0 0,1 5,55 C5,45 8,35 12,28 L30,45 C24,50 22,60 25,70 A25,25 0 0,0 50,80 C60,80 68,75 72,68 L90,15 L100,15 L82,70 C75,90 60,100 50,100 Z"
-            fill="url(#goldGradient3D)"
-          />
-          
-          {/* Gold highlight layer for 3D depth */}
-          <path
-            d="M50,100 A45,45 0 0,1 5,55 C5,45 8,35 12,28 L30,45 C24,50 22,60 25,70 A25,25 0 0,0 50,80 C60,80 68,75 72,68 L90,15 L100,15 L82,70 C75,90 60,100 50,100 Z"
-            fill="url(#goldHighlight)"
-            opacity="0.5"
-          />
-           
-          {/* Arrow Head with enhanced 3D effect */}
-          <path
-            d="M90,15 L105,15 L105,30 L90,15 Z"
-            fill="url(#goldGradient3D)"
-          />
-          
-          {/* Arrow head highlight */}
-          <path
-            d="M90,15 L105,15 L105,30 L90,15 Z"
-            fill="url(#goldHighlight)"
-            opacity="0.6"
-          />
+        {/* Blue shine layer */}
+        <path
+          d="M 100 40 A 60 60 0 0 0 100 160 Q 100 160 100 100 Q 100 40 100 40 Z"
+          fill="url(#blueShine)"
+          opacity="0.4"
+        />
 
-          {/* Metallic shine overlay for extra depth */}
-          <ellipse
-            cx="50"
-            cy="40"
-            rx="40"
-            ry="35"
-            fill="url(#metallicShine)"
-            opacity="0.3"
-          />
-        </g>
+        {/* Gold swoosh/arrow shaft going up-right */}
+        <path
+          d="M 90 130 Q 120 100 140 60 L 155 75 Q 130 115 100 145 Z"
+          fill="url(#goldArrow)"
+        />
+
+        {/* Gold arrow head - pointing up-right */}
+        <path
+          d="M 140 60 L 165 45 L 148 70 Z"
+          fill="url(#goldArrow)"
+        />
+
+        {/* Gold shine on swoosh */}
+        <path
+          d="M 90 130 Q 120 100 140 60 L 155 75 Q 130 115 100 145 Z"
+          fill="url(#goldShine)"
+          opacity="0.5"
+        />
+
+        {/* Gold shine on arrow head */}
+        <path
+          d="M 140 60 L 165 45 L 148 70 Z"
+          fill="url(#goldShine)"
+          opacity="0.6"
+        />
+
+        {/* Inner shadow/depth effect */}
+        <circle
+          cx="100"
+          cy="100"
+          r="60"
+          fill="url(#innerShadow)"
+          opacity="0.3"
+        />
       </g>
     </svg>
   );

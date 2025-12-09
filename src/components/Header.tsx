@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, Sun, Moon, Languages } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
@@ -10,8 +10,25 @@ import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { language, toggleLanguage, t } = useLanguage();
+  
+  let language = "en";
+  let toggleLanguage = () => {};
+  let t = (key: string) => key;
+  
+  try {
+    const ctx = useLanguage();
+    language = ctx.language;
+    toggleLanguage = ctx.toggleLanguage;
+    t = ctx.t;
+  } catch (e) {
+    // Provider not available, use defaults
+  }
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -24,6 +41,8 @@ const Header = () => {
     { href: "/contact", label: "nav.contact" },
     { href: "/faq", label: "nav.faq" },
   ];
+
+  if (!mounted) return null;
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
