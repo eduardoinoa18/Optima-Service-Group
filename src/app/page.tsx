@@ -104,7 +104,7 @@ export default function HomePage() {
                 Book Consultation
               </Link>
               <a
-                href="https://wa.me/19783909619?text=Hi%20Optima%2C%20I%27m%20interested"
+                href="https://wa.me/19787055509?text=Hi%20Optima%2C%20I%27m%20interested"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
@@ -239,26 +239,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Sticky Bottom Bar (Mobile Only) */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden z-40">
-        <div className="flex gap-2">
-          <a
-            href="https://wa.me/19783909619"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 btn-secondary py-3 text-sm justify-center"
-          >
-            WhatsApp
-          </a>
-          <a
-            href="tel:+19787055509"
-            className="flex-1 btn-primary py-3 text-sm justify-center"
-          >
-            Call Now
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

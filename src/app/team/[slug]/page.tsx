@@ -142,16 +142,6 @@ export default function TeamMemberPage({
           </div>
         </div>
       </section>
-
-      {/* Mobile Sticky Contact Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-40">
-        <Link
-          href="/contact"
-          className="block w-full text-center bg-optima-navy text-white py-3 rounded-lg font-semibold"
-        >
-          Contact {member.name.split(" ")[0]}
-        </Link>
-      </div>
     </div>
   );
 }

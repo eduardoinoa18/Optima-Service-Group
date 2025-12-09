@@ -124,7 +124,7 @@ export default function HomePage() {
               <div className="mb-6 relative">
                 <div className="w-32 h-32 mx-auto bg-gradient-to-br from-optima-gold/20 to-optima-blue-600/20 rounded-full p-1">
                   <div className="w-full h-full bg-optima-navy rounded-full flex items-center justify-center">
-                    <OptimaIcon size={80} color="#F5C440" />
+                    <OptimaIcon size={80} className="text-optima-gold" />
                   </div>
                 </div>
                 {/* Online Status Indicator */}
