@@ -18,7 +18,7 @@ import Link from 'next/link';
 import { Phone, MessageCircle, FileText, TrendingUp, Building2, CheckCircle2, Award, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import OptimaIcon from '@/components/OptimaIcon';
+import Logo from '@/components/Logo';
 
 const container = {
   hidden: { opacity: 0 },
@@ -231,11 +231,11 @@ export default function HomePageRedesign() {
             className="text-center mb-8"
           >
             {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <OptimaIcon size={80} className="drop-shadow-lg" />
+            <div className="flex justify-center mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-full p-3 border border-optima-gold/40">
+                <Logo width={96} height={96} priority className="shadow-lg" />
+              </div>
             </div>
-            
-            {/* Headline */}
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {t.hero.headline}
             </h1>

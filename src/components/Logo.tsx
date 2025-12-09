@@ -16,8 +16,13 @@ export default function Logo({
   height = 50,
   priority = false,
 }: LogoProps) {
+  const baseClass = "inline-block rounded-full bg-white/95 p-2 shadow-sm overflow-hidden border border-optima-gold/30";
+
   return (
-    <div className={className}>
+    <div
+      className={`${baseClass} ${className}`.trim()}
+      aria-label="Optima Service Group logo"
+    >
       <Image
         src="/Logo.png"
         alt="Optima Service Group Logo - Professional services in Lawrence MA"
