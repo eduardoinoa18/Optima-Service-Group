@@ -50,7 +50,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <Logo className="w-10 h-10" />
+            <Logo width={40} height={40} priority />
             <span className="font-heading font-bold text-lg text-optima-navy dark:text-white hidden sm:inline">
               Optima Service Group
             </span>

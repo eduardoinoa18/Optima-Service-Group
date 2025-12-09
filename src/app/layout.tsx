@@ -19,15 +19,72 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Optima Service Group - Your Solution, All in One Place",
-  description: "Professional support for taxes, immigration forms, documents, and everyday services with clarity, transparency, and trust. Bilingual services in English and Spanish.",
-  keywords: ["tax preparation", "immigration forms", "notary public", "credit repair", "translations", "business services", "bilingual services"],
+  title: "Optima Service Group - Tax & Immigration Services in Lawrence, MA",
+  description: "Professional tax preparation, immigration forms, notary services, credit repair, and business support in Lawrence, MA. Serving Massachusetts with English & Spanish bilingual services. Virtual services available nationwide.",
+  keywords: [
+    "tax preparation Lawrence MA",
+    "immigration forms Massachusetts",
+    "notary public Lawrence",
+    "credit repair MA",
+    "tax services Essex County",
+    "bilingual services Massachusetts",
+    "document preparation Lawrence",
+    "business services MA",
+    "virtual tax services",
+    "tax advisor near me"
+  ],
+  metadataBase: new URL("https://www.optimaservicegroup.com"),
+  openGraph: {
+    type: "website",
+    url: "https://www.optimaservicegroup.com",
+    title: "Optima Service Group - Your Solution, All in One Place",
+    description: "Professional tax, immigration, and business services in Lawrence, MA. Bilingual support available.",
+    images: [
+      {
+        url: "/logo-optima.png",
+        width: 1200,
+        height: 630,
+        alt: "Optima Service Group Logo",
+        type: "image/png",
+      }
+    ],
+    locale: "en_US",
+    alternateLocale: ["es_ES"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Optima Service Group - Tax & Immigration Services",
+    description: "Professional services in Lawrence, MA. English & Spanish bilingual support.",
+    images: ["/logo-optima.png"],
+  },
   icons: {
     icon: [
+      { url: "/logo-optima.png", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/logo-optima.png",
+    shortcut: "/logo-optima.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
+  },
+  alternates: {
+    languages: {
+      en: "https://www.optimaservicegroup.com",
+      es: "https://www.optimaservicegroup.com/es",
+    },
   },
 };
 
@@ -38,6 +95,85 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://www.optimaservicegroup.com",
+              name: "Optima Service Group",
+              description: "Professional tax preparation, immigration forms, notary services, and business support in Lawrence, MA",
+              url: "https://www.optimaservicegroup.com",
+              telephone: "+1-978-705-5509",
+              email: "info@optimaservicegroup.com",
+              logo: "https://www.optimaservicegroup.com/logo-optima.png",
+              image: "https://www.optimaservicegroup.com/logo-optima.png",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Lawrence",
+                addressLocality: "Lawrence",
+                addressRegion: "MA",
+                postalCode: "01840",
+                addressCountry: "US"
+              },
+              areaServed: [
+                { "@type": "City", name: "Lawrence" },
+                { "@type": "State", name: "Massachusetts" }
+              ],
+              priceRange: "$$",
+              knowsAbout: [
+                "Tax Preparation",
+                "Immigration Forms",
+                "Notary Services",
+                "Credit Repair",
+                "Document Preparation",
+                "Business Services",
+                "Virtual Services"
+              ]
+            }),
+          }}
+        />
+
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: "https://www.optimaservicegroup.com",
+              name: "Optima Service Group",
+              description: "Your Solution, All in One Place",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://www.optimaservicegroup.com/search?q={search_term_string}"
+                },
+                query_input: "required name=search_term_string"
+              }
+            }),
+          }}
+        />
+
+        {/* Contact Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPoint",
+              contactType: "Customer Service",
+              telephone: "+1-978-705-5509",
+              areaServed: ["US"],
+              availableLanguage: ["en", "es"]
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >

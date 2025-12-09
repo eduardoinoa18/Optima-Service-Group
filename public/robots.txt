@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json
+
+# Sitemaps
+Sitemap: https://www.optimaservicegroup.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
