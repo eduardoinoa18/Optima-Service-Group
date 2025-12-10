@@ -146,7 +146,7 @@ export default function AboutPage() {
                 <h3 className="font-heading font-bold text-xl text-optima-navy mb-1">
                   {founder.name}
                 </h3>
-                <p className="text-optima-gold font-semibold mb-3">{founder.role}</p>
+                <p className="text-optima-navy font-semibold mb-3 bg-optima-gold/20 px-3 py-1 rounded-full inline-block">{founder.role}</p>
                 <p className="text-gray-600 text-sm">{founder.bio}</p>
               </div>
             ))}

@@ -310,7 +310,7 @@ function RealEstateContent() {
                   },
                   {
                     label: "Key Benefit",
-                    value: "Up to 30% Commission Structure",
+                    value: "Verified Developers & Expert Guidance",
                   },
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-lg border-2 border-[#F5C440] shadow-md">
@@ -433,8 +433,8 @@ function RealEstateContent() {
                     },
                     {
                       icon: DollarSign,
-                      title: "Up to 30% Commission",
-                      description: "Attractive profit-sharing structure with transparent terms and no hidden fees",
+                      title: "Transparent Pricing",
+                      description: "Clear, upfront pricing with transparent terms and no hidden fees",
                     },
                     {
                       icon: MapPin,
@@ -515,7 +515,7 @@ function RealEstateContent() {
                     location: "Santo Domingo Properties",
                   },
                   {
-                    quote: "The 30% commission structure combined with expert guidance made this a no-brainer investment.",
+                    quote: "The transparent pricing and expert guidance made this a confident investment decision for our family.",
                     author: "Carlos V.",
                     location: "Multi-Property Investor",
                   },

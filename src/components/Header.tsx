@@ -51,8 +51,7 @@ const Header = () => {
       <div className="sticky top-0 z-51 w-full bg-[#0F213A] backdrop-blur-sm border-b border-[#F5C440]/30 py-3 shadow-lg">
         <div className="container flex items-center justify-center gap-3">
           <Link href="/" className="flex items-center gap-3 group">
-            <OptimaIcon size={44} className="text-[#F5C440] group-hover:scale-110 transition-transform duration-200" />
-            <Logo width={48} height={48} priority className="scale-125 group-hover:scale-[1.35] transition-transform duration-200" />
+            <img src="/logo-optima.png" alt="Optima Service Group" className="h-14 w-auto group-hover:scale-110 transition-transform duration-200" />
           </Link>
         </div>
       </div>
