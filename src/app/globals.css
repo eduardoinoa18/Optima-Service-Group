@@ -731,3 +731,13 @@ html {
   padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0));
 }
 
+/* Mobile-First: Minimum 44px tap targets per brand guidelines */
+.tap-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Fast, subtle transitions for app-like feel (0.2s easing) */
+.transition-app {
+  transition: all 0.2s ease-in-out;
+}

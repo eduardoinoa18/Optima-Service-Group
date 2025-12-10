@@ -58,11 +58,14 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white py-12">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="font-heading font-bold text-4xl text-optima-navy mb-4">
+          <h1 className="font-heading font-bold text-4xl text-[#0F213A] mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to get started? Contact us today and let's discuss how we can help you.
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
+            Ready to get started? Contact us today for expert assistance with taxes, immigration, real estate, credit repair, and all your professional service needs.
+          </p>
+          <p className="text-base text-gray-600 max-w-xl mx-auto">
+            🇺🇸 English | 🇩🇴 Español • Fast Response • Confidential Service
           </p>
         </div>
 
@@ -79,7 +82,7 @@ export default function ContactPage() {
                   href="tel:+19787055509"
                   className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  <div className="w-10 h-10 bg-optima-navy rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-[#0F213A] rounded-full flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -92,8 +95,8 @@ export default function ContactPage() {
                   href="mailto:inoaserv@gmail.com"
                   className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  <div className="w-10 h-10 bg-optima-gold rounded-full flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-optima-navy" />
+                  <div className="w-10 h-10 bg-[#F5C440] rounded-full flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-[#0F213A]" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-600">Email</p>

@@ -1,10 +1,11 @@
 /**
  * Optima Service Group Icon Component
  * 
- * Clean SVG icon based on the official logo
- * - Geometric "O" mark with professional styling
- * - Supports color customization via currentColor
- * - Optimized for all screen sizes
+ * Stylized Open Loop / Rising Swoosh - Brand Identity Icon
+ * - Gold (#F5C440) on Navy (#0F213A) backgrounds
+ * - White (#FFFFFF) on bright or Gold backgrounds
+ * - Scalable SVG with currentColor for dynamic styling
+ * - Clear space: minimum half the icon height around it
  */
 
 import React from 'react';
@@ -26,26 +27,44 @@ export default function OptimaIcon({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Optima Service Group Logo"
+      aria-label="Optima Service Group Icon"
     >
-      {/* Outer Circle with Gold Ring */}
-      <circle
-        cx="50"
-        cy="50"
-        r="42"
+      {/* Elegant Rising Swoosh - Brand Identity */}
+      <path
+        d="M15 80 Q25 60, 35 50 Q45 40, 55 35 Q65 30, 75 28 Q82 26, 88 30"
         stroke="currentColor"
-        strokeWidth="6"
+        strokeWidth="7"
+        strokeLinecap="round"
         fill="none"
-        opacity="0.9"
+        opacity="1"
       />
       
-      {/* Inner Circle - Solid Fill */}
+      {/* Dynamic accent swoosh */}
+      <path
+        d="M20 72 Q28 58, 38 48 Q48 38, 58 33"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.5"
+      />
+      
+      {/* Base Accent Circle */}
       <circle
-        cx="50"
-        cy="50"
-        r="30"
+        cx="15"
+        cy="80"
+        r="5"
         fill="currentColor"
-        opacity="0.15"
+        opacity="1"
+      />
+      
+      {/* Peak Accent Circle */}
+      <circle
+        cx="88"
+        cy="30"
+        r="5"
+        fill="currentColor"
+        opacity="1"
       />
       
       {/* Center "O" Letter Mark */}

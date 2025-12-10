@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Logo from "./Logo";
+import OptimaIcon from "./OptimaIcon";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,16 +46,26 @@ const Header = () => {
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-      <div className="container">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Logo width={40} height={40} priority className="scale-110" />
-            <span className="font-heading font-bold text-lg text-optima-navy dark:text-white hidden sm:inline">
-              Optima Service Group
-            </span>
+    <>
+      {/* Logo Banner - Top Center with Brand Icon */}
+      <div className="sticky top-0 z-51 w-full bg-[#0F213A] backdrop-blur-sm border-b border-[#F5C440]/30 py-3 shadow-lg">
+        <div className="container flex items-center justify-center gap-3">
+          <Link href="/" className="flex items-center gap-3 group">
+            <OptimaIcon size={44} className="text-[#F5C440] group-hover:scale-110 transition-transform duration-200" />
+            <Logo width={48} height={48} priority className="scale-125 group-hover:scale-[1.35] transition-transform duration-200" />
           </Link>
+        </div>
+      </div>
+
+      <header className="sticky top-[68px] z-50 bg-white/95 dark:bg-[#0F213A]/95 backdrop-blur-md border-b border-gray-200 dark:border-[#F5C440]/20">
+        <div className="container">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo Text */}
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="font-heading font-bold text-lg text-[#0F213A] dark:text-white">
+                Optima Service Group
+              </span>
+            </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
@@ -62,7 +73,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-optima-gold dark:hover:text-optima-gold transition-colors"
+                className="text-sm font-medium text-gray-700 dark:text-white hover:text-[#F5C440] dark:hover:text-[#F5C440] transition-colors duration-200"
               >
                 {t(link.label)}
               </Link>
@@ -71,21 +82,21 @@ const Header = () => {
             {/* Theme Toggle - Desktop */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#F5C440]/10 transition-colors"
               aria-label="Toggle theme"
               title={theme === "dark" ? "Light mode" : "Dark mode"}
             >
               {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <Sun className="w-5 h-5 text-gray-700 dark:text-[#F5C440]" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <Moon className="w-5 h-5 text-gray-700 dark:text-[#F5C440]" />
               )}
             </button>
 
             {/* Language Toggle - Desktop */}
             <button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center space-x-1"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#F5C440]/10 transition-colors flex items-center space-x-1"
               aria-label="Toggle language"
               title={language === "en" ? "Cambiar a Español" : "Switch to English"}
             >
@@ -108,7 +119,7 @@ const Header = () => {
             {/* Theme Toggle - Mobile */}
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 text-optima-navy dark:text-white"
+              className="p-2 text-[#0F213A] dark:text-[#F5C440]"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -121,13 +132,13 @@ const Header = () => {
             {/* Language Toggle - Mobile */}
             <button
               onClick={toggleLanguage}
-              className="p-2 text-optima-navy dark:text-white text-xs font-bold"
+              className="p-2 text-[#0F213A] dark:text-[#F5C440] text-xs font-bold"
               aria-label="Toggle language"
             >
               {language === "en" ? "ES" : "EN"}
             </button>
 
-            <a href="tel:+19787055509" className="text-optima-navy dark:text-white" title="Call us" aria-label="Call us at (978) 705-5509">
+            <a href="tel:+19787055509" className="text-[#0F213A] dark:text-white" title="Call us" aria-label="Call us at (978) 705-5509">
               <Phone className="w-5 h-5" />
             </a>
             <a href="https://wa.me/19787055509" className="text-[#25D366] hover:text-[#1ebe5d]" title="WhatsApp us" aria-label="Contact us on WhatsApp" target="_blank" rel="noopener noreferrer">
@@ -139,7 +150,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="p-2 text-optima-navy dark:text-white"
+              className="p-2 text-[#0F213A] dark:text-white"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -155,7 +166,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+            className="md:hidden bg-white dark:bg-[#0F213A] border-t border-gray-200 dark:border-[#F5C440]/20"
           >
             <nav className="container py-4 space-y-3">
               {navLinks.map((link) => (
@@ -163,7 +174,7 @@ const Header = () => {
                   key={link.href}
                   href={link.href}
                   onClick={toggleMenu}
-                  className="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-optima-gold transition-colors"
+                  className="block py-2 text-sm font-medium text-gray-700 dark:text-white hover:text-[#F5C440] transition-colors"
                 >
                   {t(link.label)}
                 </Link>
@@ -171,21 +182,21 @@ const Header = () => {
               <Link
                 href="/contact"
                 onClick={toggleMenu}
-                className="block py-2 text-sm font-medium text-optima-gold"
+                className="block py-2 text-sm font-medium text-[#F5C440]"
               >
                 {t("nav.getStarted")}
               </Link>
-              <div className="pt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+              <div className="pt-4 space-y-2 border-t border-gray-200 dark:border-[#F5C440]/20">
                 <a
                   href="tel:+19787055509"
-                  className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-300"
+                  className="flex items-center space-x-2 text-sm text-gray-700 dark:text-white"
                 >
                   <Phone className="w-4 h-4" />
                   <span>(978) 705-5509</span>
                 </a>
                 <a
                   href="mailto:inoaserv@gmail.com"
-                  className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-300"
+                  className="flex items-center space-x-2 text-sm text-gray-700 dark:text-white"
                 >
                   <Mail className="w-4 h-4" />
                   <span>inoaserv@gmail.com</span>
@@ -196,6 +207,7 @@ const Header = () => {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 };
 

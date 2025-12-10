@@ -82,22 +82,40 @@ export default function HomePageRedesign() {
           href: "/services/notary-public"
         },
         {
-          title: "Business Consulting",
-          description: "LLC setup, permits, accounting, compliance",
-          icon: "💼",
-          href: "/services"
-        },
-        {
           title: "Credit Repair",
           description: "Credit building, dispute resolution, monitoring",
           icon: "📊",
-          href: "/services"
+          href: "/services/credit-repair"
         },
         {
-          title: "Real Estate Support",
-          description: "Property documentation, title services, closings",
+          title: "Document Services",
+          description: "Translation, preparation, organization",
+          icon: "📑",
+          href: "/services/document-prep"
+        },
+        {
+          title: "Business Support",
+          description: "LLC setup, permits, EIN, compliance",
+          icon: "💼",
+          href: "/services/business-support"
+        },
+        {
+          title: "Life Insurance",
+          description: "Family protection & wealth strategies",
+          icon: "🛡️",
+          href: "/services/life-insurance"
+        },
+        {
+          title: "Real Estate (USA)",
+          description: "Home buying, selling, investments in MA & NH",
           icon: "🏠",
-          href: "/services"
+          href: "/real-estate"
+        },
+        {
+          title: "DR Property Investments",
+          description: "Caribbean real estate with up to 30% returns",
+          icon: "🌴",
+          href: "/real-estate?tab=dr"
         }
       ],
       
@@ -222,7 +240,7 @@ export default function HomePageRedesign() {
   return (
     <main className="min-h-screen bg-white">
       {/* ============ 1. HERO SECTION ============ */}
-      <section className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
+      <section className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -341,7 +359,7 @@ export default function HomePageRedesign() {
               const IconComponent = trustItem.icon;
               return (
                 <motion.div key={idx} variants={item}>
-                  <div className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
+                  <div className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
                     {/* Icon */}
                     <IconComponent className="w-12 h-12 mx-auto mb-4 text-optima-gold" />
                     
