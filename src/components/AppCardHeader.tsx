@@ -14,7 +14,6 @@
 import Link from 'next/link';
 import { Languages } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import OptimaIcon from './OptimaIcon';
 import ShareButton from './ShareButton';
 
 export default function AppCardHeader() {
@@ -46,13 +45,13 @@ export default function AppCardHeader() {
             </span>
           </button>
           
-          {/* CENTER: Optima Icon (Gold color for visibility) */}
+          {/* CENTER: Optima Logo */}
           <Link 
             href="/" 
             className="flex items-center justify-center"
             aria-label="Optima Service Group Home"
           >
-            <OptimaIcon size={44} className="text-optima-gold" />
+            <img src="/logo-optima.png" alt="Optima Service Group" className="h-11 w-auto" />
           </Link>
           
           {/* RIGHT: Share Button (44px tap target) */}

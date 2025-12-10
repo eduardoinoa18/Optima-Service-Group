@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Logo from "./Logo";
-import OptimaIcon from "./OptimaIcon";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
