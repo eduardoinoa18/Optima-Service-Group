@@ -1,14 +1,31 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services-data";
-
-export const metadata: Metadata = {
-  title: "Our Services | Optima Service Group",
-  description: "Comprehensive professional services including Tax Preparation, Immigration Forms, Notary Public, Credit Repair, Document Preparation, and Business Support Services.",
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ServicesPage() {
+  const { t } = useLanguage();
+
+  const serviceTitleKeyMap: Record<string, string> = {
+    "tax-preparation": "service.taxPrep",
+    "immigration-forms": "service.immigration",
+    "notary-public": "service.notary",
+    "credit-repair": "service.creditRepair",
+    "document-prep": "service.documents",
+    "business-support": "service.business",
+    "life-insurance": "service.lifeInsurance",
+    "paraiso-inmobiliario": "service.paraiso",
+    "real-estate": "service.realEstate",
+  };
+
+  const translate = (key: string | undefined, fallback: string) => {
+    if (!key) return fallback;
+    const value = t(key);
+    return value === key ? fallback : value;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -16,10 +33,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Services
+              {t("services.title")}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Professional solutions for your tax, immigration, legal documentation, and business needs.
+              {t("services.subtitle")}
             </p>
           </div>
         </div>
@@ -42,17 +59,17 @@ export default function ServicesPage() {
 
                 {/* Title */}
                 <h2 className="service-tile-title">
-                  {service.title}
+                  {translate(serviceTitleKeyMap[service.id], service.title)}
                 </h2>
 
                 {/* Description */}
                 <p className="service-tile-description line-clamp-3">
-                  {service.description}
+                  {translate(`service.${service.id}.description`, service.description)}
                 </p>
 
                 {/* CTA */}
                 <div className="flex items-center gap-2 text-hsl(var(--primary)) font-semibold text-sm mt-2">
-                  Learn More
+                  {t("services.learnMore")}
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
@@ -65,24 +82,24 @@ export default function ServicesPage() {
       <section className="bg-optima-navy text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Ready to Get Started?
+            {t("services.readyTitle")}
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Contact us today to discuss your needs and find the right solution for you.
+            {t("services.readySubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="btn-primary inline-flex items-center justify-center"
             >
-              Contact Us
+              {t("common.contactUs")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <a
               href="tel:+19787055509"
               className="btn-outline bg-white text-optima-navy hover:bg-gray-100 inline-flex items-center justify-center"
             >
-              Call (978) 705-5509
+              {t("team.call")}
             </a>
           </div>
         </div>

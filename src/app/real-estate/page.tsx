@@ -1,17 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Building2, TrendingUp, Users, FileText, MapPin, Calculator, Phone, MessageSquare, CheckCircle2, ArrowRight, Globe, MapPinIcon, Shield, DollarSign } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
-export const metadata = {
-  title: "Real Estate & Investment Services | Optima Service Group",
-  description: "Professional real estate services in MA & NH. Dominican Republic property investments. Licensed REALTOR® Eduardo Inoa: 20+ transactions, +$10M sales. Bilingual support.",
-};
-
-export default function RealEstatePage() {
+function RealEstateContent() {
   const searchParams = useSearchParams();
   const [selectedTab, setSelectedTab] = useState("usa");
 
@@ -609,5 +604,13 @@ export default function RealEstatePage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function RealEstatePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-navy">Loading...</div></div>}>
+      <RealEstateContent />
+    </Suspense>
   );
 }

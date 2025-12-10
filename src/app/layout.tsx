@@ -35,17 +35,10 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://www.optimaservicegroup.com"),
   manifest: "/manifest.json",
-  themeColor: "#0F213A",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Optima Service Group",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
   },
   openGraph: {
     type: "website",
@@ -99,6 +92,14 @@ export const metadata: Metadata = {
       es: "https://www.optimaservicegroup.com/es",
     },
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#0F213A",
 };
 
 export default function RootLayout({

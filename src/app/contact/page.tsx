@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -59,13 +61,13 @@ export default function ContactPage() {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="font-heading font-bold text-4xl text-[#0F213A] mb-4">
-            Get in Touch
+            {t("contact.title")}
           </h1>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
-            Ready to get started? Contact us today for expert assistance with taxes, immigration, real estate, credit repair, and all your professional service needs.
+            {t("contact.subtitle")}
           </p>
           <p className="text-base text-gray-600 max-w-xl mx-auto">
-            🇺🇸 English | 🇩🇴 Español • Fast Response • Confidential Service
+            {t("contact.bilingualNote")}
           </p>
         </div>
 
@@ -74,7 +76,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100">
               <h2 className="font-heading font-semibold text-xl text-optima-navy mb-6">
-                Contact Information
+                {t("contact.info")}
               </h2>
               
               <div className="space-y-4">
@@ -86,7 +88,7 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-600">Phone</p>
+                    <p className="text-xs text-gray-600">{t("footer.phone")}</p>
                     <p className="font-semibold text-optima-navy">(978) 705-5509</p>
                   </div>
                 </a>

@@ -2,9 +2,11 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ParaisoRedirect() {
   const router = useRouter();
+  const { t } = useLanguage();
 
   useEffect(() => {
     router.push("/real-estate?tab=dr");
@@ -13,8 +15,8 @@ export default function ParaisoRedirect() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
-        <h1 className="text-2xl font-bold mb-4">Redirecting to Dominican Republic Real Estate...</h1>
-        <p className="text-gray-600">Please wait while we redirect you.</p>
+        <h1 className="text-2xl font-bold mb-4">{t("paraiso.redirectTitle")}</h1>
+        <p className="text-gray-600">{t("paraiso.redirectText")}</p>
       </div>
     </div>
   );

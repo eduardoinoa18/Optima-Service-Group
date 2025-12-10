@@ -264,7 +264,7 @@ export default async function RealEstateServicePage({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-optima-navy to-blue-900 text-white py-16 px-4">
+      <section className="bg-linear-to-r from-optima-navy to-blue-900 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
           <p className="text-xl text-blue-100">{service.overview}</p>
@@ -278,7 +278,7 @@ export default async function RealEstateServicePage({
           <div className="grid md:grid-cols-2 gap-4">
             {service.features.map((feature, idx) => (
               <div key={idx} className="flex items-start">
-                <CheckCircle2 className="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-green-600 mr-3 shrink-0 mt-1" />
                 <p className="text-gray-700">{feature}</p>
               </div>
             ))}
@@ -293,7 +293,7 @@ export default async function RealEstateServicePage({
           <div className="space-y-3">
             {service.requirements.map((req, idx) => (
               <div key={idx} className="flex items-start">
-                <AlertCircle className="w-6 h-6 text-optima-gold mr-3 flex-shrink-0 mt-1" />
+                <AlertCircle className="w-6 h-6 text-optima-gold mr-3 shrink-0 mt-1" />
                 <p className="text-gray-700">{req}</p>
               </div>
             ))}
@@ -308,7 +308,7 @@ export default async function RealEstateServicePage({
           <div className="space-y-4">
             {service.process.map((step, idx) => (
               <div key={idx} className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-                <div className="w-10 h-10 bg-optima-gold text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                <div className="w-10 h-10 bg-optima-gold text-white rounded-full flex items-center justify-center font-bold mr-4 shrink-0">
                   {idx + 1}
                 </div>
                 <p className="text-gray-700 pt-2">{step}</p>

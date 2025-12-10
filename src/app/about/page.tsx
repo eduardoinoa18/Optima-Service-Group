@@ -1,46 +1,45 @@
+"use client";
+
 import Link from "next/link";
 import { Users, Target, Award, Heart } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us - Optima Service Group",
-  description: "Learn about Optima Service Group, our mission, values, and the team behind your trusted service provider.",
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+  
   const founders = [
     {
       name: "Eduardo Inoa",
-      role: "Co-Founder",
-      bio: "Dedicated to providing exceptional service and building lasting client relationships.",
+      role: t("about.founder1Role"),
+      bio: t("about.founder1Bio"),
     },
     {
       name: "Ader Melenciano",
-      role: "Co-Founder",
-      bio: "Committed to excellence and ensuring every client receives personalized attention.",
+      role: t("about.founder2Role"),
+      bio: t("about.founder2Bio"),
     },
   ];
 
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Integrity",
-      description: "We act with honesty and transparency in everything we do.",
+      title: t("about.value.integrity"),
+      description: t("about.value.integrityDesc"),
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Accuracy",
-      description: "We take every detail seriously and ensure precision in our work.",
+      title: t("about.value.accuracy"),
+      description: t("about.value.accuracyDesc"),
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Respect",
-      description: "We value every client and treat each person with dignity.",
+      title: t("about.value.respect"),
+      description: t("about.value.respectDesc"),
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Service",
-      description: "Your experience and satisfaction always come first.",
+      title: t("about.value.service"),
+      description: t("about.value.serviceDesc"),
     },
   ];
 
@@ -50,13 +49,13 @@ export default function AboutPage() {
       <section className="bg-[#0F213A] text-white py-20">
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">
-            About Optima Service Group
+            {t("about.title")}
           </h1>
           <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
-            Your All-in-One Solution for Taxes, Immigration, Real Estate, Credit Repair, Business Support & More
+            {t("about.subtitle")}
           </p>
           <div className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#F5C440] text-[#0F213A] rounded-full font-semibold">
-            🏆 10+ Years of Trusted Service
+            🏆 {t("about.badge")}
           </div>
         </div>
       </section>
@@ -66,13 +65,13 @@ export default function AboutPage() {
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading font-bold text-3xl text-[#0F213A] mb-4">
-              Our Mission
+              {t("about.mission")}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">
-              At Optima Service Group, we provide comprehensive professional services under one roof. From tax preparation and ITIN applications to immigration forms, real estate services, credit repair, notary public, business support, and life insurance—we're your complete solution.
+              {t("about.missionText1")}
             </p>
             <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our bilingual team (English & Spanish) ensures accurate form preparation, maintains strict confidentiality, and treats every client with the respect and dignity they deserve. We don't provide legal or financial advice—we specialize in expert document preparation and administrative support.
+              {t("about.missionText2")}
             </p>
           </div>
         </div>
@@ -82,7 +81,7 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container max-w-4xl mx-auto px-4">
           <h2 className="font-heading font-bold text-3xl text-[#0F213A] mb-8 text-center">
-            What We Do - Complete Service Suite
+            {t("about.whatWeDo")}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[
@@ -107,8 +106,8 @@ export default function AboutPage() {
       {/* Our Values */}
       <section className="py-16">
         <div className="container max-w-6xl mx-auto px-4">
-          <h2 className="font-heading font-bold text-3xl text-optima-navy mb-12 text-center">
-            Our Values
+          <h2 className="font-heading font-bold text-3xl text-[#0F213A] mb-12 text-center">
+            {t("about.ourValues")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
