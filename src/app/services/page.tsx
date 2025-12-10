@@ -29,7 +29,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-optima-navy to-optima-navy/90 text-white py-20">
+      <section className="bg-gradient-to-br from-optima-navy to-optima-navy/90 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                 </p>
 
                 {/* CTA */}
-                <div className="flex items-center gap-2 text-hsl(var(--primary)) font-semibold text-sm mt-2">
+                <div className="flex items-center gap-2 text-optima-gold font-semibold text-sm mt-2">
                   {t("services.learnMore")}
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -110,7 +110,7 @@ export default function ServicesPage() {
 
 // Icon component helper
 function getServiceIcon(iconName: string) {
-  const iconClass = "w-10 h-10 text-hsl(var(--primary))";
+  const iconClass = "w-10 h-10 text-optima-gold";
   
   switch (iconName) {
     case "FileText":

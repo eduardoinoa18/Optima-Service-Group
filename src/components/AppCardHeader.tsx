@@ -14,6 +14,7 @@
 import Link from 'next/link';
 import { Languages } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Logo from './Logo';
 import ShareButton from './ShareButton';
 
 export default function AppCardHeader() {
@@ -51,7 +52,7 @@ export default function AppCardHeader() {
             className="flex items-center justify-center"
             aria-label="Optima Service Group Home"
           >
-            <img src="/logo-optima.png" alt="Optima Service Group" className="h-11 w-auto" />
+            <Logo width={44} height={44} />
           </Link>
           
           {/* RIGHT: Share Button (44px tap target) */}
