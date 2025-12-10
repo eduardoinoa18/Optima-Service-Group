@@ -218,7 +218,7 @@ function RealEstateContent() {
                   },
                   {
                     title: "Proven Track Record",
-                    description: "20+ closed transactions, +$10M in sales volume",
+                    description: "Dozens of properties sold, hundreds of clients served",
                   },
                   {
                     title: "Bilingual Services",

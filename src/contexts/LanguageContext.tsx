@@ -66,7 +66,7 @@ const translations = {
     // Real Estate
     "realEstate.heroTitle": "Real Estate & Investment Excellence",
     "realEstate.heroSubtitle": "USA Market Expertise + Dominican Republic Investment Opportunities",
-    "realEstate.heroDescription": "Licensed REALTOR® Eduardo Inoa brings 20+ closed transactions and $10M+ in sales expertise, combined with specialized Dominican Republic property investment guidance. Bilingual service for all your real estate needs.",
+    "realEstate.heroDescription": "Licensed REALTOR® Eduardo Inoa brings proven experience and specialized Dominican Republic property investment guidance. Bilingual service for all your real estate needs.",
     "realEstate.bookConsultation": "Book Consultation",
     "realEstate.usa": "USA Properties",
     "realEstate.dr": "Dominican Republic",
@@ -228,7 +228,7 @@ const translations = {
     // About Page
     "about.title": "Sobre Optima Service Group",
     "about.subtitle": "Tu Solución Todo-en-Uno para Impuestos, Inmigración, Bienes Raíces, Reparación de Crédito, Apoyo Empresarial y Más",
-    "about.badge": "10+ Años de Servicio Confiable",
+    "about.badge": "Años de Servicio Confiable",
     "about.mission": "Nuestra Misión",
     "about.missionText1": "En Optima Service Group, ofrecemos servicios profesionales integrales bajo un mismo techo. Desde preparación de impuestos y solicitudes de ITIN hasta formularios de inmigración, servicios inmobiliarios, reparación de crédito, notario público, apoyo empresarial y seguro de vida—somos tu solución completa.",
     "about.missionText2": "Nuestro equipo bilingüe (Inglés y Español) garantiza la preparación precisa de formularios, mantiene estricta confidencialidad y trata a cada cliente con el respeto y la dignidad que merecen. No proporcionamos asesoramiento legal o financiero—nos especializamos en la preparación experta de documentos y apoyo administrativo.",
@@ -270,7 +270,7 @@ const translations = {
     // Real Estate
     "realEstate.heroTitle": "Excelencia en Bienes Raíces e Inversiones",
     "realEstate.heroSubtitle": "Experiencia en el Mercado de EE.UU. + Oportunidades de Inversión en República Dominicana",
-    "realEstate.heroDescription": "El REALTOR® licenciado Eduardo Inoa aporta más de 20 transacciones cerradas y $10M+ en experiencia de ventas, combinado con orientación especializada en inversiones inmobiliarias de República Dominicana. Servicio bilingüe para todas tus necesidades inmobiliarias.",
+    "realEstate.heroDescription": "El REALTOR® licenciado Eduardo Inoa aporta experiencia comprobada y orientación especializada en inversiones inmobiliarias de República Dominicana. Servicio bilingüe para todas tus necesidades inmobiliarias.",
     "realEstate.bookConsultation": "Reservar Consulta",
     "realEstate.usa": "Propiedades EE.UU.",
     "realEstate.dr": "República Dominicana",

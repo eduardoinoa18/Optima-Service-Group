@@ -125,8 +125,8 @@ export default function HomePageRedesign() {
         items: [
           {
             icon: Award,
-            label: "10+ Years Experience",
-            desc: "Trusted by hundreds of clients"
+            label: "Years of Experience",
+            desc: "Trusted by clients across multiple services"
           },
           {
             icon: Users,
