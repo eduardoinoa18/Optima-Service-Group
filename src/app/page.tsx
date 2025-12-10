@@ -240,7 +240,7 @@ export default function HomePageRedesign() {
   return (
     <main className="min-h-screen bg-white">
       {/* ============ 1. HERO SECTION ============ */}
-      <section className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
+      <section className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,9 +250,7 @@ export default function HomePageRedesign() {
           >
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-full p-2 border border-optima-gold/40">
-                <Logo width={140} height={140} priority className="shadow-lg" />
-              </div>
+              <Logo width={140} height={140} priority className="shadow-lg ring-2 ring-optima-gold/40" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {t.hero.headline}
@@ -359,7 +357,7 @@ export default function HomePageRedesign() {
               const IconComponent = trustItem.icon;
               return (
                 <motion.div key={idx} variants={item}>
-                  <div className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
+                  <div className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
                     {/* Icon */}
                     <IconComponent className="w-12 h-12 mx-auto mb-4 text-optima-gold" />
                     
