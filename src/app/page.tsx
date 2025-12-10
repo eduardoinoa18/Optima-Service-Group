@@ -265,7 +265,7 @@ export default function HomePageRedesign() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-optima-gold hover:bg-yellow-400 text-optima-navy font-bold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg min-h-11 flex items-center justify-center gap-2 text-lg"
+                className="w-full sm:w-auto px-8 py-4 bg-optima-gold hover:bg-yellow-400 text-optima-navy font-extrabold rounded-xl transition-all duration-200 transform hover:scale-105 shadow-2xl ring-4 ring-optima-gold/30 min-h-11 flex items-center justify-center gap-2 text-lg"
               >
                 <Phone className="w-5 h-5" />
                 {t.ctas.book}
@@ -293,7 +293,7 @@ export default function HomePageRedesign() {
             <h2 className="text-3xl md:text-4xl font-bold text-optima-navy mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-800 font-semibold max-w-2xl mx-auto">
               Comprehensive solutions for your tax, immigration, and business needs
             </p>
           </div>

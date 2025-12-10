@@ -161,7 +161,7 @@ export default function AboutPage() {
             <h2 className="font-heading font-bold text-3xl mb-4">
               Our Promise
             </h2>
-            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-6">
+            <p className="text-lg text-white font-semibold max-w-2xl mx-auto leading-relaxed mb-6">
               We are not attorneys or financial advisors. We provide non-legal, non-financial assistance 
               to help you prepare the documents and forms you need — clearly, professionally, and efficiently.
             </p>

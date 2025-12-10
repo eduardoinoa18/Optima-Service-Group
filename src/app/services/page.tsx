@@ -29,13 +29,13 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-optima-navy to-optima-navy/90 text-white py-20">
+      <section className="bg-linear-to-br from-optima-navy to-optima-navy/90 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {t("services.title")}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white font-semibold max-w-3xl mx-auto">
               {t("services.subtitle")}
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold mb-4">
             {t("services.readyTitle")}
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-xl text-white font-semibold mb-8">
             {t("services.readySubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
