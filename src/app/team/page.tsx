@@ -17,7 +17,7 @@ export default function TeamPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {t("team.title")}
             </h1>
-            <p className="text-xl text-gray-100 font-bold max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-optima-navy font-bold max-w-3xl mx-auto mb-8">
               {t("team.subtitle")}
             </p>
             <Link
@@ -92,7 +92,7 @@ export default function TeamPage() {
       <section className="bg-optima-navy text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">{t("team.readyTitle")}</h2>
-          <p className="text-xl text-gray-100 font-bold mb-8">
+          <p className="text-xl text-optima-navy font-bold mb-8">
             {t("team.readySubtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
