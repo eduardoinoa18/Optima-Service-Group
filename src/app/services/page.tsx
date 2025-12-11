@@ -36,7 +36,7 @@ export default function ServicesPage() {
               {t("services.title")}
             </h1>
             <p className="text-xl text-white font-semibold max-w-3xl mx-auto">
-              {t("services.subtitle")}
+              Comprehensive solutions for all your needs
             </p>
           </div>
         </div>
