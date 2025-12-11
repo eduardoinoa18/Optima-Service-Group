@@ -189,7 +189,7 @@ export default function FAQPage() {
           <h2 className="font-heading font-bold text-2xl mb-4">
             {t("faq.stillQuestions")}
           </h2>
-          <p className="text-white font-semibold mb-6">
+          <p className="text-gray-100 font-bold mb-6">
             {t("faq.stillText")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
