@@ -267,7 +267,7 @@ export default async function RealEstateServicePage({
       <section className="bg-linear-to-r from-optima-navy to-blue-900 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-          <p className="text-xl text-blue-100">{service.overview}</p>
+          <p className="text-xl text-white font-semibold">{service.overview}</p>
         </div>
       </section>
 

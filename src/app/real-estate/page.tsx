@@ -113,10 +113,9 @@ function RealEstateContent() {
             <p className="text-xl md:text-2xl mb-4 text-[#F5C440]">
               USA Market Expertise + Dominican Republic Investment Opportunities
             </p>
-            <p className="text-lg max-w-3xl mx-auto text-white/90">
-              Licensed REALTOR® Eduardo Inoa brings 20+ closed transactions and $10M+ in sales 
-              expertise, combined with specialized Dominican Republic property investment guidance. 
-              Bilingual service for all your real estate needs.
+            <p className="text-lg max-w-3xl mx-auto text-white font-semibold">
+              Licensed REALTOR® Eduardo Inoa brings proven experience and specialized Dominican Republic 
+              property investment guidance. Bilingual service for all your real estate needs.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/contact?service=real-estate" className="btn bg-[#F5C440] hover:bg-yellow-500 text-[#0F213A] px-8 py-4 text-lg font-semibold flex items-center">
@@ -540,7 +539,7 @@ function RealEstateContent() {
               ? "Ready to Start Your Real Estate Journey?"
               : "Ready to Build Caribbean Wealth?"}
           </h2>
-          <p className="text-xl text-white/90 mb-10">
+          <p className="text-xl text-white font-semibold mb-10">
             {selectedTab === "usa"
               ? "Let's discuss your home buying, selling, or investment goals"
               : "Let's discuss your Dominican Republic investment opportunities"}

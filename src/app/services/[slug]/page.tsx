@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             Back to Home
           </Link>
           <h1 className="font-heading font-bold text-3xl mb-2">{service.title}</h1>
-          <p className="text-white/90">{service.description}</p>
+          <p className="text-white font-semibold">{service.description}</p>
         </div>
       </div>
 
@@ -187,7 +187,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <h2 className="font-heading font-bold text-2xl mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-white/90 mb-6">
+            <p className="text-white font-semibold mb-6">
               Contact us today to schedule your consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

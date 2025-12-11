@@ -257,7 +257,7 @@ export default function HomePageRedesign() {
             </h1>
             
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white font-semibold mb-8 max-w-3xl mx-auto">
               {t.hero.subheadline}
             </p>
             
