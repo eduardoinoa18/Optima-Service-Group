@@ -1,4 +1,7 @@
 {
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://www.optimaservicegroup.com"
+  },
   "redirects": [
     {
       "source": "/:path*",
