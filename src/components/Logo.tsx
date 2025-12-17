@@ -16,7 +16,7 @@ export default function Logo({
   height = 50,
   priority = false,
 }: LogoProps) {
-  const baseClass = "inline-block rounded-full bg-white/95 p-2 shadow-sm overflow-hidden border border-optima-gold/30 shrink-0";
+  const baseClass = "inline-block rounded-full bg-white/95 p-1 shadow-sm overflow-hidden border border-optima-gold/30 shrink-0";
 
   return (
     <div
