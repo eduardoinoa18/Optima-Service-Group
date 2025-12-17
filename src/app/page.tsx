@@ -240,7 +240,7 @@ export default function HomePageRedesign() {
   return (
     <main className="min-h-screen bg-white">
       {/* ============ 1. HERO SECTION ============ */}
-      <section className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
+      <section className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -357,7 +357,7 @@ export default function HomePageRedesign() {
               const IconComponent = trustItem.icon;
               return (
                 <motion.div key={idx} variants={item}>
-                  <div className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
+                  <div className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
                     {/* Icon */}
                     <IconComponent className="w-12 h-12 mx-auto mb-4 text-optima-gold" />
                     

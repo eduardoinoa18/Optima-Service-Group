@@ -104,7 +104,7 @@ function RealEstateContent() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-linear-to-r from-[#0F213A] to-blue-900 text-white">
+      <section className="relative py-24 px-4 bg-gradient-to-r from-[#0F213A] to-blue-900 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -279,7 +279,7 @@ function RealEstateContent() {
       {/* Dominican Republic Investment Section */}
       {selectedTab === "dr" && (
         <>
-          <section className="py-20 px-4 bg-linear-to-b from-blue-50 to-white">
+          <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
             <div className="container mx-auto max-w-6xl">
               <h2 className="text-4xl font-bold text-[#0F213A] mb-6 text-center">
                 Paraíso Inmobiliario: Dominican Republic Premium Real Estate Investments
@@ -333,7 +333,7 @@ function RealEstateContent() {
                       key={idx}
                       className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border-t-4 border-[#F5C440]"
                     >
-                      <div className="h-48 bg-linear-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                      <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                         <Building2 className="w-24 h-24 text-white opacity-30" />
                       </div>
                       <div className="p-8">
@@ -366,7 +366,7 @@ function RealEstateContent() {
               </div>
 
               {/* Market Insights & Investment Details */}
-              <div className="mb-16 bg-linear-to-br from-blue-50 to-white p-10 rounded-2xl border border-[#F5C440]/30">
+              <div className="mb-16 bg-gradient-to-br from-blue-50 to-white p-10 rounded-2xl border border-[#F5C440]/30">
                 <h3 className="text-3xl font-bold text-[#0F213A] mb-8 text-center">
                   🇩🇴 Dominican Republic Real Estate Market Insights
                 </h3>

@@ -52,7 +52,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-8">
       {/* Header */}
-      <div className={`bg-linear-to-b ${colors.bg} text-white py-8`}>
+      <div className={`bg-gradient-to-b ${colors.bg} text-white py-8`}>
         <div className="container max-w-2xl mx-auto px-4">
           <Link
             href="/"

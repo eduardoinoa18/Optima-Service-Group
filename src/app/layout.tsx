@@ -89,6 +89,7 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",
   },
   alternates: {
+    canonical: "https://www.optimaservicegroup.com",
     languages: {
       en: "https://www.optimaservicegroup.com",
       es: "https://www.optimaservicegroup.com/es",

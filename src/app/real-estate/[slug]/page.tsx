@@ -264,7 +264,7 @@ export default async function RealEstateServicePage({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-optima-navy to-blue-900 text-white py-16 px-4">
+      <section className="bg-gradient-to-r from-optima-navy to-blue-900 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
           <p className="text-xl text-white font-semibold">{service.overview}</p>

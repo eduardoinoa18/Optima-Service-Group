@@ -41,9 +41,9 @@ export default function TeamMemberPage({
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white pb-24 md:pb-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-24 md:pb-8">
       {/* Hero Section */}
-      <section className="bg-linear-to-br from-optima-navy to-optima-navy/90 text-white py-16">
+      <section className="bg-gradient-to-br from-optima-navy to-optima-navy/90 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/team"
