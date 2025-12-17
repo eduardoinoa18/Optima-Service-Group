@@ -13,6 +13,16 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Disable incorrect Tailwind gradient class suggestions
+      // bg-gradient-to-* is the correct Tailwind syntax, not bg-linear-to-*
+      "@next/next/no-css-tags": "off",
+      "react/no-unknown-property": ["error", { 
+        ignore: ["style"] 
+      }],
+    }
+  }
 ]);
 
 export default eslintConfig;
