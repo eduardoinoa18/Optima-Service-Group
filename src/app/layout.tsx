@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     description: "Professional tax, immigration, and business services in Lawrence, MA. Bilingual support available.",
     images: [
       {
-        url: "/logo-optima.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Optima Service Group Logo",
+        alt: "Optima Service Group - Professional Tax, Immigration & Business Services",
         type: "image/png",
       }
     ],
@@ -61,16 +61,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Optima Service Group - Tax & Immigration Services",
     description: "Professional services in Lawrence, MA. English & Spanish bilingual support.",
-    images: ["/logo-optima.png"],
+    images: ["/twitter-image.png"],
   },
   icons: {
     icon: [
-      { url: "/logo-optima.png", type: "image/png" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: "/logo-optima.png",
-    shortcut: "/logo-optima.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
   robots: {
     index: true,
@@ -123,8 +125,8 @@ export default function RootLayout({
               url: "https://www.optimaservicegroup.com",
               telephone: "+1-978-705-5509",
               email: "info@optimaservicegroup.com",
-              logo: "https://www.optimaservicegroup.com/logo-optima.png",
-              image: "https://www.optimaservicegroup.com/logo-optima.png",
+              logo: "https://www.optimaservicegroup.com/Logo.png",
+              image: "https://www.optimaservicegroup.com/og-image.png",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Lawrence",
