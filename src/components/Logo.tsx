@@ -30,7 +30,7 @@ export default function Logo({
         width={width}
         height={height}
         priority={priority}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover scale-110"
       />
     </div>
   );
