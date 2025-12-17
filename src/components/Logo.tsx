@@ -21,6 +21,7 @@ export default function Logo({
   return (
     <div
       className={`${baseClass} ${className}`.trim()}
+      style={{ width, height }}
       aria-label="Optima Service Group logo"
     >
       <Image
