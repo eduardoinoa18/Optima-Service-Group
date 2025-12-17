@@ -37,6 +37,17 @@ self.addEventListener('activate', (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
+  // Skip caching for unsupported schemes
+  const url = new URL(event.request.url);
+  if (url.protocol === 'chrome-extension:' || url.protocol === 'moz-extension:' || url.protocol === 'safari-extension:') {
+    return;
+  }
+
+  // Skip cross-origin requests that can't be cached
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
@@ -60,10 +71,29 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME)
             .then((cache) => {
               cache.put(event.request, responseToCache);
+            })
+            .catch((err) => {
+              console.log('Cache put error:', err);
             });
           
           return response;
+        })
+        .catch((error) => {
+          // Network request failed, return a fallback if available
+          console.log('Fetch failed; returning offline page instead.', error);
+          
+          // For navigation requests, could return an offline page
+          if (event.request.mode === 'navigate') {
+            return caches.match('/');
+          }
+          
+          // For other requests, just reject
+          return Promise.reject(error);
         });
+      })
+      .catch((error) => {
+        console.log('Service worker error:', error);
+        return Promise.reject(error);
       })
   );
 });

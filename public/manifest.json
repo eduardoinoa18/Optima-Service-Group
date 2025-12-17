@@ -35,14 +35,7 @@
       "name": "Book Consultation",
       "short_name": "Book",
       "description": "Schedule a consultation with our experts",
-      "url": "/contact?action=book",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "WhatsApp Us",
-      "short_name": "WhatsApp",
-      "description": "Chat with us on WhatsApp",
-      "url": "https://wa.me/19787055509",
+      "url": "/contact",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
