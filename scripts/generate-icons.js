@@ -16,12 +16,14 @@ async function generateIcons() {
     // Generate favicon.ico (32x32)
     await sharp(logoBuffer)
       .resize(32, 32, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .toFile(path.join(appDir, 'favicon.ico'));
     console.log('✅ Generated favicon.ico (32x32)');
 
     // Generate icon-16x16.png
     await sharp(logoBuffer)
       .resize(16, 16, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .png()
       .toFile(path.join(publicDir, 'icon-16.png'));
     console.log('✅ Generated icon-16.png (16x16)');
@@ -29,6 +31,7 @@ async function generateIcons() {
     // Generate icon-32x32.png
     await sharp(logoBuffer)
       .resize(32, 32, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .png()
       .toFile(path.join(publicDir, 'icon-32.png'));
     console.log('✅ Generated icon-32.png (32x32)');
@@ -36,6 +39,7 @@ async function generateIcons() {
     // Generate icon-192x192.png (for Android)
     await sharp(logoBuffer)
       .resize(192, 192, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .png()
       .toFile(path.join(publicDir, 'icon-192.png'));
     console.log('✅ Generated icon-192.png (192x192)');
@@ -43,6 +47,7 @@ async function generateIcons() {
     // Generate icon-512x512.png (for Android)
     await sharp(logoBuffer)
       .resize(512, 512, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .png()
       .toFile(path.join(publicDir, 'icon-512.png'));
     console.log('✅ Generated icon-512.png (512x512)');
@@ -50,6 +55,7 @@ async function generateIcons() {
     // Generate apple-touch-icon.png (180x180)
     await sharp(logoBuffer)
       .resize(180, 180, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+      .toColourspace('srgb')
       .png()
       .toFile(path.join(publicDir, 'apple-touch-icon.png'));
     console.log('✅ Generated apple-touch-icon.png (180x180)');
@@ -67,10 +73,12 @@ async function generateIcons() {
       {
         input: await sharp(logoBuffer)
           .resize(400, 400, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+          .toColourspace('srgb')
           .toBuffer(),
         gravity: 'center'
       }
     ])
+    .toColourspace('srgb')
     .png()
     .toFile(path.join(publicDir, 'og-image.png'));
     console.log('✅ Generated og-image.png (1200x630)');
