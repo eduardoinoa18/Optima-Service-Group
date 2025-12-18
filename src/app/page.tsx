@@ -250,7 +250,7 @@ export default function HomePageRedesign() {
           >
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              <Logo width={120} height={120} priority className="shadow-2xl ring-4 ring-optima-gold/50 hover:scale-105 transition-transform duration-300" />
+              <Logo width={150} height={150} priority noCircle className="hover:scale-105 transition-transform duration-300" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {t.hero.headline}
