@@ -250,14 +250,7 @@ export default function HomePageRedesign() {
           >
             {/* Logo */}
             <div className="flex justify-center mb-8">
-              {/* Mobile logo */}
-              <div className="md:hidden">
-                <Logo width={140} height={140} priority className="shadow-lg ring-2 ring-optima-gold/40" />
-              </div>
-              {/* Desktop logo */}
-              <div className="hidden md:block">
-                <Logo width={240} height={240} priority className="shadow-lg ring-2 ring-optima-gold/40" />
-              </div>
+              <Logo width={80} height={80} priority className="shadow-lg ring-2 ring-optima-gold/40" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {t.hero.headline}
