@@ -18,14 +18,22 @@ export default function Logo({
   priority = false,
   noCircle = false,
 }: LogoProps) {
-  const baseClass = noCircle 
-    ? "inline-block shrink-0"
-    : "inline-block rounded-full bg-white/98 p-1 shadow-xl overflow-hidden border-2 border-optima-gold/40 shrink-0 backdrop-blur-sm";
+  const baseClass = noCircle
+    ? "inline-flex shrink-0"
+    : "inline-flex items-center justify-center rounded-full bg-white/98 p-2 shadow-lg border-2 border-optima-gold/40 shrink-0 overflow-hidden backdrop-blur-sm";
 
   return (
     <div
       className={`${baseClass} ${className}`.trim()}
-      style={{ width: `${width}px`, height: `${height}px`, minWidth: `${width}px`, minHeight: `${height}px`, maxWidth: `${width}px`, maxHeight: `${height}px`, ...(noCircle && { overflow: 'visible' }) }}
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        minWidth: `${width}px`,
+        minHeight: `${height}px`,
+        maxWidth: `${width}px`,
+        maxHeight: `${height}px`,
+        ...(noCircle && { overflow: "visible" }),
+      }}
       aria-label="Optima Service Group logo"
     >
       <Image

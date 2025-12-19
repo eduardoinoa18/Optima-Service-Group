@@ -50,7 +50,14 @@ const Header = () => {
       <div className="sticky top-0 z-51 w-full bg-[#0F213A] backdrop-blur-sm border-b border-[#F5C440]/30 py-3 shadow-lg">
         <div className="container flex items-center justify-center gap-3">
           <Link href="/" className="flex items-center gap-3 group">
-            <Logo width={50} height={50} className="group-hover:scale-110 transition-transform duration-200" />
+            {/* Mobile */}
+            <div className="md:hidden">
+              <Logo width={60} height={60} className="group-hover:scale-110 transition-transform duration-200" />
+            </div>
+            {/* Desktop */}
+            <div className="hidden md:block">
+              <Logo width={70} height={70} className="group-hover:scale-110 transition-transform duration-200" />
+            </div>
           </Link>
         </div>
       </div>
