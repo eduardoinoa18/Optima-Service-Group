@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import OptimaBrandIcon from "./OptimaBrandIcon";
 
 interface LogoProps {
   className?: string;
@@ -24,7 +24,7 @@ export default function Logo({
 
   return (
     <div
-      className={`relative inline-flex shrink-0 ${className}`.trim()}
+      className={`relative inline-flex items-center justify-center shrink-0 ${className}`.trim()}
       style={{
         width: `${width}px`,
         height: `${height}px`,
@@ -35,26 +35,21 @@ export default function Logo({
       }}
       aria-label="Optima Service Group logo"
     >
-      {/* Logo image - bigger and without frame */}
-      <Image
-        src="/Logo.png"
-        alt="Optima Service Group Logo - Professional services in Lawrence MA"
-        width={width}
-        height={height}
-        priority={priority}
-        className="w-full h-full object-contain"
+      {/* Optima Brand Icon - SVG based */}
+      <OptimaBrandIcon
+        size={width}
+        className="w-full h-full text-optima-navy"
       />
       
       {/* Circle frame around just the icon */}
       {!noCircle && (
         <div
-          className="absolute rounded-full bg-white/95 shadow-lg border-2 border-optima-gold/40 backdrop-blur-sm"
+          className="absolute rounded-full bg-white/95 shadow-lg border-2 border-optima-gold/40 backdrop-blur-sm pointer-events-none"
           style={{
             width: `${iconCircleSize}px`,
             height: `${iconCircleSize}px`,
             top: `${iconCircleOffset}px`,
             left: `${iconCircleOffset}px`,
-            pointerEvents: 'none',
           }}
           aria-hidden="true"
         />
