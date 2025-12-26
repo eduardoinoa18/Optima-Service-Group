@@ -32,14 +32,14 @@ export default function OptimaBrandIcon({
       <defs>
         {/* Gradients for 3D effect */}
         <linearGradient id="navyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: '#1a3a52', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#0F213A', stopOpacity: 1 }} />
+          <stop offset="0%" stopColor="#1a3a52" stopOpacity={1} />
+          <stop offset="100%" stopColor="#0F213A" stopOpacity={1} />
         </linearGradient>
 
         <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: '#F5E6C8', stopOpacity: 1 }} />
-          <stop offset="50%" style={{ stopColor: '#D4AF37', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: '#B8956A', stopOpacity: 1 }} />
+          <stop offset="0%" stopColor="#F5E6C8" stopOpacity={1} />
+          <stop offset="50%" stopColor="#D4AF37" stopOpacity={1} />
+          <stop offset="100%" stopColor="#B8956A" stopOpacity={1} />
         </linearGradient>
 
         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -97,7 +97,7 @@ export default function OptimaBrandIcon({
         strokeLinejoin="round"
         fill="none"
         opacity="0.4"
-        style={{ transform: 'translate(2px, 2px)' }}
+        transform="translate(2, 2)"
       />
 
       {/* Gold Arrow Head - Top right triangle */}
@@ -112,7 +112,7 @@ export default function OptimaBrandIcon({
         d="M 150 50 L 170 35 L 155 55 Z"
         fill="#8B7355"
         opacity="0.4"
-        style={{ transform: 'translate(2px, 2px)' }}
+        transform="translate(2, 2)"
       />
 
       {/* Inner highlight on navy circle for depth */}

@@ -29,13 +29,13 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-optima-navy to-optima-navy/90 text-white py-20">
+      <section className="bg-linear-to-br from-optima-navy to-optima-navy/90 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {t("services.title")}
             </h1>
-            <p className="text-xl text-white font-semibold max-w-3xl mx-auto">
+            <p className="text-xl text-optima-gold font-bold max-w-3xl mx-auto drop-shadow-lg">
               Comprehensive solutions for all your needs
             </p>
           </div>
@@ -79,13 +79,13 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-optima-navy text-white py-16">
+      <section className="bg-linear-to-br from-optima-navy via-optima-navy to-[#0c1d39] text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
             {t("services.readyTitle")}
           </h2>
-          <p className="text-xl text-white font-semibold mb-8">
-            {t("services.readySubtitle")}
+          <p className="text-xl text-optima-gold font-bold mb-10 drop-shadow-lg">
+            Contact us today to discuss your needs and find the right solution for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

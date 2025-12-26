@@ -19,14 +19,6 @@ export default function Logo({
   return (
     <div
       className={`inline-flex items-center justify-center shrink-0 rounded-full overflow-hidden ${className}`.trim()}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        minWidth: `${width}px`,
-        minHeight: `${height}px`,
-        maxWidth: `${width}px`,
-        maxHeight: `${height}px`,
-      }}
       aria-label="Optima Service Group logo"
     >
       <Image
