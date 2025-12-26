@@ -1,14 +1,13 @@
 "use client";
 
 import React from "react";
-import OptimaBrandIcon from "./OptimaBrandIcon";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
   width?: number;
   height?: number;
   priority?: boolean;
-  noCircle?: boolean;
 }
 
 export default function Logo({
@@ -16,15 +15,10 @@ export default function Logo({
   width = 80,
   height = 80,
   priority = false,
-  noCircle = false,
 }: LogoProps) {
-  // Calculate the icon circle size (approximately 35% of the total logo size)
-  const iconCircleSize = Math.round(width * 0.35);
-  const iconCircleOffset = Math.round(width * 0.08); // Position from top-left
-
   return (
     <div
-      className={`relative inline-flex items-center justify-center shrink-0 ${className}`.trim()}
+      className={`inline-flex items-center justify-center shrink-0 rounded-full overflow-hidden ${className}`.trim()}
       style={{
         width: `${width}px`,
         height: `${height}px`,
@@ -35,25 +29,14 @@ export default function Logo({
       }}
       aria-label="Optima Service Group logo"
     >
-      {/* Optima Brand Icon - SVG based */}
-      <OptimaBrandIcon
-        size={width}
-        className="w-full h-full text-optima-navy"
+      <Image
+        src="/Logo.png"
+        alt="Optima Service Group Logo - Professional services in Lawrence MA"
+        width={width}
+        height={height}
+        priority={priority}
+        className="w-full h-full object-cover"
       />
-      
-      {/* Circle frame around just the icon */}
-      {!noCircle && (
-        <div
-          className="absolute rounded-full bg-white/95 shadow-lg border-2 border-optima-gold/40 backdrop-blur-sm pointer-events-none"
-          style={{
-            width: `${iconCircleSize}px`,
-            height: `${iconCircleSize}px`,
-            top: `${iconCircleOffset}px`,
-            left: `${iconCircleOffset}px`,
-          }}
-          aria-hidden="true"
-        />
-      )}
     </div>
   );
 }
