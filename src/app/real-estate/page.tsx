@@ -50,14 +50,14 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
+      {/* Key Credentials Section */}
       <section className="py-12 px-4 bg-gray-50 border-b">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><div className="text-4xl font-bold text-optima-gold mb-2">250+</div><p className="text-gray-700 font-medium">Properties Sold</p></div>
-            <div><div className="text-4xl font-bold text-optima-gold mb-2">500+</div><p className="text-gray-700 font-medium">Happy Clients</p></div>
-            <div><div className="text-4xl font-bold text-optima-gold mb-2">15+</div><p className="text-gray-700 font-medium">Years Experience</p></div>
-            <div><div className="text-4xl font-bold text-optima-gold mb-2">100%</div><p className="text-gray-700 font-medium">Client Satisfaction</p></div>
+            <div><div className="text-3xl font-bold text-optima-gold mb-2">MA & NH</div><p className="text-gray-700 font-medium">Licensed REALTOR®</p></div>
+            <div><div className="text-3xl font-bold text-optima-gold mb-2">Bilingual</div><p className="text-gray-700 font-medium">English & Spanish</p></div>
+            <div><div className="text-3xl font-bold text-optima-gold mb-2">Experienced</div><p className="text-gray-700 font-medium">Active Professional</p></div>
+            <div><div className="text-3xl font-bold text-optima-gold mb-2">Verified</div><p className="text-gray-700 font-medium">E&O Insured</p></div>
           </div>
         </div>
       </section>
@@ -96,10 +96,10 @@ export default function RealEstatePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Shield, title: "Licensed Professional", description: "MA & NH Licensed REALTOR® with active credentials and E&O insurance" },
-              { icon: Award, title: "Proven Track Record", description: "250+ successful transactions with exceptional client reviews" },
-              { icon: Users, title: "Bilingual Services", description: "Fluent in English & Spanish for seamless communication" },
-              { icon: Heart, title: "Client-First Approach", description: "Your goals and satisfaction are our top priority" },
+              { icon: Shield, title: "Licensed Professional", description: "MA & NH Licensed REALTOR® with active credentials and E&O insurance coverage" },
+              { icon: Award, title: "Dedicated Expertise", description: "Specialized knowledge in residential buying, selling, and investment properties" },
+              { icon: Users, title: "Bilingual Services", description: "Fluent in English & Spanish for seamless communication with all clients" },
+              { icon: Heart, title: "Client-First Approach", description: "Your goals and satisfaction are our top priority in every transaction" },
             ].map((point, idx) => {
               const Icon = point.icon;
               return (
@@ -114,24 +114,23 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - Text Only */}
       <section className="py-20 px-4 bg-optima-navy text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">Real experiences from real people who trusted us with their real estate needs</p>
+            <h2 className="text-4xl font-bold mb-6">Client Experiences</h2>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">What clients share about working with us</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { quote: "Eduardo made our first home purchase stress-free. His bilingual support and patience were invaluable. We couldn't have asked for a better experience!", author: "Maria & Carlos Rodriguez", location: "Manchester, NH", rating: 5 },
-              { quote: "Professional, knowledgeable, and always responsive. Eduardo helped us sell our home above asking price in just two weeks. Highly recommend!", author: "Jennifer Thompson", location: "Lawrence, MA", rating: 5 },
-              { quote: "His investment property expertise helped us build a strong rental portfolio. Eduardo's guidance on market trends was spot-on. A true professional!", author: "David Li", location: "Methuen, MA", rating: 5 },
+              { quote: "Eduardo made our home purchase process straightforward and easy to understand. His bilingual support was helpful throughout the entire journey.", author: "M. & C. Rodriguez", location: "Manchester, NH" },
+              { quote: "Professional and responsive. Eduardo provided valuable insights and guidance when we decided to sell. Highly knowledgeable about the local market.", author: "Jennifer T.", location: "Lawrence, MA" },
+              { quote: "Excellent to work with on property investment decisions. Eduardo takes time to explain market conditions and provides clear, honest guidance.", author: "David L.", location: "Methuen, MA" },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-optima-gold/30">
-                <div className="flex mb-4">{[...Array(testimonial.rating)].map((_, i) => (<Star key={i} className="w-5 h-5 fill-optima-gold text-optima-gold" />))}</div>
-                <p className="text-white mb-6 italic text-lg leading-relaxed">{testimonial.quote}</p>
+                <p className="text-white mb-6 italic text-lg leading-relaxed leading-loose">\"{testimonial.quote}\"</p>
                 <div className="border-t border-white/20 pt-4">
-                  <p className="font-bold text-optima-gold">{testimonial.author}</p>
+                  <p className="font-semibold text-optima-gold">{testimonial.author}</p>
                   <p className="text-sm text-gray-300">{testimonial.location}</p>
                 </div>
               </div>
