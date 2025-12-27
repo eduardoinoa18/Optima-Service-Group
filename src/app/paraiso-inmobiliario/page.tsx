@@ -53,7 +53,7 @@ export default function ParaisoInmobiliarioPage() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-12 px-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400">
+      <section className="py-12 px-4 bg-linear-to-r from-yellow-400 via-yellow-300 to-yellow-400">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div><div className="text-5xl font-black text-blue-900 mb-2">10M+</div><p className="text-blue-800 font-bold">Visitantes Anuales</p></div>
@@ -82,7 +82,7 @@ export default function ParaisoInmobiliarioPage() {
             ].map((benefit, idx) => {
               const Icon = benefit.icon;
               return (
-                <div key={idx} className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-blue-100">
+                <div key={idx} className="bg-linear-to-br from-blue-50 to-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-blue-100">
                   <Icon className={`w-16 h-16 ${benefit.color} mb-4`} />
                   <h3 className="text-2xl font-black text-blue-900 mb-3">{benefit.title}</h3>
                   <p className="text-gray-700 text-lg leading-relaxed">{benefit.text}</p>
@@ -94,7 +94,7 @@ export default function ParaisoInmobiliarioPage() {
       </section>
 
       {/* Featured Properties - Con Emojis Visuales */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50">
+      <section className="py-20 px-4 bg-linear-to-br from-blue-50 via-cyan-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-6">Propiedades Destacadas</h2>
@@ -103,7 +103,7 @@ export default function ParaisoInmobiliarioPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property, idx) => (
               <div key={idx} className="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 border-4 border-yellow-400">
-                <div className="h-64 bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-500 flex items-center justify-center text-9xl">
+                <div className="h-64 bg-linear-to-br from-blue-400 via-cyan-400 to-blue-500 flex items-center justify-center text-9xl">
                   {property.emoji}
                 </div>
                 <div className="p-8">
@@ -114,7 +114,7 @@ export default function ParaisoInmobiliarioPage() {
                     <div className="flex items-center justify-between"><span className="text-gray-600 font-bold">Rango de Precio:</span><span className="font-black text-blue-900 text-xl">{property.price}</span></div>
                     <div className="flex items-center justify-between"><span className="text-gray-600 font-bold">ROI Esperado:</span><span className="text-green-600 font-black text-2xl">{property.roi}</span></div>
                   </div>
-                  <a href="https://wa.me/19787055509?text=Quiero%20información%20sobre%20propiedades%20en%20República%20Dominicana" target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-black py-4 rounded-xl inline-flex items-center justify-center transition-all shadow-lg">
+                  <a href="https://wa.me/19787055509?text=Quiero%20información%20sobre%20propiedades%20en%20República%20Dominicana" target="_blank" rel="noopener noreferrer" className="w-full bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-black py-4 rounded-xl inline-flex items-center justify-center transition-all shadow-lg">
                     <MessageSquare className="w-5 h-5 mr-2" />Consultar por WhatsApp
                   </a>
                 </div>
@@ -135,19 +135,19 @@ export default function ParaisoInmobiliarioPage() {
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border-2 border-yellow-400">
               <h3 className="text-2xl font-black mb-6 text-yellow-300">📈 Crecimiento del Mercado</h3>
               <ul className="space-y-4 text-lg">
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">10M+ visitantes</strong> anuales impulsan demanda de alquileres</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">5-8% apreciación</strong> anual en zonas premium</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Moneda estable</strong> DOP vinculado al USD reduce riesgo cambiario</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Sin restricciones</strong> a propiedad extranjera</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">10M+ visitantes</strong> anuales impulsan demanda de alquileres</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">5-8% apreciación</strong> anual en zonas premium</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Moneda estable</strong> DOP vinculado al USD reduce riesgo cambiario</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Sin restricciones</strong> a propiedad extranjera</span></li>
               </ul>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border-2 border-yellow-400">
               <h3 className="text-2xl font-black mb-6 text-yellow-300">💰 Beneficios Financieros</h3>
               <ul className="space-y-4 text-lg">
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Impuestos bajos:</strong> 0.5-1% tasa anual</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Sin impuesto</strong> sobre ganancias de capital en residencia principal</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Ingresos de alquiler</strong> exentos bajo ciertas condiciones</span></li>
-                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-1" /><span><strong className="text-yellow-300">Financiamiento:</strong> 30-40% enganche, 10-15 años</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Impuestos bajos:</strong> 0.5-1% tasa anual</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Sin impuesto</strong> sobre ganancias de capital en residencia principal</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Ingresos de alquiler</strong> exentos bajo ciertas condiciones</span></li>
+                <li className="flex items-start"><CheckCircle2 className="w-6 h-6 text-green-400 mr-3 shrink-0 mt-1" /><span><strong className="text-yellow-300">Financiamiento:</strong> 30-40% enganche, 10-15 años</span></li>
               </ul>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function ParaisoInmobiliarioPage() {
               const Icon = stage.icon;
               return (
                 <div key={stage.step} className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-black text-3xl shadow-2xl border-4 border-yellow-400">{stage.step}</div>
+                  <div className="w-24 h-24 bg-linear-to-br from-blue-600 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-black text-3xl shadow-2xl border-4 border-yellow-400">{stage.step}</div>
                   <p className="text-lg font-black text-blue-900">{stage.title}</p>
                 </div>
               );
@@ -183,7 +183,7 @@ export default function ParaisoInmobiliarioPage() {
       </section>
 
       {/* Testimonials in Spanish */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-cyan-500 text-white">
+      <section className="py-20 px-4 bg-linear-to-br from-blue-600 to-cyan-500 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black mb-6">Lo Que Dicen Nuestros Inversionistas</h2>
@@ -208,13 +208,13 @@ export default function ParaisoInmobiliarioPage() {
       </section>
 
       {/* Final CTA - Conversion Focused */}
-      <section className="py-24 px-4 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400">
+      <section className="py-24 px-4 bg-linear-to-r from-yellow-400 via-yellow-300 to-yellow-400">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-5xl md:text-6xl font-black text-blue-900 mb-6">¡Comienza Tu Inversión Hoy!</h2>
           <p className="text-2xl mb-4 text-blue-800 font-bold">Propiedades limitadas disponibles</p>
           <p className="text-xl mb-10 text-blue-700">Consulta gratuita | Servicio completo en español | Desarrolladores verificados</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="https://wa.me/19787055509?text=¡Hola!%20Quiero%20invertir%20en%20República%20Dominicana%20con%20Paraíso%20Inmobiliario" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-6 text-2xl font-black rounded-2xl inline-flex items-center transition-all shadow-2xl hover:shadow-3xl animate-bounce">
+            <a href="https://wa.me/19787055509?text=¡Hola!%20Quiero%20invertir%20en%20República%20Dominicana%20con%20Paraíso%20Inmobiliario" target="_blank" rel="noopener noreferrer" className="bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-6 text-2xl font-black rounded-2xl inline-flex items-center transition-all shadow-2xl hover:shadow-3xl animate-bounce">
               <MessageSquare className="w-8 h-8 mr-3" />¡Contactar por WhatsApp!
             </a>
             <Link href="/contact?service=paraiso-inmobiliario" className="bg-blue-900 hover:bg-blue-800 text-white px-12 py-6 text-2xl font-black rounded-2xl inline-flex items-center transition-all shadow-2xl hover:shadow-3xl">
