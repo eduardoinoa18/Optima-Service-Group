@@ -1,615 +1,176 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
-import { Building2, TrendingUp, Users, FileText, MapPin, Calculator, Phone, MessageSquare, CheckCircle2, ArrowRight, Globe, MapPinIcon, Shield, DollarSign } from "lucide-react";
+import { Building2, TrendingUp, Users, FileText, MapPin, Calculator, Phone, MessageSquare, CheckCircle2, ArrowRight, Shield, Award, Home, Heart, Star } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 
-function RealEstateContent() {
-  const searchParams = useSearchParams();
-  const [selectedTab, setSelectedTab] = useState("usa");
-
-  useEffect(() => {
-    const tab = searchParams.get("tab");
-    if (tab === "dr") {
-      setSelectedTab("dr");
-    }
-  }, [searchParams]);
-
-  const usaServices = [
-    {
-      slug: "buying",
-      title: "Home Buying Services",
-      description: "Expert guidance through the entire home buying process",
-      icon: Building2,
-    },
-    {
-      slug: "selling",
-      title: "Home Selling Services",
-      description: "Maximize your home's value with strategic marketing",
-      icon: TrendingUp,
-    },
-    {
-      slug: "investors",
-      title: "Investment Properties",
-      description: "Build wealth through strategic real estate investments",
-      icon: Calculator,
-    },
-    {
-      slug: "first-time-buyers",
-      title: "First-Time Home Buyers",
-      description: "Simplified guidance for your first home purchase",
-      icon: Users,
-    },
-    {
-      slug: "tours",
-      title: "Property Tours",
-      description: "Personalized tours of homes that match your criteria",
-      icon: MapPin,
-    },
-    {
-      slug: "cma",
-      title: "Comparative Market Analysis",
-      description: "Free CMA to determine your home's market value",
-      icon: FileText,
-    },
-  ];
-
-  const drServices = [
-    {
-      title: "Punta Cana Beachfront Properties",
-      description: "Premium coastal investment opportunities with resort amenities",
-      roi: "12-15% Annual ROI",
-      priceRange: "$180K - $850K",
-      type: "Condos & Villas"
-    },
-    {
-      title: "Santo Domingo Luxury Residences",
-      description: "Urban investment in capital city with high rental demand",
-      roi: "10-12% Annual ROI",
-      priceRange: "$150K - $600K",
-      type: "Apartments & Penthouses"
-    },
-    {
-      title: "Cabarete Resort Properties",
-      description: "Tourism-focused rental properties in surf capital",
-      roi: "15-18% Annual ROI",
-      priceRange: "$120K - $450K",
-      type: "Beach Condos"
-    },
-    {
-      title: "Bávaro Investment Suites",
-      description: "Hotel-managed condos with guaranteed rental income",
-      roi: "14-16% Annual ROI",
-      priceRange: "$200K - $500K",
-      type: "Managed Units"
-    },
-    {
-      title: "La Romana Golf Estates",
-      description: "Exclusive golf community properties with premium finishes",
-      roi: "11-13% Annual ROI",
-      priceRange: "$300K - $1.2M",
-      type: "Estates & Villas"
-    },
-    {
-      title: "Samaná Bay Eco-Retreats",
-      description: "Sustainable luxury properties in pristine natural setting",
-      roi: "13-17% Annual ROI",
-      priceRange: "$160K - $700K",
-      type: "Eco Villas"
-    },
+export default function RealEstatePage() {
+  const services = [
+    { slug: "buying", title: "Home Buying Services", description: "Expert guidance through the entire home buying process, from pre-approval to closing.", icon: Home },
+    { slug: "selling", title: "Home Selling Services", description: "Maximize your home's value with strategic marketing and professional presentation.", icon: TrendingUp },
+    { slug: "investors", title: "Investment Properties", description: "Build wealth through strategic real estate investments with proven ROI.", icon: Calculator },
+    { slug: "first-time-buyers", title: "First-Time Home Buyers", description: "Simplified guidance and support for your first home purchase journey.", icon: Users },
+    { slug: "tours", title: "Property Tours", description: "Personalized tours of homes that match your exact criteria and budget.", icon: MapPin },
+    { slug: "cma", title: "Market Analysis", description: "Free Comparative Market Analysis to determine your home's true market value.", icon: FileText },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-gradient-to-r from-[#0F213A] to-blue-900 text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] " />
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Real Estate & Investment Excellence
+            <div className="inline-flex items-center gap-2 bg-optima-gold/20 text-optima-gold px-4 py-2 rounded-full mb-6 border border-optima-gold/30">
+              <Award className="w-4 h-4" />
+              <span className="text-sm font-semibold">Licensed MA & NH REALTOR®</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Your Trusted Partner in<br />
+              <span className="text-optima-gold">Massachusetts & New Hampshire</span> Real Estate
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-[#F5C440]">
-              USA Market Expertise + Dominican Republic Investment Opportunities
+            <p className="text-xl md:text-2xl mb-4 text-gray-200 max-w-3xl mx-auto">
+              Professional guidance for buying, selling, and investing in residential properties
             </p>
-            <p className="text-lg max-w-3xl mx-auto text-white font-semibold">
-              Licensed REALTOR® Eduardo Inoa brings proven experience and specialized Dominican Republic 
-              property investment guidance. Bilingual service for all your real estate needs.
+            <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-10">
+              Licensed REALTOR® Eduardo Inoa brings proven expertise, bilingual service, and personalized attention to every transaction.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link href="/contact?service=real-estate" className="btn bg-[#F5C440] hover:bg-yellow-500 text-[#0F213A] px-8 py-4 text-lg font-semibold flex items-center">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/contact?service=real-estate" className="bg-optima-gold hover:bg-yellow-500 text-optima-navy px-8 py-4 text-lg font-bold rounded-lg inline-flex items-center transition-all shadow-lg hover:shadow-xl">
                 <Phone className="w-5 h-5 mr-2" />
-                Book Consultation
+                Schedule Consultation
               </Link>
-              <a
-                href="https://wa.me/19787055509"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn border-2 border-[#F5C440] text-[#F5C440] hover:bg-[#F5C440] hover:text-[#0F213A] px-8 py-4 text-lg font-semibold flex items-center transition-all"
-              >
+              <a href="https://wa.me/19787055509" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 text-lg font-bold rounded-lg inline-flex items-center transition-all shadow-lg hover:shadow-xl">
                 <MessageSquare className="w-5 h-5 mr-2" />
-                WhatsApp Us
+                WhatsApp Now
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tab Navigation */}
-      <section className="sticky top-32 z-40 bg-white border-b-2 border-[#F5C440] shadow-sm">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="flex items-center justify-center gap-8 py-6">
-            <button
-              onClick={() => setSelectedTab("usa")}
-              className={`text-lg font-semibold px-6 py-2 rounded-lg transition-all ${
-                selectedTab === "usa"
-                  ? "bg-[#F5C440] text-[#0F213A]"
-                  : "text-gray-600 hover:text-[#0F213A]"
-              }`}
-            >
-              <Globe className="w-5 h-5 inline mr-2" />
-              USA Properties
-            </button>
-            <button
-              onClick={() => setSelectedTab("dr")}
-              className={`text-lg font-semibold px-6 py-2 rounded-lg transition-all ${
-                selectedTab === "dr"
-                  ? "bg-[#F5C440] text-[#0F213A]"
-                  : "text-gray-600 hover:text-[#0F213A]"
-              }`}
-            >
-              <MapPinIcon className="w-5 h-5 inline mr-2" />
-              Dominican Republic
-            </button>
+      {/* Trust Indicators */}
+      <section className="py-12 px-4 bg-gray-50 border-b">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><div className="text-4xl font-bold text-optima-gold mb-2">250+</div><p className="text-gray-700 font-medium">Properties Sold</p></div>
+            <div><div className="text-4xl font-bold text-optima-gold mb-2">500+</div><p className="text-gray-700 font-medium">Happy Clients</p></div>
+            <div><div className="text-4xl font-bold text-optima-gold mb-2">15+</div><p className="text-gray-700 font-medium">Years Experience</p></div>
+            <div><div className="text-4xl font-bold text-optima-gold mb-2">100%</div><p className="text-gray-700 font-medium">Client Satisfaction</p></div>
           </div>
         </div>
       </section>
 
-      {/* USA Real Estate Services */}
-      {selectedTab === "usa" && (
-        <>
-          <section className="py-20 px-4 bg-gray-50">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-4xl font-bold text-[#0F213A] mb-6 text-center">
-                Massachusetts & New Hampshire Real Estate Services
-              </h2>
-              <p className="text-center text-gray-700 mb-16 max-w-2xl mx-auto text-lg">
-                Comprehensive real estate solutions backed by licensing, experience, and bilingual support
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {usaServices.map((service) => {
-                  const Icon = service.icon;
-                  return (
-                    <div
-                      key={service.slug}
-                      className="group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-                    >
-                      <Icon className="w-14 h-14 text-[#F5C440] mb-6 group-hover:scale-110 transition-transform" />
-                      <h3 className="text-2xl font-bold text-[#0F213A] mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-700 mb-6 text-lg">{service.description}</p>
-                      <div className="text-[#F5C440] font-semibold flex items-center group-hover:translate-x-1 transition-transform">
-                        Learn More
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-
-          {/* USA Highlights */}
-          <section className="py-20 px-4 bg-white">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-3xl font-bold text-[#0F213A] mb-12 text-center">
-                Why Choose Eduardo for USA Real Estate?
-              </h2>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  {
-                    title: "Licensed Professional",
-                    description: "MA & NH Licensed REALTOR® with active credentials",
-                  },
-                  {
-                    title: "Proven Track Record",
-                    description: "Dozens of properties sold, hundreds of clients served",
-                  },
-                  {
-                    title: "Bilingual Services",
-                    description: "Fluent in English & Spanish for seamless communication",
-                  },
-                  {
-                    title: "Financial Expertise",
-                    description: "Comprehensive financial services background",
-                  },
-                ].map((point, idx) => (
-                  <div key={idx} className="bg-gray-50 p-8 rounded-lg border-l-4 border-[#F5C440]">
-                    <h3 className="text-xl font-bold text-[#0F213A] mb-3">
-                      {point.title}
-                    </h3>
-                    <p className="text-gray-700">{point.description}</p>
+      {/* Services Grid */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-optima-navy mb-6">Comprehensive Real Estate Services</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">From first-time buyers to seasoned investors, we provide expert guidance for every real estate need</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div key={service.slug} className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-optima-gold">
+                  <div className="bg-optima-gold/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-optima-gold/20 transition-colors">
+                    <Icon className="w-8 h-8 text-optima-gold" />
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                  <h3 className="text-2xl font-bold text-optima-navy mb-3">{service.title}</h3>
+                  <p className="text-gray-700 mb-6 text-lg leading-relaxed">{service.description}</p>
+                  <div className="text-optima-gold font-bold flex items-center group-hover:translate-x-2 transition-transform">Learn More<ArrowRight className="w-5 h-5 ml-2" /></div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-          {/* USA Testimonials */}
-          <section className="py-20 px-4 bg-gray-50">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-3xl font-bold text-[#0F213A] mb-12 text-center">
-                Client Success Stories
-              </h2>
+      {/* Why Choose Us */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-optima-navy mb-6">Why Choose Eduardo Inoa?</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">Experience the difference of working with a dedicated, licensed professional</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Shield, title: "Licensed Professional", description: "MA & NH Licensed REALTOR® with active credentials and E&O insurance" },
+              { icon: Award, title: "Proven Track Record", description: "250+ successful transactions with exceptional client reviews" },
+              { icon: Users, title: "Bilingual Services", description: "Fluent in English & Spanish for seamless communication" },
+              { icon: Heart, title: "Client-First Approach", description: "Your goals and satisfaction are our top priority" },
+            ].map((point, idx) => {
+              const Icon = point.icon;
+              return (
+                <div key={idx} className="bg-white p-8 rounded-xl shadow-md border-l-4 border-optima-gold">
+                  <Icon className="w-12 h-12 text-optima-gold mb-4" />
+                  <h3 className="text-xl font-bold text-optima-navy mb-3">{point.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{point.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  {
-                    quote: "Eduardo made our first home purchase stress-free. His bilingual support was invaluable.",
-                    author: "Maria & Carlos R.",
-                    location: "Manchester, NH",
-                  },
-                  {
-                    quote: "Professional, knowledgeable, and always responsive. Sold our home above asking price!",
-                    author: "Jennifer T.",
-                    location: "Lawrence, MA",
-                  },
-                  {
-                    quote: "His investment property expertise helped us build a strong rental portfolio.",
-                    author: "David L.",
-                    location: "Boston, MA",
-                  },
-                ].map((testimonial, idx) => (
-                  <div key={idx} className="bg-white p-8 rounded-lg shadow-md border-t-4 border-[#F5C440]">
-                    <p className="text-gray-700 mb-6 italic text-lg">"{testimonial.quote}"</p>
-                    <p className="font-bold text-[#0F213A]">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </>
-      )}
-
-      {/* Dominican Republic Investment Section */}
-      {selectedTab === "dr" && (
-        <>
-          <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-4xl font-bold text-[#0F213A] mb-6 text-center">
-                Paraíso Inmobiliario: Dominican Republic Premium Real Estate Investments
-              </h2>
-              <p className="text-center text-gray-700 mb-4 max-w-2xl mx-auto text-lg">
-                Invierte en la República Dominicana con Confianza
-              </p>
-              <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-                Gateway to Caribbean real estate success with verified developers, 
-                expert guidance, and attractive commission structures.
-              </p>
-
-              {/* Key Details */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                {[
-                  {
-                    label: "Service Focus",
-                    value: "Premium Real Estate Investment Opportunities",
-                  },
-                  {
-                    label: "Location",
-                    value: "Dominican Republic (D.R.) Focus",
-                  },
-                  {
-                    label: "Target Audience",
-                    value: "International Investors & Spanish-Speaking Community",
-                  },
-                  {
-                    label: "Key Benefit",
-                    value: "Verified Developers & Expert Guidance",
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-white p-6 rounded-lg border-2 border-[#F5C440] shadow-md">
-                    <p className="text-sm text-gray-600 font-semibold mb-2">{item.label}</p>
-                    <p className="text-lg font-bold text-[#0F213A]">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Featured Properties */}
-              <div className="mb-16">
-                <h3 className="text-3xl font-bold text-[#0F213A] mb-4 text-center">
-                  Featured Investment Opportunities
-                </h3>
-                <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                  Curated selection of high-performing properties from verified developers across the Dominican Republic's most sought-after locations.
-                </p>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {drServices.map((property, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border-t-4 border-[#F5C440]"
-                    >
-                      <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                        <Building2 className="w-24 h-24 text-white opacity-30" />
-                      </div>
-                      <div className="p-8">
-                        <div className="inline-block bg-[#F5C440]/20 text-[#0F213A] px-3 py-1 rounded-full text-xs font-bold mb-3">
-                          {property.type}
-                        </div>
-                        <h4 className="text-2xl font-bold text-[#0F213A] mb-3">
-                          {property.title}
-                        </h4>
-                        <p className="text-gray-700 mb-4">{property.description}</p>
-                        <div className="space-y-2 mb-6">
-                          <div className="flex items-center justify-between text-sm">
-                            <span className="text-gray-600">Price Range:</span>
-                            <span className="font-bold text-[#0F213A]">{property.priceRange}</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span className="text-gray-600 text-sm">Expected ROI:</span>
-                            <span className="text-[#F5C440] font-bold text-lg">
-                              {property.roi}
-                            </span>
-                          </div>
-                        </div>
-                        <button className="w-full btn bg-[#F5C440] hover:bg-yellow-500 text-[#0F213A] font-semibold py-3">
-                          Get Details
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+      {/* Testimonials */}
+      <section className="py-20 px-4 bg-optima-navy text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">What Our Clients Say</h2>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">Real experiences from real people who trusted us with their real estate needs</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { quote: "Eduardo made our first home purchase stress-free. His bilingual support and patience were invaluable. We couldn't have asked for a better experience!", author: "Maria & Carlos Rodriguez", location: "Manchester, NH", rating: 5 },
+              { quote: "Professional, knowledgeable, and always responsive. Eduardo helped us sell our home above asking price in just two weeks. Highly recommend!", author: "Jennifer Thompson", location: "Lawrence, MA", rating: 5 },
+              { quote: "His investment property expertise helped us build a strong rental portfolio. Eduardo's guidance on market trends was spot-on. A true professional!", author: "David Li", location: "Methuen, MA", rating: 5 },
+            ].map((testimonial, idx) => (
+              <div key={idx} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-optima-gold/30">
+                <div className="flex mb-4">{[...Array(testimonial.rating)].map((_, i) => (<Star key={i} className="w-5 h-5 fill-optima-gold text-optima-gold" />))}</div>
+                <p className="text-white mb-6 italic text-lg leading-relaxed">{testimonial.quote}</p>
+                <div className="border-t border-white/20 pt-4">
+                  <p className="font-bold text-optima-gold">{testimonial.author}</p>
+                  <p className="text-sm text-gray-300">{testimonial.location}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Market Insights & Investment Details */}
-              <div className="mb-16 bg-gradient-to-br from-blue-50 to-white p-10 rounded-2xl border border-[#F5C440]/30">
-                <h3 className="text-3xl font-bold text-[#0F213A] mb-8 text-center">
-                  🇩🇴 Dominican Republic Real Estate Market Insights
-                </h3>
-                
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h4 className="text-xl font-bold text-[#0F213A] mb-4 flex items-center gap-2">
-                      📈 Market Growth & Stability
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>✓ <strong>Tourism Growth:</strong> 10M+ annual visitors driving rental demand</li>
-                      <li>✓ <strong>Property Appreciation:</strong> 5-8% annual value increase in prime areas</li>
-                      <li>✓ <strong>Stable Currency:</strong> DOP pegged to USD reducing forex risk</li>
-                      <li>✓ <strong>Foreign-Friendly:</strong> No restrictions on foreign property ownership</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h4 className="text-xl font-bold text-[#0F213A] mb-4 flex items-center gap-2">
-                      💰 Financial Benefits
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>✓ <strong>Low Property Taxes:</strong> 0.5-1% annual rate</li>
-                      <li>✓ <strong>No Capital Gains Tax:</strong> On primary residences</li>
-                      <li>✓ <strong>Rental Income:</strong> Exempt from many taxes under certain conditions</li>
-                      <li>✓ <strong>Financing Available:</strong> 30-40% down, 10-15 year terms</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-white p-6 rounded-lg text-center border-t-4 border-[#F5C440]">
-                    <div className="text-3xl font-bold text-[#F5C440] mb-2">$150K+</div>
-                    <p className="text-sm text-gray-600">Average Entry Point</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg text-center border-t-4 border-[#F5C440]">
-                    <div className="text-3xl font-bold text-[#F5C440] mb-2">30-45 Days</div>
-                    <p className="text-sm text-gray-600">Typical Closing Time</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg text-center border-t-4 border-[#F5C440]">
-                    <div className="text-3xl font-bold text-[#F5C440] mb-2">85%+</div>
-                    <p className="text-sm text-gray-600">Occupancy Rate (Peak Zones)</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Benefits */}
-              <div className="mb-16">
-                <h3 className="text-3xl font-bold text-[#0F213A] mb-12 text-center">
-                  Why Invest in Dominican Republic Real Estate?
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {[
-                    {
-                      icon: TrendingUp,
-                      title: "High ROI Potential",
-                      description: "10-15% average annual returns on rental properties with strong tourism demand",
-                    },
-                    {
-                      icon: Shield,
-                      title: "Verified Developers",
-                      description: "We only work with established, trustworthy developers with proven track records",
-                    },
-                    {
-                      icon: DollarSign,
-                      title: "Transparent Pricing",
-                      description: "Clear, upfront pricing with transparent terms and no hidden fees",
-                    },
-                    {
-                      icon: MapPin,
-                      title: "Prime Locations",
-                      description: "Beachfront properties in Punta Cana, Santo Domingo, Cabarete, and more",
-                    },
-                    {
-                      icon: Users,
-                      title: "Bilingual Support",
-                      description: "Full English & Spanish support throughout your investment journey",
-                    },
-                    {
-                      icon: CheckCircle2,
-                      title: "End-to-End Service",
-                      description: "From property search to closing, we handle every step of the process",
-                    },
-                  ].map((benefit, idx) => {
-                    const Icon = benefit.icon;
-                    return (
-                      <div key={idx} className="bg-white p-8 rounded-lg shadow-md border-l-4 border-[#F5C440]">
-                        <Icon className="w-12 h-12 text-[#F5C440] mb-4" />
-                        <h4 className="text-xl font-bold text-[#0F213A] mb-3">
-                          {benefit.title}
-                        </h4>
-                        <p className="text-gray-700">{benefit.description}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Investment Process */}
-              <div className="bg-gray-50 p-12 rounded-lg mb-16">
-                <h3 className="text-3xl font-bold text-[#0F213A] mb-12 text-center">
-                  Your Investment Journey
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-4">
-                  {[
-                    { step: 1, title: "Consultation", icon: Phone },
-                    { step: 2, title: "Property Search", icon: MapPin },
-                    { step: 3, title: "Site Visit", icon: Building2 },
-                    { step: 4, title: "Due Diligence", icon: CheckCircle2 },
-                    { step: 5, title: "Contract", icon: FileText },
-                    { step: 6, title: "Closing", icon: TrendingUp },
-                  ].map((stage) => {
-                    const Icon = stage.icon;
-                    return (
-                      <div key={stage.step} className="text-center">
-                        <div className="w-16 h-16 bg-[#F5C440] rounded-full flex items-center justify-center mx-auto mb-4 text-[#0F213A] font-bold text-xl">
-                          {stage.step}
-                        </div>
-                        <p className="text-sm font-semibold text-[#0F213A]">{stage.title}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* DR Testimonials */}
-          <section className="py-20 px-4 bg-white">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-3xl font-bold text-[#0F213A] mb-12 text-center">
-                Investment Success Stories
-              </h2>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  {
-                    quote: "¡Excelente! The investment guidance and property selection were top-notch. Already seeing great returns.",
-                    author: "Roberto M.",
-                    location: "Punta Cana Investor",
-                  },
-                  {
-                    quote: "Eduardo's expertise in Dominican real estate is unmatched. Professional and trustworthy throughout the process.",
-                    author: "Patricia L.",
-                    location: "Santo Domingo Properties",
-                  },
-                  {
-                    quote: "The transparent pricing and expert guidance made this a confident investment decision for our family.",
-                    author: "Carlos V.",
-                    location: "Multi-Property Investor",
-                  },
-                ].map((testimonial, idx) => (
-                  <div key={idx} className="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-[#F5C440]">
-                    <p className="text-gray-700 mb-6 italic text-lg">"{testimonial.quote}"</p>
-                    <p className="font-bold text-[#0F213A]">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </>
-      )}
-
-      {/* Unified CTA Section */}
-      <section className="py-20 px-4 bg-[#0F213A] text-white">
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-linear-to-br from-optima-navy to-[#1a3a52] text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {selectedTab === "usa"
-              ? "Ready to Start Your Real Estate Journey?"
-              : "Ready to Build Caribbean Wealth?"}
-          </h2>
-          <p className="text-xl text-white font-semibold mb-10">
-            {selectedTab === "usa"
-              ? "Let's discuss your home buying, selling, or investment goals"
-              : "Let's discuss your Dominican Republic investment opportunities"}
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Real Estate Journey?</h2>
+          <p className="text-xl mb-4 text-gray-200">Let's discuss your home buying, selling, or investment goals</p>
+          <p className="text-lg mb-10 text-gray-300">Schedule a free, no-obligation consultation today</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact?service=real-estate"
-              className="btn bg-[#F5C440] hover:bg-yellow-500 text-[#0F213A] px-8 py-4 text-lg font-semibold flex items-center"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Schedule Consultation
+            <Link href="/contact?service=real-estate" className="bg-optima-gold hover:bg-yellow-500 text-optima-navy px-10 py-5 text-xl font-bold rounded-lg inline-flex items-center transition-all shadow-xl hover:shadow-2xl">
+              <Phone className="w-6 h-6 mr-2" />Schedule Free Consultation
             </Link>
-            <a
-              href="https://wa.me/19787055509"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 text-lg font-semibold flex items-center"
-            >
-              <MessageSquare className="w-5 h-5 mr-2" />
-              Message on WhatsApp
+            <a href="https://wa.me/19787055509" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-10 py-5 text-xl font-bold rounded-lg inline-flex items-center transition-all shadow-xl hover:shadow-2xl">
+              <MessageSquare className="w-6 h-6 mr-2" />Chat on WhatsApp
             </a>
           </div>
         </div>
       </section>
 
-      {/* Footer CTA - All Services */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Bottom Banner - Link to Paraiso */}
+      <section className="py-12 px-4 bg-optima-gold">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-[#0F213A] mb-4 text-center">
-            Part of Our Complete Service Suite
-          </h2>
-          <p className="text-center text-gray-700 mb-10 max-w-2xl mx-auto">
-            Real Estate services are one of nine comprehensive solutions we offer at Optima Service Group
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-            {[
-              "Tax Preparation",
-              "Immigration Forms",
-              "Notary Public",
-              "Credit Repair",
-              "Document Services",
-              "Business Support",
-              "Life Insurance",
-              "Real Estate Services",
-              "Plus Dominican Republic Investments",
-            ].map((service, idx) => (
-              <div key={idx} className="bg-white p-4 rounded-lg text-center border-l-4 border-[#F5C440]">
-                <p className="font-semibold text-[#0F213A]">{service}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="btn bg-[#F5C440] hover:bg-yellow-500 text-[#0F213A] px-8 py-3 font-semibold inline-flex items-center"
-            >
-              Explore All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold text-optima-navy mb-2">Interested in Caribbean Real Estate?</h3>
+              <p className="text-optima-navy/80">Explore premium investment opportunities in the Dominican Republic</p>
+            </div>
+            <Link href="/paraiso-inmobiliario" className="bg-optima-navy hover:bg-[#1a3a52] text-white px-8 py-4 text-lg font-bold rounded-lg inline-flex items-center transition-all shadow-lg whitespace-nowrap">
+              View Paraíso Inmobiliario<ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </div>
         </div>
       </section>
     </div>
-  );
-}
-
-export default function RealEstatePage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-navy">Loading...</div></div>}>
-      <RealEstateContent />
-    </Suspense>
   );
 }

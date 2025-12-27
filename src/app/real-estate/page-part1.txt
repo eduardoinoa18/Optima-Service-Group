@@ -1,0 +1,49 @@
+﻿"use client";
+
+import { Building2, TrendingUp, Users, FileText, MapPin, Calculator, Phone, MessageSquare, CheckCircle2, ArrowRight, Shield, Award, Home, Heart } from "lucide-react";
+import Link from "next/link";
+
+export default function RealEstatePage() {
+  const services = [
+    { slug: "buying", title: "Home Buying Services", description: "Expert guidance through the entire home buying process, from pre-approval to closing.", icon: Home },
+    { slug: "selling", title: "Home Selling Services", description: "Maximize your home's value with strategic marketing and professional presentation.", icon: TrendingUp },
+    { slug: "investors", title: "Investment Properties", description: "Build wealth through strategic real estate investments with proven ROI.", icon: Calculator },
+    { slug: "first-time-buyers", title: "First-Time Home Buyers", description: "Simplified guidance and support for your first home purchase journey.", icon: Users },
+    { slug: "tours", title: "Property Tours", description: "Personalized tours of homes that match your exact criteria and budget.", icon: MapPin },
+    { slug: "cma", title: "Market Analysis", description: "Free Comparative Market Analysis to determine your home's true market value.", icon: FileText },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] " />
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-optima-gold/20 text-optima-gold px-4 py-2 rounded-full mb-6 border border-optima-gold/30">
+              <Award className="w-4 h-4" />
+              <span className="text-sm font-semibold">Licensed MA & NH REALTOR</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Your Trusted Partner in<br />
+              <span className="text-optima-gold">Massachusetts & New Hampshire</span> Real Estate
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-gray-200 max-w-3xl mx-auto">
+              Professional guidance for buying, selling, and investing in residential properties
+            </p>
+            <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-10">
+              Licensed REALTOR Eduardo Inoa brings proven expertise, bilingual service, 
+              and personalized attention to every transaction.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/contact?service=real-estate" className="bg-optima-gold hover:bg-yellow-500 text-optima-navy px-8 py-4 text-lg font-bold rounded-lg inline-flex items-center transition-all shadow-lg hover:shadow-xl">
+                <Phone className="w-5 h-5 mr-2" />Schedule Consultation
+              </Link>
+              <a href="https://wa.me/19787055509" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 text-lg font-bold rounded-lg inline-flex items-center transition-all shadow-lg hover:shadow-xl">
+                <MessageSquare className="w-5 h-5 mr-2" />WhatsApp Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
