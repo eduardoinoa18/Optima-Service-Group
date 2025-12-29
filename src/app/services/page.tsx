@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services-data";
@@ -39,6 +40,23 @@ export default function ServicesPage() {
               Comprehensive solutions for all your needs
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Visual Highlights */}
+      <section className="-mt-10 pb-4 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4">
+          {[{title:"Impuestos & Formularios",href:"/services/tax-preparation",image:"/mock-paper.svg"},{title:"Bienes Raíces USA",href:"/real-estate",image:"/mock-house.svg"},{title:"Equipo Bilingüe",href:"/team",image:"/mock-team.svg"}].map((card)=> (
+            <Link key={card.title} href={card.href} className="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-transform bg-white">
+              <div className="relative h-44">
+                <Image src={card.image} alt={card.title} fill className="object-cover" priority={false} />
+                <div className="absolute inset-0 bg-linear-to-b from-black/25 to-black/45 group-hover:from-black/10 transition-all" />
+                <div className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg drop-shadow-lg">
+                  {card.title}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -15,6 +15,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, MessageCircle, FileText, TrendingUp, Building2, CheckCircle2, Award, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -240,7 +241,7 @@ export default function HomePageRedesign() {
   return (
     <main className="min-h-screen bg-white">
       {/* ============ 1. HERO SECTION ============ */}
-      <section className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
+      <section className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -289,6 +290,23 @@ export default function HomePageRedesign() {
               </a>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Visual Service Highlights */}
+      <section className="-mt-10 pb-6 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4">
+          {[{title:"Paperwork & Formularios",href:"/services",image:"/mock-paper.svg"},{title:"Real Estate USA",href:"/real-estate",image:"/mock-house.svg"},{title:"Equipo Bilingüe",href:"/team",image:"/mock-team.svg"}].map((card) => (
+            <Link key={card.title} href={card.href} className="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white hover:-translate-y-1 hover:shadow-2xl transition-transform">
+              <div className="relative h-44">
+                <Image src={card.image} alt={card.title} fill className="object-cover" priority={false} />
+                <div className="absolute inset-0 bg-linear-to-b from-black/30 to-black/50 group-hover:from-black/15 transition-all" />
+                <div className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg drop-shadow">
+                  {card.title}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -364,7 +382,7 @@ export default function HomePageRedesign() {
               const IconComponent = trustItem.icon;
               return (
                 <motion.div key={idx} variants={item}>
-                  <div className="bg-gradient-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
+                  <div className="bg-linear-to-br from-optima-navy to-[#1a3a52] text-white rounded-xl p-6 text-center h-full">
                     {/* Icon */}
                     <IconComponent className="w-12 h-12 mx-auto mb-4 text-optima-gold" />
                     

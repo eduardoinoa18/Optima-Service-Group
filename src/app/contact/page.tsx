@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import Image from "next/image";
 import { toast } from "react-hot-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -120,6 +121,13 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Mock Visual */}
+            <div className="relative h-40 rounded-xl overflow-hidden shadow-soft border border-gray-100">
+              <Image src="/mock-paper.svg" alt="Servicios" fill className="object-cover" />
+              <div className="absolute inset-0 bg-linear-to-b from-black/25 to-black/45" />
+              <div className="absolute bottom-3 left-4 right-4 text-white font-bold text-lg">Documentos, formularios y asesoría bilingüe</div>
             </div>
 
             {/* WhatsApp CTA */}

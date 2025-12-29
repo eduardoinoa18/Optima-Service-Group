@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E9EEF8" />
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0F213A" />
+      <stop offset="100%" stop-color="#12345A" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" />
+  <rect x="180" y="90" width="440" height="320" rx="18" fill="url(#paper)" stroke="#D6DEED" stroke-width="6" />
+  <rect x="230" y="150" width="300" height="22" rx="6" fill="#F5C440" />
+  <rect x="230" y="200" width="280" height="16" rx="5" fill="#B6C4E6" />
+  <rect x="230" y="230" width="220" height="14" rx="5" fill="#C7D2EA" />
+  <rect x="230" y="260" width="320" height="14" rx="5" fill="#C7D2EA" />
+  <rect x="230" y="290" width="180" height="14" rx="5" fill="#C7D2EA" />
+  <rect x="230" y="340" width="200" height="50" rx="12" fill="#0F213A" />
+  <text x="245" y="375" fill="#F5C440" font-family="'Segoe UI', Arial" font-size="22" font-weight="700">Consultation</text>
+  <text x="210" y="60" fill="#E2ECFF" font-family="'Segoe UI', Arial" font-size="26" font-weight="700">Mock Forms & Paperwork</text>
+  <text x="210" y="88" fill="#9AB2E2" font-family="'Segoe UI', Arial" font-size="16" font-weight="600">Use as a placeholder for service imagery</text>
+</svg>
