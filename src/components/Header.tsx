@@ -37,6 +37,7 @@ const Header = () => {
     { href: "/about", label: "nav.about" },
     { href: "/services", label: "nav.services" },
     { href: "/real-estate", label: "nav.realEstate" },
+    { href: "/paraiso-inmobiliario", label: "Paraíso Inmobiliario" },
     { href: "/team", label: "nav.team" },
     { href: "/contact", label: "nav.contact" },
     { href: "/faq", label: "nav.faq" },

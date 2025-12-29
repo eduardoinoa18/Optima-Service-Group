@@ -46,7 +46,7 @@ export default function ServicesPage() {
       {/* Visual Highlights */}
       <section className="-mt-10 pb-4 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4">
-          {[{title:"Impuestos & Formularios",href:"/services/tax-preparation",image:"/mock-paper.svg"},{title:"Bienes Raíces USA",href:"/real-estate",image:"/mock-house.svg"},{title:"Equipo Bilingüe",href:"/team",image:"/mock-team.svg"}].map((card)=> (
+          {[{title:"Impuestos & Formularios",href:"/services/tax-preparation",image:"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=350&fit=crop"},{title:"Bienes Raíces USA",href:"/real-estate",image:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=350&fit=crop"},{title:"Equipo Bilingüe",href:"/team",image:"https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=350&fit=crop"}].map((card)=> (
             <Link key={card.title} href={card.href} className="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-1 hover:shadow-2xl transition-transform bg-white">
               <div className="relative h-44">
                 <Image src={card.image} alt={card.title} fill className="object-cover" priority={false} />

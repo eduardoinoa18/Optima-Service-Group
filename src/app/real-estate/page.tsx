@@ -16,7 +16,7 @@ export default function RealEstatePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden bg-[url('/mock-house.svg')] bg-cover bg-center">
+      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&h=500&fit=crop')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 opacity-15">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] " />
@@ -129,7 +129,7 @@ export default function RealEstatePage() {
               { quote: "Excellent to work with on property investment decisions. Eduardo takes time to explain market conditions and provides clear, honest guidance.", author: "David L.", location: "Methuen, MA" },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-optima-gold/30">
-                <p className="text-white mb-6 italic text-lg leading-relaxed">\"{testimonial.quote}\"</p>
+                <p className="text-gray-900 mb-6 italic text-lg leading-relaxed font-semibold">\"{testimonial.quote}\"</p>
                 <div className="border-t border-white/20 pt-4">
                   <p className="font-semibold text-optima-gold">{testimonial.author}</p>
                   <p className="text-sm text-gray-300">{testimonial.location}</p>
@@ -157,21 +157,6 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* Contact CTA - Independent */}
-      <section className="py-12 px-4 bg-optima-gold">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-optima-navy mb-4">Ready to Get Started?</h3>
-          <p className="text-gray-800 mb-8 text-lg">Contact Eduardo Inoa today for your Massachusetts & New Hampshire real estate needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/19787055509" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 font-bold rounded-lg inline-flex items-center transition-all">
-              <MessageSquare className="w-5 h-5 mr-2" />WhatsApp
-            </a>
-            <Link href="/contact?service=real-estate" className="bg-optima-navy hover:bg-[#1a3a52] text-white px-8 py-3 font-bold rounded-lg inline-flex items-center transition-all">
-              <Phone className="w-5 h-5 mr-2" />Schedule Call
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
