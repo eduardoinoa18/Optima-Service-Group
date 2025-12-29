@@ -125,7 +125,7 @@ export default function ContactPage() {
 
             {/* Mock Visual */}
             <div className="relative h-40 rounded-xl overflow-hidden shadow-soft border border-gray-100">
-              <Image src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Servicios" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" alt="Servicios" fill className="object-cover" />
               <div className="absolute inset-0 bg-linear-to-b from-black/25 to-black/45" />
               <div className="absolute bottom-3 left-4 right-4 text-white font-bold text-lg">Documentos, formularios y asesoría bilingüe</div>
             </div>

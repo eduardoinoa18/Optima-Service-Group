@@ -16,7 +16,7 @@ export default function RealEstatePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&h=500&fit=crop')] bg-cover bg-center">
+      <section className="relative py-24 px-4 bg-linear-to-br from-optima-navy via-[#1a3a52] to-optima-navy text-white overflow-hidden bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 opacity-15">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] " />
