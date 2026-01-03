@@ -15,18 +15,18 @@ export default function ParaisoInmobiliarioPage() {
   ];
 
   const propertyImages = [
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-    "https://images.unsplash.com/photo-1512622550470-58d82097c900",
-    "https://images.unsplash.com/photo-1502005645147-dba150f16121",
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
-    "https://images.unsplash.com/photo-1549887534-f96635e93c96",
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
+    "https://images.unsplash.com/photo-1512622550470-58d82097c900?w=800&q=80",
+    "https://images.unsplash.com/photo-1502005645147-dba150f16121?w=800&q=80",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
+    "https://images.unsplash.com/photo-1549887534-f96635e93c96?w=800&q=80",
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Logo */}
-      <section className="relative py-28 px-4 bg-linear-to-br from-blue-900 via-teal-700 to-teal-600 text-white overflow-hidden bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')] bg-cover bg-center">
+      <section className="relative py-28 px-4 bg-linear-to-br from-blue-900 via-teal-700 to-teal-600 text-white overflow-hidden bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] " />
