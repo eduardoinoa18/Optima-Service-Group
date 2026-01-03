@@ -23,7 +23,7 @@ const Footer = () => {
     { href: "/services/business-support", label: "Business Support" },
     { href: "/services/life-insurance", label: "Life Insurance" },
     { href: "/real-estate", label: "Real Estate (USA)" },
-    { href: "/real-estate?tab=dr", label: "Paraíso Inmobiliario (D.R.)" },
+    { href: "/paraiso-inmobiliario", label: "Paraíso Inmobiliario (D.R.)" },
   ];
 
   const legalLinks = [

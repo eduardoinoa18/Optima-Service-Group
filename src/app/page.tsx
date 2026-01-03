@@ -116,7 +116,7 @@ export default function HomePageRedesign() {
           title: "DR Property Investments",
           description: "Caribbean real estate with up to 30% returns",
           icon: "🌴",
-          href: "/real-estate?tab=dr"
+          href: "/paraiso-inmobiliario"
         }
       ],
       
