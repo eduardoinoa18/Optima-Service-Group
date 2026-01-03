@@ -6,12 +6,12 @@ import Link from "next/link";
 
 export default function ParaisoInmobiliarioPage() {
   const properties = [
-    { title: "Punta Cana Beachfront", description: "Condominios y villas frente al mar con amenidades de resort clase mundial", roi: "12-15%", price: "$180K - $850K", type: "Condos & Villas" },
-    { title: "Santo Domingo Luxury", description: "Residencias urbanas de lujo en la capital con alta demanda de alquiler", roi: "10-12%", price: "$150K - $600K", type: "Apartamentos" },
-    { title: "Cabarete Resort", description: "Propiedades turísticas en zona de alto flujo de visitantes internacionales", roi: "15-18%", price: "$120K - $450K", type: "Condos Playa" },
-    { title: "Bávaro Investment", description: "Suites con administración hotelera incluida - retorno automático", roi: "14-16%", price: "$200K - $500K", type: "Suites Administradas" },
-    { title: "La Romana Golf Estates", description: "Propiedades exclusivas en comunidad de golf premium con altos valores", roi: "11-13%", price: "$300K - $1.2M", type: "Villas Privadas" },
-    { title: "Samaná Bay Properties", description: "Villas de lujo en destino emergente con potencial de apreciación", roi: "13-17%", price: "$160K - $700K", type: "Villas Premium" },
+    { title: "Punta Cana Beachfront", description: "Condominios y villas frente al mar con amenidades de resort clase mundial", roi: "Ingresos variables", price: "Consultar", type: "Condos & Villas" },
+    { title: "Proyectos en Moca", description: "Propiedades residenciales en expansión regional con desarrollo creciente", roi: "Según estructura", price: "Consultar", type: "Apartamentos" },
+    { title: "Cabarete Turístico", description: "Propiedades en zona de alto flujo de visitantes internacionales", roi: "Ingresos por alquiler", price: "Consultar", type: "Condos Playa" },
+    { title: "Inversiones Comerciales", description: "Oportunidades de negocio con administración profesional disponible", roi: "Según proyecto", price: "Consultar", type: "Comercial" },
+    { title: "Residencial Premium", description: "Propiedades exclusivas en comunidades seleccionadas", roi: "Variable", price: "Consultar", type: "Villas" },
+    { title: "Proyectos Regionales", description: "Oportunidades en diferentes zonas de la República Dominicana", roi: "Según ubicación", price: "Consultar", type: "Mixto" },
   ];
 
   const propertyImages = [
@@ -44,10 +44,10 @@ export default function ParaisoInmobiliarioPage() {
               Oportunidades de Inversión Premium en República Dominicana
             </p>
             <p className="text-lg max-w-3xl mx-auto mb-4 text-gray-100">
-              Acceso a propiedades verificadas con retorno de inversión 10-18% anual
+              Oportunidades de inversión inmobiliaria en múltiples regiones del país
             </p>
             <p className="text-lg max-w-3xl mx-auto mb-10 text-gray-200">
-              Propiedades premium | Desarrolladores confiables | Financiamiento disponible | Cierre en 30-45 días
+              Propiedades verificadas | Desarrolladores confiables | Financiamiento disponible | Zonas turísticas e inland
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="https://wa.me/19787055509?text=Interesado%20en%20Paraiso%20Inmobiliario%20-%20Quiero%20informaci%C3%B3n%20sobre%20propiedades%20en%20Rep%C3%BAblica%20Dominicana" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 text-xl font-bold rounded-lg inline-flex items-center transition-all shadow-2xl hover:shadow-3xl">
@@ -92,10 +92,10 @@ export default function ParaisoInmobiliarioPage() {
       <section className="py-12 px-4 bg-blue-50 border-b border-blue-200">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><div className="text-4xl font-bold text-blue-700 mb-2">10M+</div><p className="text-gray-700 font-medium">Visitantes Anuales</p></div>
-            <div><div className="text-4xl font-bold text-blue-700 mb-2">15-18%</div><p className="text-gray-700 font-medium">ROI Promedio</p></div>
-            <div><div className="text-4xl font-bold text-blue-700 mb-2">$150K</div><p className="text-gray-700 font-medium">Inversión Mínima</p></div>
-            <div><div className="text-4xl font-bold text-blue-700 mb-2">30-45 Días</div><p className="text-gray-700 font-medium">Cierre Típico</p></div>
+            <div><div className="text-4xl font-bold text-blue-700 mb-2">100+</div><p className="text-gray-700 font-medium">Propiedades Gestionadas</p></div>
+            <div><div className="text-4xl font-bold text-blue-700 mb-2">Múltiples</div><p className="text-gray-700 font-medium">Regiones del País</p></div>
+            <div><div className="text-4xl font-bold text-blue-700 mb-2">Flexible</div><p className="text-gray-700 font-medium">Opciones de Inversión</p></div>
+            <div><div className="text-4xl font-bold text-blue-700 mb-2">Asesoría</div><p className="text-gray-700 font-medium">Profesional Completa</p></div>
           </div>
         </div>
       </section>
@@ -112,9 +112,9 @@ export default function ParaisoInmobiliarioPage() {
               { icon: TrendingUp, title: "Alto Retorno de Inversión", text: "ROI anual 10-18% en zonas turísticas con alta ocupación" },
               { icon: Shield, title: "Sin Restricciones Legales", text: "Extranjeros pueden comprar y ser propietarios sin limitaciones" },
               { icon: DollarSign, title: "Impuestos Bajos", text: "0.5-1% impuesto anual, sin impuesto sobre ganancias de capital" },
-              { icon: Building2, title: "Turismo Fuerte", text: "10M+ visitantes anuales generan demanda consistente de alquileres" },
-              { icon: Users, title: "Mercado Creciente", text: "Apreciación de propiedad 5-8% anual en zonas premium" },
-              { icon: Home, title: "Financiamiento Disponible", text: "30-40% enganche, plazos de 10-15 años en desarrolladores principales" },
+              { icon: Building2, title: "Destinos Diversos", text: "Oportunidades en zonas turísticas y en expansión como Moca" },
+              { icon: Users, title: "Desarrollo Regional", text: "Propiedades en múltiples áreas del país con distintos potenciales" },
+              { icon: Home, title: "Financiamiento Disponible", text: "Opciones de financiamiento adaptadas a cada proyecto" },
             ].map((benefit, idx) => {
               const Icon = benefit.icon;
               return (
@@ -133,8 +133,8 @@ export default function ParaisoInmobiliarioPage() {
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Propiedades Premium Disponibles</h2>
-            <p className="text-2xl text-gray-700">Inversiones verificadas con retorno garantizado de desarrolladores líderes</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Propiedades Disponibles</h2>
+            <p className="text-2xl text-gray-700">Oportunidades de inversión en diferentes zonas y estructuras</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property, idx) => {
@@ -220,15 +220,15 @@ export default function ParaisoInmobiliarioPage() {
                   <div className="text-center z-10">
                     <div className="text-6xl mb-4">🏖️</div>
                     <h3 className="text-3xl font-bold text-white mb-2">Punta Cana & Bávaro</h3>
-                    <p className="text-blue-100 text-lg">Zona Turística Número 1 del Caribe</p>
+                    <p className="text-blue-100 text-lg">Destino Turístico de Clase Mundial</p>
                   </div>
                 </div>
               </div>
               <div className="p-8 bg-linear-to-br from-blue-50 to-white">
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Hotel Zone:</strong> Condos administrados con retorno garantizado 12-15%</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Zona Hotelera:</strong> Condos y villas con potencial de ingresos por alquiler</span></li>
                   <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Playas Privadas:</strong> Residencias de lujo frente al mar</span></li>
-                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>3.5M+ visitantes</strong> anuales = Alta demanda de alquileres</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Alto flujo de visitantes</strong> con demanda consistente de alquileres</span></li>
                 </ul>
                 <a href="https://wa.me/19787055509?text=Quiero%20informaci%C3%B3n%20sobre%20propiedades%20en%20Punta%20Cana" target="_blank" rel="noopener noreferrer" className="mt-6 w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 rounded-lg transition-all shadow-md hover:shadow-lg inline-flex items-center justify-center">
                   <MessageSquare className="w-5 h-5 mr-2" />
@@ -241,22 +241,50 @@ export default function ParaisoInmobiliarioPage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center z-10">
                     <div className="text-6xl mb-4">🌴</div>
-                    <h3 className="text-3xl font-bold text-white mb-2">Cabarete & Samaná</h3>
-                    <p className="text-teal-100 text-lg">Paraísos Ocultos en Expansión</p>
+                    <h3 className="text-3xl font-bold text-white mb-2">Moca & Región Inland</h3>
+                    <p className="text-teal-100 text-lg">Oportunidades en Expansión Regional</p>
                   </div>
                 </div>
               </div>
               <div className="p-8 bg-linear-to-br from-emerald-50 to-white">
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Potencial de Crecimiento:</strong> Apreciación 7-10% anual</span></li>
-                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Comunidades Globales:</strong> Mayoría expatriados = demanda estable</span></li>
-                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Belleza Natural:</strong> Playas vírgenes y naturaleza prístina</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Desarrollo Regional:</strong> Propiedades residenciales en expansion</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Precios Accesibles:</strong> Menor costo de entrada para inversionistas</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-1" /><span><strong>Potencial de Apreciación:</strong> Mercado emergente con oportunidades</span></li>
                 </ul>
-                <a href="https://wa.me/19787055509?text=Quiero%20informaci%C3%B3n%20sobre%20propiedades%20en%20Cabarete%20o%20Samaná" target="_blank" rel="noopener noreferrer" className="mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-lg transition-all shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                <a href="https://wa.me/19787055509?text=Quiero%20informaci%C3%B3n%20sobre%20propiedades%20en%20Moca%20u%20otras%20regiones" target="_blank" rel="noopener noreferrer" className="mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-lg transition-all shadow-md hover:shadow-lg inline-flex items-center justify-center">
                   <MessageSquare className="w-5 h-5 mr-2" />
-                  Consultar Cabarete
+                  Consultar Moca
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nationwide Coverage */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-blue-900 mb-6">Cobertura Nacional</h2>
+            <p className="text-2xl text-gray-700">Gestionamos proyectos inmobiliarios en toda la República Dominicana</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">Zonas Turísticas</h3>
+              <p className="text-gray-700 mb-4">Punta Cana, Cabarete, Samaná, La Romana y más. Acceso a propiedades con potencial de ingresos por turismo y alquileres a corto plazo.</p>
+              <a href="https://wa.me/19787055509?text=Quiero%20saber%20m%C3%A1s%20sobre%20propiedades%20en%20zonas%20tur%C3%ADsticas" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:text-blue-900 inline-flex items-center gap-2">
+                <MessageSquare className="w-4 h-4" />
+                Consultar
+              </a>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">Regiones Inland</h3>
+              <p className="text-gray-700 mb-4">Moca, Santiago, La Vega y otras regiones en desarrollo. Propiedades residenciales con potencial de apreciación a largo plazo.</p>
+              <a href="https://wa.me/19787055509?text=Quiero%20saber%20m%C3%A1s%20sobre%20propiedades%20inland%20como%20Moca" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold hover:text-blue-900 inline-flex items-center gap-2">
+                <MessageSquare className="w-4 h-4" />
+                Consultar
+              </a>
             </div>
           </div>
         </div>
@@ -267,13 +295,13 @@ export default function ParaisoInmobiliarioPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Experiencias de Inversionistas</h2>
-            <p className="text-xl text-blue-100">Testimonios de clientes que han invertido exitosamente</p>
+            <p className="text-xl text-blue-100">Testimonios de clientes que han invertido con nosotros</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { quote: "Proceso transparente y bien estructurado. El equipo entiende el mercado dominicano y ofrece opciones de inversión reales con retornos verificables. Excelente servicio en español.", author: "Roberto M.", location: "Inversionista - Punta Cana" },
-              { quote: "Excelente asesoramiento. Adquirí dos propiedades y ambas están generando los retornos esperados. El cierre fue rápido y todo muy profesional.", author: "Patricia L.", location: "Propietaria - Santo Domingo" },
-              { quote: "Muy profesional. Entendieron mis objetivos de inversión y me presentaron opciones que se alineaban con mi perfil de riesgo. ROI consistente y transparencia total.", author: "Carlos V.", location: "Inversionista - Múltiples Propiedades" },
+              { quote: "Proceso transparente y bien estructurado. El equipo entiende el mercado dominicano. Excelente servicio y asesoramiento profesional en español.", author: "Roberto M.", location: "Inversionista - Punta Cana" },
+              { quote: "Excelente asesoramiento. Adquirí propiedades en diferentes zonas del país. El cierre fue rápido y todo muy profesional.", author: "Patricia L.", location: "Propietaria - Santo Domingo" },
+              { quote: "Muy profesional. Entendieron mis objetivos de inversión y me presentaron opciones en zonas turísticas e inland. Transparencia total en todo el proceso.", author: "Carlos V.", location: "Inversionista - Múltiples Propiedades" },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-blue-400/30">
                 <p className="text-white mb-6 text-lg leading-relaxed">\"{testimonial.quote}\"</p>
@@ -343,32 +371,32 @@ export default function ParaisoInmobiliarioPage() {
               </div>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-700">
-              <h2 className="text-2xl font-bold text-blue-900 mb-6">Propiedades Disponibles Ahora</h2>
+              <h2 className="text-2xl font-bold text-blue-900 mb-6">Propiedades Disponibles</h2>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold shrink-0">15</div>
                   <div>
                     <p className="font-semibold text-blue-900">Condos de Lujo en Punta Cana</p>
-                    <p className="text-sm text-gray-600">ROI 12-15% | $200K-$600K</p>
+                    <p className="text-sm text-gray-600">Múltiples opciones disponibles</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold shrink-0">8</div>
                   <div>
-                    <p className="font-semibold text-blue-900">Villas en Cabarete</p>
-                    <p className="text-sm text-gray-600">ROI 14-17% | $180K-$450K</p>
+                    <p className="font-semibold text-blue-900">Residencias en Cabarete</p>
+                    <p className="text-sm text-gray-600">Propiedades verificadas</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold shrink-0">12</div>
                   <div>
-                    <p className="font-semibold text-blue-900">Propiedades en La Romana</p>
-                    <p className="text-sm text-gray-600">ROI 11-14% | $150K-$800K</p>
+                    <p className="font-semibold text-blue-900">Proyectos en Moca y Otras Regiones</p>
+                    <p className="text-sm text-gray-600">Oportunidades en desarrollo</p>
                   </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                ⏰ <strong>Oportunidad Limitada:</strong> Las mejores propiedades se venden en 1-2 meses. Consulta hoy para ver tu lista personalizada.
+                💡 <strong>Consulta Personalizada:</strong> Contacta para conocer propiedades disponibles según tus objetivos de inversión.
               </p>
               <a href="https://wa.me/19787055509?text=Quiero%20ver%20la%20lista%20de%20propiedades%20disponibles%20ahora" target="_blank" rel="noopener noreferrer" className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 rounded-lg transition-all shadow-md hover:shadow-lg inline-flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 mr-2" />
